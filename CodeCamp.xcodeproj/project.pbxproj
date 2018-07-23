@@ -19,7 +19,6 @@
 		963A1A062105C31E00C8C428 /* CodeCampTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A1A052105C31E00C8C428 /* CodeCampTests.m */; };
 		963A1A112105C31E00C8C428 /* CodeCampUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A1A102105C31E00C8C428 /* CodeCampUITests.m */; };
 		9663EA372105DE6E00F64A36 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9663EA362105DE6E00F64A36 /* UserNotifications.framework */; };
-		9663EA392105EB0D00F64A36 /* NotificationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 9663EA382105EB0D00F64A36 /* NotificationHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +60,6 @@
 		963A1A102105C31E00C8C428 /* CodeCampUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeCampUITests.m; sourceTree = "<group>"; };
 		963A1A122105C31E00C8C428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9663EA362105DE6E00F64A36 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
-		9663EA382105EB0D00F64A36 /* NotificationHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationHandler.m; sourceTree = "<group>"; };
-		969E1CEE2105EBBE00EDF0FE /* NotificationHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationHandler.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +119,6 @@
 				963A19EC2105C31D00C8C428 /* GameScene.h */,
 				963A19ED2105C31D00C8C428 /* GameScene.m */,
 				963A19EF2105C31D00C8C428 /* GameViewController.h */,
-				9663EA382105EB0D00F64A36 /* NotificationHandler.m */,
-				969E1CEE2105EBBE00EDF0FE /* NotificationHandler.h */,
 				963A19F02105C31D00C8C428 /* GameViewController.m */,
 				963A19F22105C31D00C8C428 /* Main.storyboard */,
 				963A19F52105C31E00C8C428 /* Assets.xcassets */,
@@ -294,7 +289,6 @@
 			files = (
 				963A19EE2105C31D00C8C428 /* GameScene.m in Sources */,
 				963A19F12105C31D00C8C428 /* GameViewController.m in Sources */,
-				9663EA392105EB0D00F64A36 /* NotificationHandler.m in Sources */,
 				963A19FC2105C31E00C8C428 /* main.m in Sources */,
 				963A19E72105C31D00C8C428 /* AppDelegate.m in Sources */,
 			);

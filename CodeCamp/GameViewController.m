@@ -73,23 +73,29 @@ bool isGrantedNotificationAccess;
 - (IBAction)showNotification:(id)sender {
     if(isGrantedNotificationAccess)
     {
-        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-        
-        UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
-        
-        content.title = @"Notification Title";
-        content.subtitle = @"Notification Subtitle";
-        content.body = @"This is Notification Body";
-        content.sound = [UNNotificationSound defaultSound];
-        
-        UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:10 repeats:NO];
-        
-        //setting up the request for notification
-        UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:@"UYLocalNotification" content:content trigger:trigger];
-        
-        [center addNotificationRequest:request withCompletionHandler:nil];
-        
+        [self sendNotification:sender forTitle:@"Ich" forSubtitle:@"funk" forBody:@"tioniere" forIntervall:5];
     }
+}
+
+- (void) sendNotification:(id) sender forTitle:(NSString*) title forSubtitle:(NSString*) subtitle forBody:(NSString*) body forIntervall: (NSInteger) intervall{
+    if(isGrantedNotificationAccess){
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    
+    UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
+    
+    content.title = title;
+    content.subtitle = subtitle;
+    content.body = body;
+    content.sound = [UNNotificationSound defaultSound];
+    
+    UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:10 repeats:NO];
+    
+    //setting up the request for notification
+    UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:@"UYLocalNotification" content:content trigger:trigger];
+    
+    [center addNotificationRequest:request withCompletionHandler:nil];
+    
+}
 }
 
 
