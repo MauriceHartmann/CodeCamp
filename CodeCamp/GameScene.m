@@ -8,6 +8,7 @@
 
 #import "GameScene.h"
 
+
 @implementation GameScene {
     NSTimeInterval _lastUpdateTime;
     SKShapeNode *_spinnyNode;
@@ -38,6 +39,7 @@
                                                 [SKAction fadeOutWithDuration:0.5],
                                                 [SKAction removeFromParent],
                                                 ]]];
+    
 }
 
 
