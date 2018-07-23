@@ -18,6 +18,7 @@
 		963A19FC2105C31E00C8C428 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A19FB2105C31E00C8C428 /* main.m */; };
 		963A1A062105C31E00C8C428 /* CodeCampTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A1A052105C31E00C8C428 /* CodeCampTests.m */; };
 		963A1A112105C31E00C8C428 /* CodeCampUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A1A102105C31E00C8C428 /* CodeCampUITests.m */; };
+		963A1A282106039500C8C428 /* Share.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A1A272106039500C8C428 /* Share.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		963A1A0C2105C31E00C8C428 /* CodeCampUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeCampUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		963A1A102105C31E00C8C428 /* CodeCampUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeCampUITests.m; sourceTree = "<group>"; };
 		963A1A122105C31E00C8C428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		963A1A272106039500C8C428 /* Share.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Share.m; sourceTree = "<group>"; };
+		963A1A29210603DE00C8C428 /* Share.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Share.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,8 @@
 				963A19F72105C31E00C8C428 /* LaunchScreen.storyboard */,
 				963A19FA2105C31E00C8C428 /* Info.plist */,
 				963A19FB2105C31E00C8C428 /* main.m */,
+				963A1A272106039500C8C428 /* Share.m */,
+				963A1A29210603DE00C8C428 /* Share.h */,
 			);
 			path = CodeCamp;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				963A19EE2105C31D00C8C428 /* GameScene.m in Sources */,
+				963A1A282106039500C8C428 /* Share.m in Sources */,
 				963A19F12105C31D00C8C428 /* GameViewController.m in Sources */,
 				963A19FC2105C31E00C8C428 /* main.m in Sources */,
 				963A19E72105C31D00C8C428 /* AppDelegate.m in Sources */,

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "Share.h"
 @interface AppDelegate ()
 
 @end
@@ -16,9 +16,11 @@
 NSMutableDictionary *dict;
 NSString *path;
 NSFileManager *myManager;
+Share* myShare;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    dict = [NSMutableDictionary dictionary];
+    myShare = Share.sharedSingleton;
+    dict = myShare.passedMutableDict;
     myManager = [NSFileManager defaultManager];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -27,10 +29,14 @@ NSFileManager *myManager;
     if([myManager fileExistsAtPath:path]){
         dict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
         NSLog(@"Read");
+        myShare.passedMutableDict = dict;
     }else{
         //create dict using default values
         [dict setObject: @100  forKey: @"hunger"];
         [dict setObject: @100  forKey: @"thirst"];
+        [dict setObject: @10 forKey:@"fodder"];
+        [dict setObject: @10 forKey:@"drinks"];
+        myShare.passedMutableDict = dict;
     }
     return YES;
     
@@ -50,8 +56,7 @@ NSFileManager *myManager;
     [dict writeToFile:path atomically:YES];
     for (NSString *key in dict)
         NSLog(@"%@: %@", key, [dict valueForKey:key]) ;
-    
-    
+    myShare.passedMutableDict = dict;
 }
 
 
@@ -73,5 +78,11 @@ NSFileManager *myManager;
     NSNumber *t = [NSNumber numberWithInt:(val)];
     return t;
 }
+
++ (NSMutableDictionary*)getDict{
+    return dict;
+}
+
+
 
 @end

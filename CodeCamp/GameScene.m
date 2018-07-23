@@ -7,7 +7,7 @@
 //
 
 #import "GameScene.h"
-
+#import "Share.h"
 
 @implementation GameScene {
     NSTimeInterval _lastUpdateTime;
@@ -15,9 +15,13 @@
     SKLabelNode *_label;
 }
 
+Share* thisShare;
+NSMutableDictionary *diction;
+
 - (void)sceneDidLoad {
-    // Setup your scene here
+        // Setup your scene here
     
+    NSLog(@"Loaded");
     // Initialize update time
     _lastUpdateTime = 0;
     
@@ -44,6 +48,13 @@
 
 
 - (void)touchDownAtPoint:(CGPoint)pos {
+    thisShare = Share.sharedSingleton;
+    diction = thisShare.passedMutableDict;
+    
+    for (NSString *key in diction){
+        NSLog(@"%@: %@", key, [diction valueForKey:key]);
+    }
+    
     SKShapeNode *n = [_spinnyNode copy];
     n.position = pos;
     n.strokeColor = [SKColor greenColor];
@@ -55,6 +66,7 @@
     n.position = pos;
     n.strokeColor = [SKColor blueColor];
     [self addChild:n];
+    
 }
 
 - (void)touchUpAtPoint:(CGPoint)pos {
