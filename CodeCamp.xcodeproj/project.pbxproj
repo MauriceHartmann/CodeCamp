@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		962606E82106038B005C7A1C /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962606E72106038B005C7A1C /* PageViewController.m */; };
 		963A19E72105C31D00C8C428 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A19E62105C31D00C8C428 /* AppDelegate.m */; };
 		963A19E92105C31D00C8C428 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 963A19E82105C31D00C8C428 /* GameScene.sks */; };
 		963A19EB2105C31D00C8C428 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 963A19EA2105C31D00C8C428 /* Actions.sks */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		962606E62106038B005C7A1C /* PageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
+		962606E72106038B005C7A1C /* PageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		963A19E22105C31D00C8C428 /* CodeCamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeCamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		963A19E52105C31D00C8C428 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		963A19E62105C31D00C8C428 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -121,6 +124,8 @@
 				963A19F72105C31E00C8C428 /* LaunchScreen.storyboard */,
 				963A19FA2105C31E00C8C428 /* Info.plist */,
 				963A19FB2105C31E00C8C428 /* main.m */,
+				962606E62106038B005C7A1C /* PageViewController.h */,
+				962606E72106038B005C7A1C /* PageViewController.m */,
 			);
 			path = CodeCamp;
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 				963A19EE2105C31D00C8C428 /* GameScene.m in Sources */,
 				963A19F12105C31D00C8C428 /* GameViewController.m in Sources */,
 				963A19FC2105C31E00C8C428 /* main.m in Sources */,
+				962606E82106038B005C7A1C /* PageViewController.m in Sources */,
 				963A19E72105C31D00C8C428 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

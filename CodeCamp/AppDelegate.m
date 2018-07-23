@@ -17,6 +17,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    UITabBar *tabBar = tabBarController.tabBar;
+    UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
+    UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:1];
+    UITabBarItem *tabBarItem3 = [tabBar.items objectAtIndex:2];
+    
+    [tabBarItem1 setFinishedSelectedImage:[UIImage imageNamed:@"home_button.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"home_button.png"]];
+    [tabBarItem2 setFinishedSelectedImage:[UIImage imageNamed:@"saloon_button.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"saloon_button.png"]];
+    [tabBarItem3 setFinishedSelectedImage:[UIImage imageNamed:@"mall_button.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"mall_button.png"]];
+    
     return YES;
 }
 

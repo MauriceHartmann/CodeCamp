@@ -1,24 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A278a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SGV-OX-3JS">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Game View Controller-->
-        <scene sceneID="tXr-a1-R10">
+        <!--Saloon-->
+        <scene sceneID="gN3-Mf-aVa">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModuleProvider="" sceneMemberID="viewController">
-                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
+                <viewController id="fCv-tj-xMK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bzz-UH-rfz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="saloon" translatesAutoresizingMaskIntoConstraints="NO" id="QSX-bV-ppO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="QSX-bV-ppO" secondAttribute="bottom" id="Drq-uz-kCx"/>
+                            <constraint firstItem="QSX-bV-ppO" firstAttribute="trailing" secondItem="tKJ-ve-MC1" secondAttribute="trailing" id="I5m-cu-EWg"/>
+                            <constraint firstItem="QSX-bV-ppO" firstAttribute="top" secondItem="bzz-UH-rfz" secondAttribute="top" id="Yjr-Lp-Cw8"/>
+                            <constraint firstItem="QSX-bV-ppO" firstAttribute="leading" secondItem="tKJ-ve-MC1" secondAttribute="leading" id="wki-x2-9mx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tKJ-ve-MC1"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Saloon" id="PvU-cj-ICT"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BGS-Ns-voL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-3783.1999999999998" y="753.37331334332839"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="mU0-6a-YS3">
+            <objects>
+                <viewController id="QS4-9e-m9m" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gid-gp-Yqp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="living_room" translatesAutoresizingMaskIntoConstraints="NO" id="Sqg-Ot-SCU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Sqg-Ot-SCU" secondAttribute="bottom" id="0qd-w8-1Nh"/>
+                            <constraint firstItem="Sqg-Ot-SCU" firstAttribute="trailing" secondItem="UIm-b0-ZkQ" secondAttribute="trailing" id="HRv-aT-j0x"/>
+                            <constraint firstItem="Sqg-Ot-SCU" firstAttribute="leading" secondItem="UIm-b0-ZkQ" secondAttribute="leading" id="Khw-Kf-l2e"/>
+                            <constraint firstItem="Sqg-Ot-SCU" firstAttribute="top" secondItem="gid-gp-Yqp" secondAttribute="top" id="TYC-yR-IU4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UIm-b0-ZkQ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" id="0Ao-7R-hQi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mzI-M8-Krg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2834.4000000000001" y="593.25337331334333"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Apl-br-JzU">
+            <objects>
+                <tabBarController id="SGV-OX-3JS" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4k8-Qk-hQU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="QS4-9e-m9m" kind="relationship" relationship="viewControllers" id="wae-Cb-iYS"/>
+                        <segue destination="fCv-tj-xMK" kind="relationship" relationship="viewControllers" id="1n3-eC-qte"/>
+                        <segue destination="Voj-gV-yme" kind="relationship" relationship="viewControllers" id="TLT-4G-Oqg"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wio-r4-b31" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3783" y="13"/>
+        </scene>
+        <!--Mall-->
+        <scene sceneID="sXb-l6-5vC">
+            <objects>
+                <viewController id="Voj-gV-yme" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6ZU-lv-ny7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="mall" translatesAutoresizingMaskIntoConstraints="NO" id="ZpS-z2-YPP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ZpS-z2-YPP" firstAttribute="trailing" secondItem="Pub-0C-NKL" secondAttribute="trailing" id="B1J-dM-lZE"/>
+                            <constraint firstItem="ZpS-z2-YPP" firstAttribute="leading" secondItem="Pub-0C-NKL" secondAttribute="leading" id="H6W-Uf-s9v"/>
+                            <constraint firstItem="ZpS-z2-YPP" firstAttribute="top" secondItem="6ZU-lv-ny7" secondAttribute="top" id="LEP-ie-SkR"/>
+                            <constraint firstAttribute="bottom" secondItem="ZpS-z2-YPP" secondAttribute="bottom" id="hMN-9R-rUw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Pub-0C-NKL"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Mall" id="iKx-Vc-0I8"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QAp-yt-rZq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2834.4000000000001" y="-77.811094452773617"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="living_room" width="474" height="643"/>
+        <image name="mall" width="474" height="649"/>
+        <image name="saloon" width="474" height="649"/>
+    </resources>
 </document>
