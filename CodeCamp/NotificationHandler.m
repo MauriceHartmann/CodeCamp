@@ -13,6 +13,8 @@
 
 bool isGrantedNotificationAccess;
 
+// needs do be initilized to send Notifications to the users
+// initilazies/enables the Push Notifiactions
 - (void) initNotification {
     
     isGrantedNotificationAccess = false;
@@ -25,6 +27,11 @@ bool isGrantedNotificationAccess;
         isGrantedNotificationAccess = granted;
     }];
 }
+//allows you to send a push notification
+//sender:
+//title:     headline for the notification
+//subtitle:  second headline ?!?
+//body:      smaller Text part for informations
 
 - (void) sendNotification:(id) sender forTitle:(NSString*) title forSubtitle:(NSString*) subtitle forBody:(NSString*) body forIntervall: (NSInteger) intervall
 {
