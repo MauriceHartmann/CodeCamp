@@ -9,11 +9,23 @@
 #import "GameViewController.h"
 #import "GameScene.h"
 
+bool isGrantedNotificationAccess;
+
 @implementation GameViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    isGrantedNotificationAccess = false;
+    
+    UNUserNotificationCenter *center =  [UNUserNotificationCenter currentNotificationCenter];
+    
+    UNAuthorizationOptions options = UNAuthorizationOptionAlert + UNAuthorizationOptionAlert;
+                                                                    
+    [center requestAuthorizationWithOptions:options completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        isGrantedNotificationAccess = granted;
+    }];
+    
     // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
     // including entities and graphs.
     GKScene *scene = [GKScene sceneWithFileNamed:@"GameScene"];
@@ -57,5 +69,29 @@
 - (BOOL)prefersStatusBarHidden {
     return YES;
 }
+
+- (IBAction)showNotification:(id)sender {
+    if(isGrantedNotificationAccess)
+    {
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        
+        UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
+        
+        content.title = @"Notification Title";
+        content.subtitle = @"Notification Subtitle";
+        content.body = @"This is Notification Body";
+        content.sound = [UNNotificationSound defaultSound];
+        
+        UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:10 repeats:NO];
+        
+        //setting up the request for notification
+        UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:@"UYLocalNotification" content:content trigger:trigger];
+        
+        [center addNotificationRequest:request withCompletionHandler:nil];
+        
+    }
+}
+
+
 
 @end
