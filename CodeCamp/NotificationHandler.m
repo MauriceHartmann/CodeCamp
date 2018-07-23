@@ -11,6 +11,21 @@
 
 @implementation NotificationHandler
 
+/*
+ How it works:
+ 
+ NotificationHandler* notifications;
+ @implementation exampleClass
+ - (void)initExampleClass {
+     notifications = [[NotificationHandler alloc]init];
+     [notifications initNotification];
+ }
+ - void send{
+    [notifications sendNotification:@"This " forSubtitle:@"is a" forBody:@"test" forIntervall:5];
+ }
+ 
+ */
+
 bool isGrantedNotificationAccess;
 
 // needs do be initilized to send Notifications to the users
@@ -28,12 +43,12 @@ bool isGrantedNotificationAccess;
     }];
 }
 //allows you to send a push notification
-//sender:
 //title:     headline for the notification
 //subtitle:  second headline ?!?
 //body:      smaller Text part for informations
+//intervall: amount of seconds until the notifications pops up
 
-- (void) sendNotification:(id) sender forTitle:(NSString*) title forSubtitle:(NSString*) subtitle forBody:(NSString*) body forIntervall: (NSInteger) intervall
+- (void) sendNotification:(NSString*) title forSubtitle:(NSString*) subtitle forBody:(NSString*) body forIntervall: (NSInteger) intervall
 {
     if(isGrantedNotificationAccess)
     {
@@ -46,7 +61,7 @@ bool isGrantedNotificationAccess;
         content.body = body;
         content.sound = [UNNotificationSound defaultSound];
         
-        UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:10 repeats:NO];
+        UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:intervall repeats:NO];
         
         //setting up the request for notification
         UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:@"UYLocalNotification" content:content trigger:trigger];

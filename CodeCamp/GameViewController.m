@@ -66,7 +66,7 @@ NotificationHandler* notifications;
 }
 
 - (IBAction)showNotification:(id)sender {
-       [notifications sendNotification:sender forTitle:@"XYZ hat Hunger" forSubtitle:@"" forBody:@"XYZ hat eine Weile nichts gegessen. Schaue doch mal nach ihm" forIntervall:5];
+       [notifications sendNotification:@"XYZ hat Hunger" forSubtitle:@"" forBody:@"XYZ hat eine Weile nichts gegessen. Schaue doch mal nach ihm" forIntervall:5];
     
 }
 @end

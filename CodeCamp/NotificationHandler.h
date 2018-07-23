@@ -12,7 +12,7 @@
 
 - (void) initNotification;
 
-- (void) sendNotification:(id) sender forTitle:(NSString*) title forSubtitle:(NSString*) subtitle forBody:(NSString*) body forIntervall: (NSInteger) intervall;
+- (void) sendNotification:(NSString*) title forSubtitle:(NSString*) subtitle forBody:(NSString*) body forIntervall: (NSInteger) intervall;
 
 @end
 
