@@ -8,23 +8,18 @@
 
 #import "GameViewController.h"
 #import "GameScene.h"
+#import "NotificationHandler.m"
 
-bool isGrantedNotificationAccess;
+NotificationHandler* notifications;
 
 @implementation GameViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    isGrantedNotificationAccess = false;
+    notifications = [[NotificationHandler alloc]init];
     
-    UNUserNotificationCenter *center =  [UNUserNotificationCenter currentNotificationCenter];
-    
-    UNAuthorizationOptions options = UNAuthorizationOptionAlert + UNAuthorizationOptionAlert;
-                                                                    
-    [center requestAuthorizationWithOptions:options completionHandler:^(BOOL granted, NSError * _Nullable error) {
-        isGrantedNotificationAccess = granted;
-    }];
+    [notifications initNotification];
     
     // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
     // including entities and graphs.
@@ -71,33 +66,7 @@ bool isGrantedNotificationAccess;
 }
 
 - (IBAction)showNotification:(id)sender {
-    if(isGrantedNotificationAccess)
-    {
-        [self sendNotification:sender forTitle:@"Ich" forSubtitle:@"funk" forBody:@"tioniere" forIntervall:5];
-    }
-}
-
-- (void) sendNotification:(id) sender forTitle:(NSString*) title forSubtitle:(NSString*) subtitle forBody:(NSString*) body forIntervall: (NSInteger) intervall{
-    if(isGrantedNotificationAccess){
-        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-    
-    UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
-    
-    content.title = title;
-    content.subtitle = subtitle;
-    content.body = body;
-    content.sound = [UNNotificationSound defaultSound];
-    
-    UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:10 repeats:NO];
-    
-    //setting up the request for notification
-    UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:@"UYLocalNotification" content:content trigger:trigger];
-    
-    [center addNotificationRequest:request withCompletionHandler:nil];
+       [notifications sendNotification:sender forTitle:@"Jaaaaaaaaa" forSubtitle:@"aaaaaaaaaa" forBody:@"aaaaaaaa" forIntervall:5];
     
 }
-}
-
-
-
 @end

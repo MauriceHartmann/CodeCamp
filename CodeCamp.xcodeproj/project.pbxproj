@@ -60,6 +60,8 @@
 		963A1A102105C31E00C8C428 /* CodeCampUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeCampUITests.m; sourceTree = "<group>"; };
 		963A1A122105C31E00C8C428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9663EA362105DE6E00F64A36 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		969E1CF02105F4F300EDF0FE /* NotificationHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationHandler.h; sourceTree = "<group>"; };
+		969E1CF12105F5CB00EDF0FE /* NotificationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,8 @@
 				963A19F72105C31E00C8C428 /* LaunchScreen.storyboard */,
 				963A19FA2105C31E00C8C428 /* Info.plist */,
 				963A19FB2105C31E00C8C428 /* main.m */,
+				969E1CF12105F5CB00EDF0FE /* NotificationHandler.m */,
+				969E1CF02105F4F300EDF0FE /* NotificationHandler.h */,
 			);
 			path = CodeCamp;
 			sourceTree = "<group>";
