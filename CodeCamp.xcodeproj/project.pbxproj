@@ -18,6 +18,21 @@
 		963A19FC2105C31E00C8C428 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A19FB2105C31E00C8C428 /* main.m */; };
 		963A1A062105C31E00C8C428 /* CodeCampTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A1A052105C31E00C8C428 /* CodeCampTests.m */; };
 		963A1A112105C31E00C8C428 /* CodeCampUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A1A102105C31E00C8C428 /* CodeCampUITests.m */; };
+		9653C5BC2105D5F8007D3563 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9653C5BA2105D5F8007D3563 /* Model.xcdatamodeld */; };
+		9653C5F72105DBF6007D3563 /* Inventory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C5E92105DBF6007D3563 /* Inventory+CoreDataClass.swift */; };
+		9653C5F82105DBF6007D3563 /* Inventory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C5EA2105DBF6007D3563 /* Inventory+CoreDataProperties.swift */; };
+		9653C5F92105DBF6007D3563 /* Kitchen+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C5EB2105DBF6007D3563 /* Kitchen+CoreDataClass.swift */; };
+		9653C5FA2105DBF6007D3563 /* Kitchen+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C5EC2105DBF6007D3563 /* Kitchen+CoreDataProperties.swift */; };
+		9653C5FB2105DBF6007D3563 /* Needs+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C5ED2105DBF6007D3563 /* Needs+CoreDataClass.swift */; };
+		9653C5FC2105DBF6007D3563 /* Needs+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C5EE2105DBF6007D3563 /* Needs+CoreDataProperties.swift */; };
+		9653C5FD2105DBF6007D3563 /* Room+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C5EF2105DBF6007D3563 /* Room+CoreDataClass.swift */; };
+		9653C5FE2105DBF6007D3563 /* Room+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C5F02105DBF6007D3563 /* Room+CoreDataProperties.swift */; };
+		9653C5FF2105DBF6007D3563 /* Bar+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C5F12105DBF6007D3563 /* Bar+CoreDataClass.swift */; };
+		9653C6002105DBF6007D3563 /* Bar+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C5F22105DBF6007D3563 /* Bar+CoreDataProperties.swift */; };
+		9653C6012105DBF6007D3563 /* Shop+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C5F32105DBF6007D3563 /* Shop+CoreDataClass.swift */; };
+		9653C6022105DBF6007D3563 /* Shop+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C5F42105DBF6007D3563 /* Shop+CoreDataProperties.swift */; };
+		9653C6032105DBF6007D3563 /* Creature+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C5F52105DBF6007D3563 /* Creature+CoreDataClass.swift */; };
+		9653C6042105DBF6007D3563 /* Creature+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9653C5F62105DBF6007D3563 /* Creature+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +73,22 @@
 		963A1A0C2105C31E00C8C428 /* CodeCampUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeCampUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		963A1A102105C31E00C8C428 /* CodeCampUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeCampUITests.m; sourceTree = "<group>"; };
 		963A1A122105C31E00C8C428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9653C5BB2105D5F8007D3563 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		9653C5C02105D961007D3563 /* CodeCamp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CodeCamp-Bridging-Header.h"; sourceTree = "<group>"; };
+		9653C5E92105DBF6007D3563 /* Inventory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Inventory+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9653C5EA2105DBF6007D3563 /* Inventory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Inventory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9653C5EB2105DBF6007D3563 /* Kitchen+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Kitchen+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9653C5EC2105DBF6007D3563 /* Kitchen+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Kitchen+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9653C5ED2105DBF6007D3563 /* Needs+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Needs+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9653C5EE2105DBF6007D3563 /* Needs+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Needs+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9653C5EF2105DBF6007D3563 /* Room+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9653C5F02105DBF6007D3563 /* Room+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9653C5F12105DBF6007D3563 /* Bar+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bar+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9653C5F22105DBF6007D3563 /* Bar+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bar+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9653C5F32105DBF6007D3563 /* Shop+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shop+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9653C5F42105DBF6007D3563 /* Shop+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shop+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9653C5F52105DBF6007D3563 /* Creature+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Creature+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9653C5F62105DBF6007D3563 /* Creature+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Creature+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +123,7 @@
 				963A1A042105C31E00C8C428 /* CodeCampTests */,
 				963A1A0F2105C31E00C8C428 /* CodeCampUITests */,
 				963A19E32105C31D00C8C428 /* Products */,
+				9653C5C02105D961007D3563 /* CodeCamp-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +140,7 @@
 		963A19E42105C31D00C8C428 /* CodeCamp */ = {
 			isa = PBXGroup;
 			children = (
+				9653C5B92105D5B5007D3563 /* Data Model */,
 				963A19E52105C31D00C8C428 /* AppDelegate.h */,
 				963A19E62105C31D00C8C428 /* AppDelegate.m */,
 				963A19E82105C31D00C8C428 /* GameScene.sks */,
@@ -141,6 +174,28 @@
 				963A1A122105C31E00C8C428 /* Info.plist */,
 			);
 			path = CodeCampUITests;
+			sourceTree = "<group>";
+		};
+		9653C5B92105D5B5007D3563 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				9653C5E92105DBF6007D3563 /* Inventory+CoreDataClass.swift */,
+				9653C5EA2105DBF6007D3563 /* Inventory+CoreDataProperties.swift */,
+				9653C5EB2105DBF6007D3563 /* Kitchen+CoreDataClass.swift */,
+				9653C5EC2105DBF6007D3563 /* Kitchen+CoreDataProperties.swift */,
+				9653C5ED2105DBF6007D3563 /* Needs+CoreDataClass.swift */,
+				9653C5EE2105DBF6007D3563 /* Needs+CoreDataProperties.swift */,
+				9653C5EF2105DBF6007D3563 /* Room+CoreDataClass.swift */,
+				9653C5F02105DBF6007D3563 /* Room+CoreDataProperties.swift */,
+				9653C5F12105DBF6007D3563 /* Bar+CoreDataClass.swift */,
+				9653C5F22105DBF6007D3563 /* Bar+CoreDataProperties.swift */,
+				9653C5F32105DBF6007D3563 /* Shop+CoreDataClass.swift */,
+				9653C5F42105DBF6007D3563 /* Shop+CoreDataProperties.swift */,
+				9653C5F52105DBF6007D3563 /* Creature+CoreDataClass.swift */,
+				9653C5F62105DBF6007D3563 /* Creature+CoreDataProperties.swift */,
+				9653C5BA2105D5F8007D3563 /* Model.xcdatamodeld */,
+			);
+			path = "Data Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +265,7 @@
 				TargetAttributes = {
 					963A19E12105C31D00C8C428 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0930;
 					};
 					963A1A002105C31E00C8C428 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -275,9 +331,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9653C5F92105DBF6007D3563 /* Kitchen+CoreDataClass.swift in Sources */,
+				9653C6012105DBF6007D3563 /* Shop+CoreDataClass.swift in Sources */,
+				9653C6002105DBF6007D3563 /* Bar+CoreDataProperties.swift in Sources */,
 				963A19EE2105C31D00C8C428 /* GameScene.m in Sources */,
+				9653C6042105DBF6007D3563 /* Creature+CoreDataProperties.swift in Sources */,
+				9653C5F82105DBF6007D3563 /* Inventory+CoreDataProperties.swift in Sources */,
+				9653C6022105DBF6007D3563 /* Shop+CoreDataProperties.swift in Sources */,
 				963A19F12105C31D00C8C428 /* GameViewController.m in Sources */,
+				9653C5FD2105DBF6007D3563 /* Room+CoreDataClass.swift in Sources */,
+				9653C5F72105DBF6007D3563 /* Inventory+CoreDataClass.swift in Sources */,
+				9653C5FB2105DBF6007D3563 /* Needs+CoreDataClass.swift in Sources */,
+				9653C5FE2105DBF6007D3563 /* Room+CoreDataProperties.swift in Sources */,
+				9653C5FA2105DBF6007D3563 /* Kitchen+CoreDataProperties.swift in Sources */,
+				9653C5FC2105DBF6007D3563 /* Needs+CoreDataProperties.swift in Sources */,
+				9653C5BC2105D5F8007D3563 /* Model.xcdatamodeld in Sources */,
+				9653C5FF2105DBF6007D3563 /* Bar+CoreDataClass.swift in Sources */,
 				963A19FC2105C31E00C8C428 /* main.m in Sources */,
+				9653C6032105DBF6007D3563 /* Creature+CoreDataClass.swift in Sources */,
 				963A19E72105C31D00C8C428 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,6 +518,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R8D6BLX4HD;
 				INFOPLIST_FILE = CodeCamp/Info.plist;
@@ -456,6 +528,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.uni-kassel.eecs.comtec.CodeCamp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CodeCamp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -464,6 +539,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R8D6BLX4HD;
 				INFOPLIST_FILE = CodeCamp/Info.plist;
@@ -473,6 +549,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.uni-kassel.eecs.comtec.CodeCamp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CodeCamp-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -480,6 +558,7 @@
 		963A1A192105C31E00C8C428 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R8D6BLX4HD;
@@ -499,6 +578,7 @@
 		963A1A1A2105C31E00C8C428 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R8D6BLX4HD;
@@ -518,6 +598,7 @@
 		963A1A1C2105C31E00C8C428 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R8D6BLX4HD;
 				INFOPLIST_FILE = CodeCampUITests/Info.plist;
@@ -536,6 +617,7 @@
 		963A1A1D2105C31E00C8C428 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R8D6BLX4HD;
 				INFOPLIST_FILE = CodeCampUITests/Info.plist;
@@ -591,6 +673,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9653C5BA2105D5F8007D3563 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9653C5BB2105D5F8007D3563 /* Model.xcdatamodel */,
+			);
+			currentVersion = 9653C5BB2105D5F8007D3563 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 963A19DA2105C31D00C8C428 /* Project object */;
 }
