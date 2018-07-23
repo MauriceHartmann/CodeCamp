@@ -35,6 +35,19 @@
     
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
+    
+    /*
+     Showing time on screen
+     */
+    _timeLabel.hidden = YES;
+    _timeLabel.text = [[NSDate date] description];
+    [NSTimer scheduledTimerWithTimeInterval:1
+                                     target:self
+                                   selector:@selector(showTime)
+                                   userInfo:nil
+                                    repeats:YES];
+    
+    
 }
 
 - (BOOL)shouldAutorotate {
@@ -57,5 +70,26 @@
 - (BOOL)prefersStatusBarHidden {
     return YES;
 }
+
+//get current time as NSString
+-(NSString *) getCurrentTime {
+    NSDate *currentTime = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//    [dateFormatter setDateFormat:@"hh:mm"];
+    NSString *resultString = [dateFormatter stringFromDate: currentTime];
+    
+    return resultString;
+}
+
+
+-(void)showTime{
+    NSDate *currentTime = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"hh:mm"];
+    NSString *resultString = [dateFormatter stringFromDate: currentTime];
+    _timeLabel.hidden = NO;
+    _timeLabel.text=resultString;
+}
+
 
 @end
