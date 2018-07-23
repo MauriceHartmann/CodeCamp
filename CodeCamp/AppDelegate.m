@@ -23,9 +23,9 @@
     UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:1];
     UITabBarItem *tabBarItem3 = [tabBar.items objectAtIndex:2];
     
-    [tabBarItem1 setFinishedSelectedImage:[UIImage imageNamed:@"home_button.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"home_button.png"]];
-    [tabBarItem2 setFinishedSelectedImage:[UIImage imageNamed:@"saloon_button.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"saloon_button.png"]];
-    [tabBarItem3 setFinishedSelectedImage:[UIImage imageNamed:@"mall_button.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"mall_button.png"]];
+    tabBarItem1 = [tabBarItem1 initWithTitle:@"Home" image:[UIImage imageNamed:@"home_button.png"] selectedImage:[UIImage imageNamed:@"home_button.png"]];
+    tabBarItem2 = [tabBarItem2 initWithTitle:@"Saloon" image:[UIImage imageNamed:@"saloon_button.png"] selectedImage:[UIImage imageNamed:@"saloon_button.png"]];
+    tabBarItem3 = [tabBarItem3 initWithTitle:@"Mall" image:[UIImage imageNamed:@"mall_button.png"] selectedImage:[UIImage imageNamed:@"mall_button.png"]];
     
     return YES;
 }
