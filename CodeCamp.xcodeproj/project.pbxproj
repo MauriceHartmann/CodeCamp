@@ -58,6 +58,7 @@
 		963A1A0C2105C31E00C8C428 /* CodeCampUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeCampUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		963A1A102105C31E00C8C428 /* CodeCampUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeCampUITests.m; sourceTree = "<group>"; };
 		963A1A122105C31E00C8C428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		963A1A1F2105C8D800C8C428 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,6 +319,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				963A19F32105C31D00C8C428 /* Base */,
+				963A1A1F2105C8D800C8C428 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
