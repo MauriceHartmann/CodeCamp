@@ -17,26 +17,32 @@ NSMutableDictionary *dict;
 NSString *path;
 NSFileManager *myManager;
 Share* myShare;
+int counter = 4;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //Create or find a file to write to or read from
     myShare = Share.sharedSingleton;
     dict = myShare.passedMutableDict;
     myManager = [NSFileManager defaultManager];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    path = [documentsDirectory stringByAppendingPathComponent:@"values.txt"];
+    path = [documentsDirectory stringByAppendingPathComponent:@"values.txt"]; // Name of file is vaues.txt
 
     if([myManager fileExistsAtPath:path]){
-        dict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
+        dict = [NSMutableDictionary dictionaryWithContentsOfFile:path]; // Copy Values of file in our dictionary
         NSLog(@"Read");
-        myShare.passedMutableDict = dict;
+        myShare.passedMutableDict = dict; // Copy files back into our singleton
     }else{
-        //create dict using default values
+        NSLog(@"created");
+        dict = [NSMutableDictionary dictionary];
+        //Create dict using default values if no file was found
         [dict setObject: @100  forKey: @"hunger"];
         [dict setObject: @100  forKey: @"thirst"];
-        [dict setObject: @10 forKey:@"fodder"];
-        [dict setObject: @10 forKey:@"drinks"];
-        myShare.passedMutableDict = dict;
+        [dict setObject: @10 forKey: @"fodder"];
+        [dict setObject: @10 forKey: @"drinks"];
+        for (NSString *key in dict)
+            NSLog(@"%@: %@", key, [dict valueForKey:key]) ;
+        myShare.passedMutableDict = dict; // Copy files back to singleton
     }
     return YES;
     
@@ -50,13 +56,19 @@ Share* myShare;
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
+    dict = myShare.passedMutableDict;
     NSNumber* z = [dict valueForKey:@"hunger"];
     NSNumber* u = [NSNumber numberWithInt:([z intValue] -2)];
     [dict setValue: u forKey:@"hunger"];
-    [dict writeToFile:path atomically:YES];
+    [dict writeToFile:path atomically:YES]; // Write everything to file to save status
+    NSLog(@"written");
     for (NSString *key in dict)
         NSLog(@"%@: %@", key, [dict valueForKey:key]) ;
     myShare.passedMutableDict = dict;
+    counter --;
+    if(counter == 0){
+        [AppDelegate deleteFile];
+    }
 }
 
 
@@ -74,15 +86,15 @@ Share* myShare;
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-+ (NSNumber*)intToNS:(int) val{
++ (NSNumber*)intToNS:(int) val{ // HelpMethod
     NSNumber *t = [NSNumber numberWithInt:(val)];
     return t;
 }
 
-+ (NSMutableDictionary*)getDict{
-    return dict;
++(void)deleteFile{
+    [myManager removeItemAtPath: path error: nil];
+    NSLog(@"delete");
 }
-
 
 
 @end

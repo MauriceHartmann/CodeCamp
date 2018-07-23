@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "Share.h"
 
+//Create a Singleton to make the Dictionary accessible to all classes
+
 @implementation Share
 @synthesize passedMutableDict;
 
