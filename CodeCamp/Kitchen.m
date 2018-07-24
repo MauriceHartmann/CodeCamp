@@ -9,5 +9,9 @@
 #import "Kitchen.h"
 
 @implementation Kitchen
-
+-(void) doAction{
+    
+    //remove food from inventory
+    //remove hunger from pet
+}
 @end

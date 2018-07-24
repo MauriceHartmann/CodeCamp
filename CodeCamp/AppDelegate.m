@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Share.h"
+#import "Creature.h"
 @interface AppDelegate ()
 
 @end
@@ -17,9 +18,14 @@ NSMutableDictionary *dict;
 NSString *path;
 NSFileManager *myManager;
 Share* myShare;
+Creature* pet;
 int counter = 4; // remove later
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    pet = [[Creature alloc] init];
+    [pet initCreature];
+    
     [AppDelegate setupFile]; //Prepares File and Dictionary
     // Override point for customization after application launch.
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
