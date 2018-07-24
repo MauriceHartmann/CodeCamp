@@ -57,6 +57,7 @@ int counter = 4; // remove later
     NSLog(@"written");
     for (NSString *key in [myShare getAllKeys])
         NSLog(@"%@", key) ;
+    [pet sendNotification:@"CodeCamp" forSubtitle:@"Hintergrund" forBody:@"Bin im Hintergrund. Weißt bescheid!" forIntervall:5];
 }
 
 
@@ -94,6 +95,8 @@ int counter = 4; // remove later
     if([myManager fileExistsAtPath:path]){
         [myShare createFromFile:path]; // Copy Values of file in our dictionary
         NSLog(@"Read");
+        for (NSString *key in [myShare getAllKeys])
+            NSLog(@"%@",key) ;
         // Copy files back into our singleton
     }else{
         NSLog(@"created");
