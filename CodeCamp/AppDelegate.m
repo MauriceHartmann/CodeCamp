@@ -17,7 +17,7 @@ NSMutableDictionary *dict;
 NSString *path;
 NSFileManager *myManager;
 Share* myShare;
-int counter = 4;
+int counter = 4; // remove later
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //Create or find a file to write to or read from
@@ -44,6 +44,17 @@ int counter = 4;
             NSLog(@"%@: %@", key, [dict valueForKey:key]) ;
         myShare.passedMutableDict = dict; // Copy files back to singleton
     }
+    // Override point for customization after application launch.
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    UITabBar *tabBar = tabBarController.tabBar;
+    UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
+    UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:1];
+    UITabBarItem *tabBarItem3 = [tabBar.items objectAtIndex:2];
+    
+    tabBarItem1 = [tabBarItem1 initWithTitle:@"Home" image:[UIImage imageNamed:@"home_button.png"] selectedImage:[UIImage imageNamed:@"home_button.png"]];
+    tabBarItem2 = [tabBarItem2 initWithTitle:@"Saloon" image:[UIImage imageNamed:@"saloon_button.png"] selectedImage:[UIImage imageNamed:@"saloon_button.png"]];
+    tabBarItem3 = [tabBarItem3 initWithTitle:@"Mall" image:[UIImage imageNamed:@"mall_button.png"] selectedImage:[UIImage imageNamed:@"mall_button.png"]];
+    
     return YES;
     
 }
