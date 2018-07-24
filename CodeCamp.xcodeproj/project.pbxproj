@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96229C06210716EA00365EE1 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 96229C05210716EA00365EE1 /* Room.m */; };
+		96229C092107170B00365EE1 /* Creature.m in Sources */ = {isa = PBXBuildFile; fileRef = 96229C082107170B00365EE1 /* Creature.m */; };
+		96229C0C2107176000365EE1 /* Saloon.m in Sources */ = {isa = PBXBuildFile; fileRef = 96229C0B2107176000365EE1 /* Saloon.m */; };
+		96229C0F210717C500365EE1 /* Kitchen.m in Sources */ = {isa = PBXBuildFile; fileRef = 96229C0E210717C500365EE1 /* Kitchen.m */; };
+		96229C122107181E00365EE1 /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = 96229C112107181E00365EE1 /* Store.m */; };
+		96229C152107186800365EE1 /* Inventory.m in Sources */ = {isa = PBXBuildFile; fileRef = 96229C142107186800365EE1 /* Inventory.m */; };
 		963A19E72105C31D00C8C428 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A19E62105C31D00C8C428 /* AppDelegate.m */; };
 		963A19E92105C31D00C8C428 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 963A19E82105C31D00C8C428 /* GameScene.sks */; };
 		963A19EB2105C31D00C8C428 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 963A19EA2105C31D00C8C428 /* Actions.sks */; };
@@ -18,7 +24,7 @@
 		963A19FC2105C31E00C8C428 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A19FB2105C31E00C8C428 /* main.m */; };
 		963A1A062105C31E00C8C428 /* CodeCampTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A1A052105C31E00C8C428 /* CodeCampTests.m */; };
 		963A1A112105C31E00C8C428 /* CodeCampUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A1A102105C31E00C8C428 /* CodeCampUITests.m */; };
-		9653C5BC2105D5F8007D3563 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9653C5BA2105D5F8007D3563 /* Model.xcdatamodeld */; };
+		96EA4A9F2107136B00A8F579 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EA4A9E2107136B00A8F579 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +45,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		96229C04210716EA00365EE1 /* Room.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Room.h; sourceTree = "<group>"; };
+		96229C05210716EA00365EE1 /* Room.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
+		96229C072107170B00365EE1 /* Creature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Creature.h; sourceTree = "<group>"; };
+		96229C082107170B00365EE1 /* Creature.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Creature.m; sourceTree = "<group>"; };
+		96229C0A2107176000365EE1 /* Saloon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Saloon.h; sourceTree = "<group>"; };
+		96229C0B2107176000365EE1 /* Saloon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Saloon.m; sourceTree = "<group>"; };
+		96229C0D210717C500365EE1 /* Kitchen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Kitchen.h; sourceTree = "<group>"; };
+		96229C0E210717C500365EE1 /* Kitchen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Kitchen.m; sourceTree = "<group>"; };
+		96229C102107181E00365EE1 /* Store.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Store.h; sourceTree = "<group>"; };
+		96229C112107181E00365EE1 /* Store.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Store.m; sourceTree = "<group>"; };
+		96229C132107186800365EE1 /* Inventory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Inventory.h; sourceTree = "<group>"; };
+		96229C142107186800365EE1 /* Inventory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Inventory.m; sourceTree = "<group>"; };
 		963A19E22105C31D00C8C428 /* CodeCamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeCamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		963A19E52105C31D00C8C428 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		963A19E62105C31D00C8C428 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -59,7 +77,7 @@
 		963A1A0C2105C31E00C8C428 /* CodeCampUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeCampUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		963A1A102105C31E00C8C428 /* CodeCampUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeCampUITests.m; sourceTree = "<group>"; };
 		963A1A122105C31E00C8C428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9653C5BB2105D5F8007D3563 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		96EA4A9E2107136B00A8F579 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96EA4A9F2107136B00A8F579 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +106,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		96229C002107169700365EE1 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				96229C04210716EA00365EE1 /* Room.h */,
+				96229C05210716EA00365EE1 /* Room.m */,
+				96229C072107170B00365EE1 /* Creature.h */,
+				96229C082107170B00365EE1 /* Creature.m */,
+				96229C0A2107176000365EE1 /* Saloon.h */,
+				96229C0B2107176000365EE1 /* Saloon.m */,
+				96229C0D210717C500365EE1 /* Kitchen.h */,
+				96229C0E210717C500365EE1 /* Kitchen.m */,
+				96229C102107181E00365EE1 /* Store.h */,
+				96229C112107181E00365EE1 /* Store.m */,
+				96229C132107186800365EE1 /* Inventory.h */,
+				96229C142107186800365EE1 /* Inventory.m */,
+			);
+			name = "Data Model";
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		963A19D92105C31D00C8C428 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +133,7 @@
 				963A1A042105C31E00C8C428 /* CodeCampTests */,
 				963A1A0F2105C31E00C8C428 /* CodeCampUITests */,
 				963A19E32105C31D00C8C428 /* Products */,
+				96EA4A9D2107136A00A8F579 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,7 +150,7 @@
 		963A19E42105C31D00C8C428 /* CodeCamp */ = {
 			isa = PBXGroup;
 			children = (
-				9653C5B92105D5B5007D3563 /* Data Model */,
+				96229C002107169700365EE1 /* Data Model */,
 				963A19E52105C31D00C8C428 /* AppDelegate.h */,
 				963A19E62105C31D00C8C428 /* AppDelegate.m */,
 				963A19E82105C31D00C8C428 /* GameScene.sks */,
@@ -146,12 +186,12 @@
 			path = CodeCampUITests;
 			sourceTree = "<group>";
 		};
-		9653C5B92105D5B5007D3563 /* Data Model */ = {
+		96EA4A9D2107136A00A8F579 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9653C5BA2105D5F8007D3563 /* Model.xcdatamodeld */,
+				96EA4A9E2107136B00A8F579 /* CoreData.framework */,
 			);
-			path = "Data Model";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,9 +327,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96229C0C2107176000365EE1 /* Saloon.m in Sources */,
+				96229C06210716EA00365EE1 /* Room.m in Sources */,
+				96229C0F210717C500365EE1 /* Kitchen.m in Sources */,
 				963A19EE2105C31D00C8C428 /* GameScene.m in Sources */,
+				96229C152107186800365EE1 /* Inventory.m in Sources */,
+				96229C092107170B00365EE1 /* Creature.m in Sources */,
 				963A19F12105C31D00C8C428 /* GameViewController.m in Sources */,
-				9653C5BC2105D5F8007D3563 /* Model.xcdatamodeld in Sources */,
+				96229C122107181E00365EE1 /* Store.m in Sources */,
 				963A19FC2105C31E00C8C428 /* main.m in Sources */,
 				963A19E72105C31D00C8C428 /* AppDelegate.m in Sources */,
 			);
@@ -463,6 +508,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R8D6BLX4HD;
+				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = CodeCamp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -485,6 +531,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R8D6BLX4HD;
+				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = CodeCamp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -615,19 +662,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		9653C5BA2105D5F8007D3563 /* Model.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				9653C5BB2105D5F8007D3563 /* Model.xcdatamodel */,
-			);
-			currentVersion = 9653C5BB2105D5F8007D3563 /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 963A19DA2105C31D00C8C428 /* Project object */;
 }
