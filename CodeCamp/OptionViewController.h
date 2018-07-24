@@ -10,5 +10,7 @@
 
 @interface OptionViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *deleteBtn;
+@property (weak, nonatomic) IBOutlet UIButton *thirstBtn;
+@property (weak, nonatomic) IBOutlet UIButton *hungerButton;
 
 @end
