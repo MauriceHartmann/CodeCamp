@@ -11,7 +11,6 @@
 #import <UserNotifications/UserNotifications.h>
 
 
-
 @interface Creature : NSObject
 -(void) initCreature;
 -(void) checkNeeds;
