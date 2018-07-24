@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Share.h"
+#import "Creature.h"
 @interface AppDelegate ()
 
 @end

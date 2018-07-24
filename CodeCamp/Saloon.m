@@ -9,5 +9,9 @@
 #import "Saloon.h"
 
 @implementation Saloon
-
+-(void) doAction{
+    
+    //lose drink from inventory
+    //remove thirsty from pet
+}
 @end

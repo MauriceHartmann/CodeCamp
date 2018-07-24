@@ -10,5 +10,5 @@
 #import "Room.h"
 
 @interface Store : Room
-
+-(void) doAction;
 @end

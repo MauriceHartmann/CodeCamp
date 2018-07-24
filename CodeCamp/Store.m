@@ -10,4 +10,10 @@
 
 @implementation Store
 
+-(void) doAction
+{
+    //add Stuff to Inventory
+    //lose money ?!?
+}
+
 @end

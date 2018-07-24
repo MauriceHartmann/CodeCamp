@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface Creature : NSObject
-
+-(void) initCreature;
+-(void) checkNeeds;
 @end

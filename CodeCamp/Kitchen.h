@@ -10,5 +10,5 @@
 #import "Room.h"
 
 @interface Kitchen : Room
-
+-(void) doAction;
 @end

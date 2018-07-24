@@ -15,9 +15,7 @@
 //    SKLabelNode *_label;
 }
 
-//If values fall below the specified Limits the pet is considered hungry, thirsty etc.
-const int THIRST_LIMIT = 20;
-const int HUNGER_LIMIT = 20;
+
 Share* thisShare;
 NSMutableDictionary *diction;
 

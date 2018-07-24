@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface Room : NSObject
-+(void) doAction;
+-(void) doAction;
 @end
