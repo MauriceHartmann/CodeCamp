@@ -76,7 +76,7 @@ int counter = 4; // remove later
 }
 
 +(void)deleteFile{
-    myManager = [NSFileManager defaultManager]; // create New Manager
+    myManager = [NSFileManager defaultManager]; // create New Manager when called from another class
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     path = [documentsDirectory stringByAppendingPathComponent:@"values.txt"]; 
