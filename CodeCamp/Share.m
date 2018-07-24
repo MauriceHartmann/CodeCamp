@@ -23,7 +23,7 @@ static Share *sharedSingleton = nil;
     }
     return sharedSingleton;
 }
-//Only the functions below must be used to ensure Thread Safety when acessing the Dictionary
+//The following functions are an attempt to make accessing the dictionary threadsafe
 
 -(void) createKeyWith: (NSString*) key : (NSObject*) value{
     @synchronized(passedMutableDict){
@@ -43,7 +43,7 @@ static Share *sharedSingleton = nil;
         int temp = [nsNum intValue];
         temp += num;
         if(temp < 0){
-            temp = 0;
+            temp = 0; // dont allow values below 0
         }
         nsNum = [Share intToNS:temp];
         [passedMutableDict setValue:nsNum forKey:key];
@@ -62,7 +62,7 @@ static Share *sharedSingleton = nil;
     return [passedMutableDict allValues];
 }
 
-+ (NSNumber*)intToNS:(int) val{ // HelpMethod
++ (NSNumber*)intToNS:(int) val{ // Static HelpMethod
     NSNumber *t = [NSNumber numberWithInt:(val)];
     return t;
 }
