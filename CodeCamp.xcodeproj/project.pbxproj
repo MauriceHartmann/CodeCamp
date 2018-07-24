@@ -86,8 +86,6 @@
 		963A1A29210603DE00C8C428 /* Share.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Share.h; sourceTree = "<group>"; };
 		96419CF22107636000DD39D3 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		96419CF42107637200DD39D3 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
-		9642FEFF2107093D00A99568 /* NotificationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationHandler.m; sourceTree = "<group>"; };
-		9642FF012107094B00A99568 /* NotificationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationHandler.h; sourceTree = "<group>"; };
 		966AD6A721071B5A002AD49E /* Creature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Creature.h; sourceTree = "<group>"; };
 		966AD6A821071B76002AD49E /* Creature.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Creature.m; sourceTree = "<group>"; };
 		966AD6AA21071B79002AD49E /* Inventory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Inventory.h; sourceTree = "<group>"; };
@@ -172,8 +170,6 @@
 				966AD6AA21071B79002AD49E /* Inventory.h */,
 				966AD6A821071B76002AD49E /* Creature.m */,
 				966AD6A721071B5A002AD49E /* Creature.h */,
-				9642FF012107094B00A99568 /* NotificationHandler.h */,
-				9642FEFF2107093D00A99568 /* NotificationHandler.m */,
 				963A19E52105C31D00C8C428 /* AppDelegate.h */,
 				963A19E62105C31D00C8C428 /* AppDelegate.m */,
 				963A19EC2105C31D00C8C428 /* GameScene.h */,

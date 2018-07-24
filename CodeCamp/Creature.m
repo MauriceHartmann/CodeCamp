@@ -14,9 +14,9 @@ const int THIRST_LIMIT = 20;
 const int HUNGER_LIMIT = 20;
 int hunger = 100;
 int random_factor = 9;
+double time_tick_factor = 2.0;
 
 //Name of the keys in the dictionary
-
 NSString* HUNGER =  @"hunger";
 NSString* THIRST =  @"thirst";
 NSString* FODDER =  @"fodder";
@@ -37,7 +37,7 @@ NSTimer *t;
 {
     [self initNotification];
     myShareCreature = Share.sharedSingleton;
-    t = [NSTimer scheduledTimerWithTimeInterval: 2.0
+    t = [NSTimer scheduledTimerWithTimeInterval: time_tick_factor
                                                                                                     target: self
                                                                                                        selector:@selector(onTick:)
                                                                                                     userInfo: nil repeats:YES];
@@ -59,7 +59,6 @@ NSTimer *t;
         NSLog(@"Hungry");
         int value = 100 - [myShareCreature getIntFromKey:@"hunger"];
         [myShareCreature updateKeyBy:@"hunger" :value ];
-        [self sendNotification:@"CodeCamp" forSubtitle:@"" forBody:@"HUNGER" forIntervall:5];
     }
      
     
@@ -125,5 +124,12 @@ bool isGrantedNotificationAccess;
         
     }
 }
+
+-(void) prepareBackgroundNotification
+{
+    double hoursLeftTillNeed = (([myShareCreature getIntFromKey:@"hunger"]-20) / ((random_factor + 1)/2))*2;
+    [self sendNotification:@"CodeCamp" forSubtitle:@"Hunger" forBody:@"Hab Hunger!" forIntervall:hoursLeftTillNeed];
+}
+
 
 @end
