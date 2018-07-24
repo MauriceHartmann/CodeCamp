@@ -17,9 +17,10 @@ NSMutableDictionary *dict;
 NSString *path;
 NSFileManager *myManager;
 Share* myShare;
-int counter = 4; // remove later
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    myShare = Share.sharedSingleton;
+    [myShare initDict];
     [AppDelegate setupFile]; //Prepares File and Dictionary
     // Override point for customization after application launch.
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
@@ -44,19 +45,11 @@ int counter = 4; // remove later
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    dict = myShare.passedMutableDict;
-    NSNumber* z = [dict valueForKey:@"hunger"];
-    NSNumber* u = [NSNumber numberWithInt:([z intValue] -2)];
-    [dict setValue: u forKey:@"hunger"];
-    [dict writeToFile:path atomically:YES]; // Write everything to file to save status
+    [myShare updateKeyBy:@"hunger" :-2];
+    [myShare dictToTxt:path]; // Write everything to file to save status
     NSLog(@"written");
-    for (NSString *key in dict)
-        NSLog(@"%@: %@", key, [dict valueForKey:key]) ;
-    myShare.passedMutableDict = dict;
-    counter --;
-    if(counter == 0){
-        [AppDelegate deleteFile];
-    }
+    for (NSString *key in [myShare getAllKeys])
+        NSLog(@"%@", key) ;
 }
 
 
@@ -74,41 +67,41 @@ int counter = 4; // remove later
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-+ (NSNumber*)intToNS:(int) val{ // HelpMethod
-    NSNumber *t = [NSNumber numberWithInt:(val)];
-    return t;
-}
-
 +(void)deleteFile{
+    myManager = [NSFileManager defaultManager]; // create New Manager
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    path = [documentsDirectory stringByAppendingPathComponent:@"values.txt"]; 
     [myManager removeItemAtPath: path error: nil];
     NSLog(@"delete");
 }
 
 +(void) setupFile{
     //Create or find a file to write to or read from
-    myShare = Share.sharedSingleton;
-    dict = myShare.passedMutableDict;
+
     myManager = [NSFileManager defaultManager];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     path = [documentsDirectory stringByAppendingPathComponent:@"values.txt"]; // Name of file is vaues.txt
     
     if([myManager fileExistsAtPath:path]){
-        dict = [NSMutableDictionary dictionaryWithContentsOfFile:path]; // Copy Values of file in our dictionary
+        [myShare createFromFile:path]; // Copy Values of file in our dictionary
         NSLog(@"Read");
-        myShare.passedMutableDict = dict; // Copy files back into our singleton
+        // Copy files back into our singleton
     }else{
         NSLog(@"created");
-        dict = [NSMutableDictionary dictionary];
-        //Create dict using default values if no file was found
-        [dict setObject: @100  forKey: @"hunger"];
-        [dict setObject: @100  forKey: @"thirst"];
-        [dict setObject: @10 forKey: @"fodder"];
-        [dict setObject: @10 forKey: @"drinks"];
-        for (NSString *key in dict)
-            NSLog(@"%@: %@", key, [dict valueForKey:key]) ;
-        myShare.passedMutableDict = dict; // Copy files back to singleton
+        [AppDelegate initDict];
     }}
 
++(void) initDict{
+    NSLog(@"init");
+    [myShare createKeyWith:@"hunger" : @100];
+    //Create dict using default values if no file was found
+    [myShare changeValueOfKey:@"thirst" :@100];
+    [myShare changeValueOfKey:@"fodder" :@10];
+    [myShare changeValueOfKey:@"drinks" :@10];
+    for (NSString *key in [myShare getAllKeys])
+        NSLog(@"%@",key) ;
+}
 
 @end

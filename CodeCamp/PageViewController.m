@@ -7,7 +7,7 @@
 //
 
 #import "PageViewController.h"
-
+#import "AppDelegate.h"
 @interface PageViewController ()
 
 @end
@@ -23,6 +23,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 /*
 #pragma mark - Navigation

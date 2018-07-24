@@ -14,5 +14,14 @@
 }
 @property NSMutableDictionary* passedMutableDict;
 + (Share *) sharedSingleton;
+-(void) updateKeyBy:(NSString*) key : (int) num;
+-(void) changeValueOfKey: (NSString*) key : (NSNumber*) value;
+-(int) getIntFromKey:(NSString*) key;
+-(NSArray*) getAllKeys;
++(NSNumber*) intToNS:(int) val;
+-(void) createFromFile:(NSString*) path;
+-(void) dictToTxt:(NSString*) path;
+-(void) createKeyWith: (NSString*) key : (NSObject*) value;
+-(void) initDict;
 @end
 #endif /* Share_h */

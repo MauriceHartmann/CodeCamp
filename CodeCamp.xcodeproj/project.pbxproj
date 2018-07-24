@@ -31,6 +31,8 @@
 		966AD6BE21071DED002AD49E /* Kitchen.m in Resources */ = {isa = PBXBuildFile; fileRef = 966AD6AE21071B80002AD49E /* Kitchen.m */; };
 		966AD6BF21071DF0002AD49E /* Saloon.h in Resources */ = {isa = PBXBuildFile; fileRef = 966AD6B321071B86002AD49E /* Saloon.h */; };
 		966AD6C021071DF3002AD49E /* Kitchen.h in Resources */ = {isa = PBXBuildFile; fileRef = 966AD6AD21071B7E002AD49E /* Kitchen.h */; };
+		96B31241210731E40081FCA6 /* OptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B31240210731E40081FCA6 /* OptionViewController.m */; };
+		96B312432107400F0081FCA6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 96B312422107400F0081FCA6 /* GameScene.sks */; };
 		96ECBAF12107103600B989DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96ECBAF02107103600B989DA /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +97,9 @@
 		966AD6B421071B87002AD49E /* Saloon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Saloon.m; sourceTree = "<group>"; };
 		966AD6B621071B98002AD49E /* Store.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Store.m; sourceTree = "<group>"; };
 		966AD6B821071B9C002AD49E /* Store.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Store.h; sourceTree = "<group>"; };
+		96B3123F210731C20081FCA6 /* OptionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OptionViewController.h; sourceTree = "<group>"; };
+		96B31240210731E40081FCA6 /* OptionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OptionViewController.m; sourceTree = "<group>"; };
+		96B312422107400F0081FCA6 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		96ECBAF02107103600B989DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = CodeCamp/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,6 +159,7 @@
 				966AD6B621071B98002AD49E /* Store.m */,
 				966AD6B421071B87002AD49E /* Saloon.m */,
 				966AD6B121071B84002AD49E /* Room.m */,
+				96B312422107400F0081FCA6 /* GameScene.sks */,
 				966AD6B321071B86002AD49E /* Saloon.h */,
 				966AD6A821071B76002AD49E /* Creature.m */,
 				966AD6B021071B82002AD49E /* Room.h */,
@@ -179,6 +185,8 @@
 				963A1A29210603DE00C8C428 /* Share.h */,
 				962606E62106038B005C7A1C /* PageViewController.h */,
 				962606E72106038B005C7A1C /* PageViewController.m */,
+				96B3123F210731C20081FCA6 /* OptionViewController.h */,
+				96B31240210731E40081FCA6 /* OptionViewController.m */,
 			);
 			path = CodeCamp;
 			sourceTree = "<group>";
@@ -328,6 +336,7 @@
 				966AD6C021071DF3002AD49E /* Kitchen.h in Resources */,
 				966AD6BF21071DF0002AD49E /* Saloon.h in Resources */,
 				966AD6BE21071DED002AD49E /* Kitchen.m in Resources */,
+				96B312432107400F0081FCA6 /* GameScene.sks in Resources */,
 				966AD6BD21071DDB002AD49E /* Saloon.m in Resources */,
 				966AD6BC21071DD7002AD49E /* Store.m in Resources */,
 				966AD6BB21071DD2002AD49E /* Room.m in Resources */,
@@ -367,6 +376,7 @@
 				963A19F12105C31D00C8C428 /* GameViewController.m in Sources */,
 				963A19FC2105C31E00C8C428 /* main.m in Sources */,
 				962606E82106038B005C7A1C /* PageViewController.m in Sources */,
+				96B31241210731E40081FCA6 /* OptionViewController.m in Sources */,
 				963A19E72105C31D00C8C428 /* AppDelegate.m in Sources */,
 				966AD6B721071B98002AD49E /* Store.m in Sources */,
 				966AD6B221071B84002AD49E /* Room.m in Sources */,

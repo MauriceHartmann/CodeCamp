@@ -9,10 +9,13 @@
 #import "GameViewController.h"
 #import "GameScene.h"
 #import "NotificationHandler.m"
+#import "AppDelegate.h"
 
 NotificationHandler* notifications;
 
 @implementation GameViewController
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -83,6 +86,9 @@ NotificationHandler* notifications;
     
 }
 
+- (IBAction)deleteBtn:(UIButton *)sender {
+}
+
 //get current time as NSString
 -(NSString *) getCurrentTime {
     NSDate *currentTime = [NSDate date];
@@ -104,4 +110,6 @@ NotificationHandler* notifications;
 }
 
 
+- (IBAction)deleteFileBtn:(id)sender {
+}
 @end

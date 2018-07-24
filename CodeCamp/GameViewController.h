@@ -14,7 +14,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *deviceImages;
 
 - (IBAction)showNotification:(id)sender;
+- (IBAction)deleteBtn:(UIButton *)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+- (IBAction)deleteFileBtn:(id)sender;
 
 @end
