@@ -7,7 +7,6 @@
 //
 
 #import "NotificationHandler.h"
-#import <UserNotifications/UserNotifications.h>
 
 @implementation NotificationHandler
 

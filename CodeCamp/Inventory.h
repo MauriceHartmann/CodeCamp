@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Creature.h"
 
-@interface Inventory : Creature
+@interface Inventory : NSObject
 
 @end

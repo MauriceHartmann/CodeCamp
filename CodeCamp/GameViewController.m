@@ -8,13 +8,12 @@
 
 #import "GameViewController.h"
 #import "GameScene.h"
-#import "NotificationHandler.m"
 #import "AppDelegate.h"
 
-NotificationHandler* notifications;
+//NotificationHandler* notifications;
 
 @implementation GameViewController
-
+/*
 
 
 - (void)viewDidLoad {
@@ -45,10 +44,11 @@ NotificationHandler* notifications;
     
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
-    
+    */
     /*
      Showing time on screen
      */
+/*
     _timeLabel.hidden = YES;
     _timeLabel.text = [[NSDate date] description];
     [NSTimer scheduledTimerWithTimeInterval:1
@@ -111,5 +111,5 @@ NotificationHandler* notifications;
 
 
 - (IBAction)deleteFileBtn:(id)sender {
-}
+}*/
 @end
