@@ -8,12 +8,19 @@
 
 #import "GameViewController.h"
 #import "GameScene.h"
+#import "NotificationHandler.m"
+
+NotificationHandler* notifications;
 
 @implementation GameViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    notifications = [[NotificationHandler alloc]init];
+    
+    [notifications initNotification];
+    
     // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
     // including entities and graphs.
     GKScene *scene = [GKScene sceneWithFileNamed:@"GameScene"];
@@ -58,4 +65,8 @@
     return YES;
 }
 
+- (IBAction)showNotification:(id)sender {
+       [notifications sendNotification:@"XYZ hat Hunger" forSubtitle:@"" forBody:@"XYZ hat eine Weile nichts gegessen. Schaue doch mal nach ihm" forIntervall:5];
+    
+}
 @end

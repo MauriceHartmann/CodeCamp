@@ -12,4 +12,6 @@
 
 @interface GameViewController : UIViewController
 
+- (IBAction)showNotification:(id)sender;
+
 @end

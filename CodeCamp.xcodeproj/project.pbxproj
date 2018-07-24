@@ -18,6 +18,7 @@
 		963A19FC2105C31E00C8C428 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A19FB2105C31E00C8C428 /* main.m */; };
 		963A1A062105C31E00C8C428 /* CodeCampTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A1A052105C31E00C8C428 /* CodeCampTests.m */; };
 		963A1A112105C31E00C8C428 /* CodeCampUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A1A102105C31E00C8C428 /* CodeCampUITests.m */; };
+		9663EA372105DE6E00F64A36 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9663EA362105DE6E00F64A36 /* UserNotifications.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9663EA372105DE6E00F64A36 /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +95,7 @@
 				963A1A042105C31E00C8C428 /* CodeCampTests */,
 				963A1A0F2105C31E00C8C428 /* CodeCampUITests */,
 				963A19E32105C31D00C8C428 /* Products */,
+				9663EA352105DE6E00F64A36 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +125,8 @@
 				963A19F72105C31E00C8C428 /* LaunchScreen.storyboard */,
 				963A19FA2105C31E00C8C428 /* Info.plist */,
 				963A19FB2105C31E00C8C428 /* main.m */,
+				969E1CF12105F5CB00EDF0FE /* NotificationHandler.m */,
+				969E1CF02105F4F300EDF0FE /* NotificationHandler.h */,
 			);
 			path = CodeCamp;
 			sourceTree = "<group>";
@@ -142,6 +147,14 @@
 				963A1A122105C31E00C8C428 /* Info.plist */,
 			);
 			path = CodeCampUITests;
+			sourceTree = "<group>";
+		};
+		9663EA352105DE6E00F64A36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9663EA362105DE6E00F64A36 /* UserNotifications.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
