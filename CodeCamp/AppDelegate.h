@@ -14,5 +14,7 @@
 
 + (void) deleteFile;
 
++ (void) setupFile;
+
 @end
 

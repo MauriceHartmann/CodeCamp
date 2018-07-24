@@ -20,30 +20,7 @@ Share* myShare;
 int counter = 4; // remove later
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    //Create or find a file to write to or read from
-    myShare = Share.sharedSingleton;
-    dict = myShare.passedMutableDict;
-    myManager = [NSFileManager defaultManager];
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    path = [documentsDirectory stringByAppendingPathComponent:@"values.txt"]; // Name of file is vaues.txt
-
-    if([myManager fileExistsAtPath:path]){
-        dict = [NSMutableDictionary dictionaryWithContentsOfFile:path]; // Copy Values of file in our dictionary
-        NSLog(@"Read");
-        myShare.passedMutableDict = dict; // Copy files back into our singleton
-    }else{
-        NSLog(@"created");
-        dict = [NSMutableDictionary dictionary];
-        //Create dict using default values if no file was found
-        [dict setObject: @100  forKey: @"hunger"];
-        [dict setObject: @100  forKey: @"thirst"];
-        [dict setObject: @10 forKey: @"fodder"];
-        [dict setObject: @10 forKey: @"drinks"];
-        for (NSString *key in dict)
-            NSLog(@"%@: %@", key, [dict valueForKey:key]) ;
-        myShare.passedMutableDict = dict; // Copy files back to singleton
-    }
+    [AppDelegate setupFile]; //Prepares File and Dictionary
     // Override point for customization after application launch.
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     UITabBar *tabBar = tabBarController.tabBar;
@@ -106,6 +83,32 @@ int counter = 4; // remove later
     [myManager removeItemAtPath: path error: nil];
     NSLog(@"delete");
 }
+
++(void) setupFile{
+    //Create or find a file to write to or read from
+    myShare = Share.sharedSingleton;
+    dict = myShare.passedMutableDict;
+    myManager = [NSFileManager defaultManager];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    path = [documentsDirectory stringByAppendingPathComponent:@"values.txt"]; // Name of file is vaues.txt
+    
+    if([myManager fileExistsAtPath:path]){
+        dict = [NSMutableDictionary dictionaryWithContentsOfFile:path]; // Copy Values of file in our dictionary
+        NSLog(@"Read");
+        myShare.passedMutableDict = dict; // Copy files back into our singleton
+    }else{
+        NSLog(@"created");
+        dict = [NSMutableDictionary dictionary];
+        //Create dict using default values if no file was found
+        [dict setObject: @100  forKey: @"hunger"];
+        [dict setObject: @100  forKey: @"thirst"];
+        [dict setObject: @10 forKey: @"fodder"];
+        [dict setObject: @10 forKey: @"drinks"];
+        for (NSString *key in dict)
+            NSLog(@"%@: %@", key, [dict valueForKey:key]) ;
+        myShare.passedMutableDict = dict; // Copy files back to singleton
+    }}
 
 
 @end

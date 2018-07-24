@@ -9,5 +9,7 @@
 #import "Room.h"
 
 @implementation Room
-
++(void) doAction{
+    
+}
 @end
