@@ -11,9 +11,9 @@
 #import <UserNotifications/UserNotifications.h>
 
 
-
 @interface Creature : NSObject
 -(void) initCreature;
 -(void) checkNeeds;
-- (void) sendNotification:(NSString*) title forSubtitle:(NSString*) subtitle forBody:(NSString*) body forIntervall: (NSInteger) intervall;
+-(void) sendNotification:(NSString*) title forSubtitle:(NSString*) subtitle forBody:(NSString*) body forIntervall: (NSInteger) intervall;
+-(void) prepareBackgroundNotification;
 @end

@@ -57,7 +57,7 @@ int counter = 4; // remove later
     NSLog(@"written");
     for (NSString *key in [myShare getAllKeys])
         NSLog(@"%@", key) ;
-    [pet sendNotification:@"CodeCamp" forSubtitle:@"Hintergrund" forBody:@"Bin im Hintergrund. Weißt bescheid!" forIntervall:5];
+    [pet prepareBackgroundNotification];
 }
 
 

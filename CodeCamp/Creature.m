@@ -12,18 +12,22 @@
 //If values fall below the specified Limits the pet is considered hungry, thirsty etc.
 const int THIRST_LIMIT = 20;
 const int HUNGER_LIMIT = 20;
-int hunger = 100;
+
+//Max value for the needs.
+const int MAX_VALUE_LIMIT = 100;
+
+//random_factor is the max Number -1 of Supply the pet loses per time_tick_factor
+//example: random_factor = 9 => 1-10 Supply loss per tick
+//time_tick_factor is the time the pet loses supply in seconds
+
 int random_factor = 9;
+double time_tick_factor = 2.0;
 
 //Name of the keys in the dictionary
-
 NSString* HUNGER =  @"hunger";
 NSString* THIRST =  @"thirst";
 NSString* FODDER =  @"fodder";
 NSString* DRINKS =  @"drinks";
-
-//Max value for the needs.
-const int MAX_VALUE_LIMIT = 100;
 
 NSMutableDictionary *dictCreature;
 UITabBarController* mainView;
@@ -37,7 +41,7 @@ NSTimer *t;
 {
     [self initNotification];
     myShareCreature = Share.sharedSingleton;
-    t = [NSTimer scheduledTimerWithTimeInterval: 2.0
+    t = [NSTimer scheduledTimerWithTimeInterval: time_tick_factor
                                                                                                     target: self
                                                                                                        selector:@selector(onTick:)
                                                                                                     userInfo: nil repeats:YES];
@@ -45,21 +49,20 @@ NSTimer *t;
 
 -(void)onTick:(NSTimer*)timer
 {
-    [myShareCreature updateKeyBy:@"hunger" :(arc4random_uniform(random_factor) + 1)*(-1) ];
+    [myShareCreature updateKeyBy:HUNGER :(arc4random_uniform(random_factor) + 1)*(-1) ];
     [self checkNeeds];
-    NSLog(@"hunger: %d" ,[myShareCreature getIntFromKey:@"hunger"]);
+    NSLog(@"hunger: %d" ,[myShareCreature getIntFromKey:HUNGER]);
 }
 
 //checks if the pet is hungry,thirsty etc.
 -(void) checkNeeds
 {
     
-    if([myShareCreature getIntFromKey:@"hunger"] <  HUNGER_LIMIT)
+    if([myShareCreature getIntFromKey:HUNGER] <  HUNGER_LIMIT)
     {
         NSLog(@"Hungry");
-        int value = 100 - [myShareCreature getIntFromKey:@"hunger"];
-        [myShareCreature updateKeyBy:@"hunger" :value ];
-        [self sendNotification:@"CodeCamp" forSubtitle:@"" forBody:@"HUNGER" forIntervall:5];
+        int value = 100 - [myShareCreature getIntFromKey:HUNGER];
+        [myShareCreature updateKeyBy:HUNGER :value ];
     }
      
     
@@ -119,11 +122,24 @@ bool isGrantedNotificationAccess;
         UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:intervall repeats:NO];
         
         //setting up the request for notification
-        UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:@"UYLocalNotification" content:content trigger:trigger];
+        UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:subtitle content:content trigger:trigger];
         
         [center addNotificationRequest:request withCompletionHandler:nil];
         
     }
 }
+
+//prepares the notifications when the app is in background
+-(void) prepareBackgroundNotification
+{
+    double hoursLeftTillNeed = (([myShareCreature getIntFromKey:HUNGER]-20) / ((random_factor + 1)/2))*2;
+    [self sendNotification:@"CodeCamp" forSubtitle:@"Hunger" forBody:@"Hab Hunger!" forIntervall:hoursLeftTillNeed];
+    
+    hoursLeftTillNeed = (([myShareCreature getIntFromKey:THIRST]-20) / ((random_factor + 1)/2))*2;
+    [self sendNotification:@"CodeCamp" forSubtitle:@"Durscht" forBody:@"ICH HAB BRAND!" forIntervall:hoursLeftTillNeed];
+    
+    
+}
+
 
 @end

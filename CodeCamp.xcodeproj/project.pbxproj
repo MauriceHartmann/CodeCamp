@@ -168,8 +168,6 @@
 				966AD6AA21071B79002AD49E /* Inventory.h */,
 				966AD6A821071B76002AD49E /* Creature.m */,
 				966AD6A721071B5A002AD49E /* Creature.h */,
-				9642FF012107094B00A99568 /* NotificationHandler.h */,
-				9642FEFF2107093D00A99568 /* NotificationHandler.m */,
 				963A19E52105C31D00C8C428 /* AppDelegate.h */,
 				963A19E62105C31D00C8C428 /* AppDelegate.m */,
 				963A19EC2105C31D00C8C428 /* GameScene.h */,
