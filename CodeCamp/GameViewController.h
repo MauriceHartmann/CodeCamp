@@ -15,4 +15,6 @@
 
 - (IBAction)showNotification:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+
 @end

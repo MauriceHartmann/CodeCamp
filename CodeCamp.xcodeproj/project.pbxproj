@@ -19,6 +19,18 @@
 		963A1A112105C31E00C8C428 /* CodeCampUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A1A102105C31E00C8C428 /* CodeCampUITests.m */; };
 		963A1A282106039500C8C428 /* Share.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A1A272106039500C8C428 /* Share.m */; };
 		9663EA372105DE6E00F64A36 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		966AD6A921071B77002AD49E /* Creature.m in Sources */ = {isa = PBXBuildFile; fileRef = 966AD6A821071B76002AD49E /* Creature.m */; };
+		966AD6AC21071B7C002AD49E /* Inventory.m in Sources */ = {isa = PBXBuildFile; fileRef = 966AD6AB21071B7C002AD49E /* Inventory.m */; };
+		966AD6AF21071B80002AD49E /* Kitchen.m in Sources */ = {isa = PBXBuildFile; fileRef = 966AD6AE21071B80002AD49E /* Kitchen.m */; };
+		966AD6B221071B84002AD49E /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 966AD6B121071B84002AD49E /* Room.m */; };
+		966AD6B521071B87002AD49E /* Saloon.m in Sources */ = {isa = PBXBuildFile; fileRef = 966AD6B421071B87002AD49E /* Saloon.m */; };
+		966AD6B721071B98002AD49E /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = 966AD6B621071B98002AD49E /* Store.m */; };
+		966AD6BB21071DD2002AD49E /* Room.m in Resources */ = {isa = PBXBuildFile; fileRef = 966AD6B121071B84002AD49E /* Room.m */; };
+		966AD6BC21071DD7002AD49E /* Store.m in Resources */ = {isa = PBXBuildFile; fileRef = 966AD6B621071B98002AD49E /* Store.m */; };
+		966AD6BD21071DDB002AD49E /* Saloon.m in Resources */ = {isa = PBXBuildFile; fileRef = 966AD6B421071B87002AD49E /* Saloon.m */; };
+		966AD6BE21071DED002AD49E /* Kitchen.m in Resources */ = {isa = PBXBuildFile; fileRef = 966AD6AE21071B80002AD49E /* Kitchen.m */; };
+		966AD6BF21071DF0002AD49E /* Saloon.h in Resources */ = {isa = PBXBuildFile; fileRef = 966AD6B321071B86002AD49E /* Saloon.h */; };
+		966AD6C021071DF3002AD49E /* Kitchen.h in Resources */ = {isa = PBXBuildFile; fileRef = 966AD6AD21071B7E002AD49E /* Kitchen.h */; };
 		96ECBAF12107103600B989DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96ECBAF02107103600B989DA /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +52,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		96229C05210716EA00365EE1 /* Room.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
+		96229C082107170B00365EE1 /* Creature.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Creature.m; sourceTree = "<group>"; };
+		96229C0B2107176000365EE1 /* Saloon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Saloon.m; sourceTree = "<group>"; };
+		96229C0E210717C500365EE1 /* Kitchen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Kitchen.m; sourceTree = "<group>"; };
+		96229C112107181E00365EE1 /* Store.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Store.m; sourceTree = "<group>"; };
+		96229C142107186800365EE1 /* Inventory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Inventory.m; sourceTree = "<group>"; };
 		962606E62106038B005C7A1C /* PageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
 		962606E72106038B005C7A1C /* PageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		963A19E22105C31D00C8C428 /* CodeCamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeCamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +83,18 @@
 		963A1A29210603DE00C8C428 /* Share.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Share.h; sourceTree = "<group>"; };
 		9642FEFF2107093D00A99568 /* NotificationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationHandler.m; sourceTree = "<group>"; };
 		9642FF012107094B00A99568 /* NotificationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationHandler.h; sourceTree = "<group>"; };
+		966AD6A721071B5A002AD49E /* Creature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Creature.h; sourceTree = "<group>"; };
+		966AD6A821071B76002AD49E /* Creature.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Creature.m; sourceTree = "<group>"; };
+		966AD6AA21071B79002AD49E /* Inventory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Inventory.h; sourceTree = "<group>"; };
+		966AD6AB21071B7C002AD49E /* Inventory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Inventory.m; sourceTree = "<group>"; };
+		966AD6AD21071B7E002AD49E /* Kitchen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Kitchen.h; sourceTree = "<group>"; };
+		966AD6AE21071B80002AD49E /* Kitchen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Kitchen.m; sourceTree = "<group>"; };
+		966AD6B021071B82002AD49E /* Room.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Room.h; sourceTree = "<group>"; };
+		966AD6B121071B84002AD49E /* Room.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
+		966AD6B321071B86002AD49E /* Saloon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Saloon.h; sourceTree = "<group>"; };
+		966AD6B421071B87002AD49E /* Saloon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Saloon.m; sourceTree = "<group>"; };
+		966AD6B621071B98002AD49E /* Store.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Store.m; sourceTree = "<group>"; };
+		966AD6B821071B9C002AD49E /* Store.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Store.h; sourceTree = "<group>"; };
 		96ECBAF02107103600B989DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = CodeCamp/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +133,7 @@
 				963A1A0F2105C31E00C8C428 /* CodeCampUITests */,
 				963A19E32105C31D00C8C428 /* Products */,
 				9663EA352105DE6E00F64A36 /* Frameworks */,
+				966AD6A421071AAB002AD49E /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +150,18 @@
 		963A19E42105C31D00C8C428 /* CodeCamp */ = {
 			isa = PBXGroup;
 			children = (
+				966AD6B821071B9C002AD49E /* Store.h */,
+				966AD6B621071B98002AD49E /* Store.m */,
+				966AD6B421071B87002AD49E /* Saloon.m */,
+				966AD6B121071B84002AD49E /* Room.m */,
+				966AD6B321071B86002AD49E /* Saloon.h */,
+				966AD6A821071B76002AD49E /* Creature.m */,
+				966AD6B021071B82002AD49E /* Room.h */,
+				966AD6AE21071B80002AD49E /* Kitchen.m */,
+				966AD6AD21071B7E002AD49E /* Kitchen.h */,
+				966AD6AB21071B7C002AD49E /* Inventory.m */,
+				966AD6AA21071B79002AD49E /* Inventory.h */,
+				966AD6A721071B5A002AD49E /* Creature.h */,
 				9642FF012107094B00A99568 /* NotificationHandler.h */,
 				9642FEFF2107093D00A99568 /* NotificationHandler.m */,
 				963A19E52105C31D00C8C428 /* AppDelegate.h */,
@@ -163,6 +206,19 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		966AD6A421071AAB002AD49E /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				96229C0B2107176000365EE1 /* Saloon.m */,
+				96229C05210716EA00365EE1 /* Room.m */,
+				96229C0E210717C500365EE1 /* Kitchen.m */,
+				96229C142107186800365EE1 /* Inventory.m */,
+				96229C082107170B00365EE1 /* Creature.m */,
+				96229C112107181E00365EE1 /* Store.m */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +288,7 @@
 				TargetAttributes = {
 					963A19E12105C31D00C8C428 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0930;
 					};
 					963A1A002105C31E00C8C428 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -268,6 +325,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				966AD6C021071DF3002AD49E /* Kitchen.h in Resources */,
+				966AD6BF21071DF0002AD49E /* Saloon.h in Resources */,
+				966AD6BE21071DED002AD49E /* Kitchen.m in Resources */,
+				966AD6BD21071DDB002AD49E /* Saloon.m in Resources */,
+				966AD6BC21071DD7002AD49E /* Store.m in Resources */,
+				966AD6BB21071DD2002AD49E /* Room.m in Resources */,
 				963A19F42105C31D00C8C428 /* Main.storyboard in Resources */,
 				963A19F62105C31E00C8C428 /* Assets.xcassets in Resources */,
 				963A19F92105C31E00C8C428 /* LaunchScreen.storyboard in Resources */,
@@ -296,12 +359,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				966AD6B521071B87002AD49E /* Saloon.m in Sources */,
 				963A19EE2105C31D00C8C428 /* GameScene.m in Sources */,
+				966AD6A921071B77002AD49E /* Creature.m in Sources */,
 				963A1A282106039500C8C428 /* Share.m in Sources */,
+				966AD6AC21071B7C002AD49E /* Inventory.m in Sources */,
 				963A19F12105C31D00C8C428 /* GameViewController.m in Sources */,
 				963A19FC2105C31E00C8C428 /* main.m in Sources */,
 				962606E82106038B005C7A1C /* PageViewController.m in Sources */,
 				963A19E72105C31D00C8C428 /* AppDelegate.m in Sources */,
+				966AD6B721071B98002AD49E /* Store.m in Sources */,
+				966AD6B221071B84002AD49E /* Room.m in Sources */,
+				966AD6AF21071B80002AD49E /* Kitchen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,7 +477,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -460,7 +529,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -471,15 +540,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R8D6BLX4HD;
+				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = CodeCamp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.uni-kassel.eecs.comtec.CodeCamp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CodeCamp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -488,15 +563,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R8D6BLX4HD;
+				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = CodeCamp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.uni-kassel.eecs.comtec.CodeCamp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CodeCamp-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -545,6 +625,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R8D6BLX4HD;
 				INFOPLIST_FILE = CodeCampUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -563,6 +644,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R8D6BLX4HD;
 				INFOPLIST_FILE = CodeCampUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
