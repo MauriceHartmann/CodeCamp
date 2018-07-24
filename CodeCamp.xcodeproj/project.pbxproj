@@ -290,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				963A19EE2105C31D00C8C428 /* GameScene.m in Sources */,
+				963A1A282106039500C8C428 /* Share.m in Sources */,
 				963A19F12105C31D00C8C428 /* GameViewController.m in Sources */,
 				963A19FC2105C31E00C8C428 /* main.m in Sources */,
 				963A19E72105C31D00C8C428 /* AppDelegate.m in Sources */,
