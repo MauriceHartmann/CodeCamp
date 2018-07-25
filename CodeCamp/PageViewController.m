@@ -9,6 +9,10 @@
 #import "PageViewController.h"
 #import "AppDelegate.h"
 #import "Share.h"
+#import "Store.h"
+#import "Saloon.h"
+#import "Kitchen.h"
+
 @interface PageViewController ()
 
 @end
@@ -102,8 +106,25 @@ CGFloat width;
                 break;
         }
     }
+    
+    [PageViewController callOutARoom:self.tabBarController.selectedIndex :mySharesView];
 }
 
++ (void) callOutARoom:(NSUInteger)tabId :(Share*) mySharesView
+{
+    switch (tabId) {
+        case 0:
+            [Kitchen doAction: mySharesView];
+            break;
+        case 1:
+            [Saloon doAction: mySharesView];
+            break;
+        case 2:
+            [Store doAction: mySharesView];
+        default:
+            break;
+    }
+}
 /*
 #pragma mark - Navigation
 

@@ -10,8 +10,9 @@
 
 @implementation Store
 
--(void) doAction
++(void) doAction : (Share *) myShares
 {
+    NSLog(@"In Store");
     //add Stuff to Inventory
     //lose money ?!?
 }
