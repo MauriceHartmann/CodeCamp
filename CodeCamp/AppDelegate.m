@@ -112,6 +112,7 @@ Creature* pet;
     [myShare changeValueOfKey:@"fodder" :@10];
     [myShare changeValueOfKey:@"drinks" :@10];
     [myShare createKeyWith:@"time" :[NSDate date]];
+    [myShare changeValueOfKey:@"life" :@1];
     for (NSString *key in [myShare getAllKeys])
         NSLog(@"%@",key) ;
 }

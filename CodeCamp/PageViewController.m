@@ -9,6 +9,7 @@
 #import "PageViewController.h"
 #import "AppDelegate.h"
 #import "Share.h"
+#import "Creature.h"
 #import "Store.h"
 #import "Saloon.h"
 #import "Kitchen.h"
@@ -18,20 +19,29 @@
 @end
 
 UIImageView * petView;
+UIImageView * hungerView;
+UIImageView * thirstView;
 
 @implementation PageViewController
 Share* mySharesView;
 CGFloat height;
 CGFloat width;
+int petViewWidth;
+int petViewHeight;
+NSTimer *needViewTimer;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     // Handle Swipes
     self.leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
     self.leftSwipe.direction = UISwipeGestureRecognizerDirectionLeft;
     [self.view addGestureRecognizer:self.leftSwipe];
     
+    mySharesView = Share.sharedSingleton;
+    
+
     self.rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
     self.rightSwipe.direction = UISwipeGestureRecognizerDirectionRight;
     [self.view addGestureRecognizer:self.rightSwipe];
@@ -48,14 +58,47 @@ CGFloat width;
 //    petView.frame = CGRectMake(width/2, height/2, 150, 150);
 //    [self.view addSubview:petView];
     
+    hungerView= [[UIImageView alloc] init];
+    myimg = [UIImage imageNamed:@"hunger"];
+    hungerView.image=myimg;
+    hungerView.frame = CGRectMake(width/2 , height/2 , petViewWidth , petViewHeight);
     
-    mySharesView = Share.sharedSingleton;
-    NSLog(@"LADEN");
+    thirstView= [[UIImageView alloc] init];
+    myimg = [UIImage imageNamed:@"thirst"];
+    thirstView.image=myimg;
+    thirstView.frame = CGRectMake(width/2 - petViewWidth , height/2 , petViewWidth , petViewHeight);
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void) checkNeedView
+{
+    if([mySharesView getIntFromKey:HUNGER] <= HUNGER_LIMIT )
+    {
+        [self.view addSubview:hungerView];
+    }
+    else
+    {
+        [hungerView removeFromSuperview];
+    }
+    
+    if([mySharesView getIntFromKey:THIRST] <= THIRST_LIMIT)
+    {
+        [self.view addSubview:thirstView];
+    }
+    else
+    {
+        [thirstView removeFromSuperview];
+    }
+    
+    if([mySharesView getIntFromKey:@"life"] == 0){
+        NSLog(@"Dead");
+        NSString * storyboardName = @"Main";
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+        UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"GOScreen"];
+        [self presentViewController:vc animated:YES completion:nil];
+        //[UIViewController presentViewController:viewController animated:NO completion:nil];
+        return;
+        
+    }
 }
 
 - (void)handleSwipe:(UISwipeGestureRecognizer *)sender {
@@ -124,7 +167,7 @@ CGFloat width;
             [Saloon doAction: mySharesView];
             break;
         case 2:
-            [Store doAction: mySharesView];
+            [Store doAction: mySharesView:self];
         default:
             break;
     }
