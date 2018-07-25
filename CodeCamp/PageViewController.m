@@ -64,16 +64,16 @@ CGFloat width;
                 3 -> Options
              */
         switch (self.tabBarController.selectedIndex) {
-            case 0:     // Home
-                self.tabBarController.selectedIndex = 1;    // to Saloon
+            case 0:
+                self.tabBarController.selectedIndex = 1;
                 break;
 
-            case 1:     // Saloon
-                self.tabBarController.selectedIndex = 2;    // to Mall
+            case 1:
+                self.tabBarController.selectedIndex = 2;
                 break;
 
-            case 2:     // Mall
-                self.tabBarController.selectedIndex = 2;    // stay
+            case 2:
+                self.tabBarController.selectedIndex = 2;
                 break;
 
             default:
@@ -89,16 +89,16 @@ CGFloat width;
                 3 -> Options
              */
         switch (self.tabBarController.selectedIndex) {
-            case 0:     // Home
-                self.tabBarController.selectedIndex = 0;    // stay
+            case 0:
+                self.tabBarController.selectedIndex = 0;
                 break;
 
-            case 1:     // Saloon
-                self.tabBarController.selectedIndex = 0;    // to Home
+            case 1:
+                self.tabBarController.selectedIndex = 0;
                 break;
 
-            case 2:     // Mall
-                self.tabBarController.selectedIndex = 1;    // to Saloon
+            case 2:
+                self.tabBarController.selectedIndex = 1;
                 break;
 
             default:

@@ -53,6 +53,7 @@ Creature* pet;
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     [myShare updateKeyBy:@"hunger" :-2];
     [myShare dictToTxt:path]; // Write everything to file to save status
+    [myShare createKeyWith:@"time" :[NSDate date]];
     NSLog(@"written");
     for (NSString *key in [myShare getAllKeys])
         NSLog(@"%@", key) ;
@@ -61,7 +62,7 @@ Creature* pet;
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    [Creature updateAfterReturn];
 }
 
 
@@ -110,6 +111,7 @@ Creature* pet;
     [myShare changeValueOfKey:@"thirst" :@100];
     [myShare changeValueOfKey:@"fodder" :@10];
     [myShare changeValueOfKey:@"drinks" :@10];
+    [myShare createKeyWith:@"time" :[NSDate date]];
     for (NSString *key in [myShare getAllKeys])
         NSLog(@"%@",key) ;
 }
