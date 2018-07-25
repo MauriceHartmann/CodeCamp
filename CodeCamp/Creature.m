@@ -171,11 +171,22 @@ bool isGrantedNotificationAccess;
 //prepares the notifications when the app is in background
 -(void) prepareBackgroundNotification
 {
-    double hoursLeftTillNeed = ((([myShareCreature getIntFromKey:HUNGER]-20) / ((random_factor + 1)/2)))*time_tick_factor;
+    int needValue = [myShareCreature getIntFromKey:HUNGER]-20;
+    if(needValue < 0 )
+    {
+        needValue = 0;
+    }
+    double hoursLeftTillNeed = ((needValue / ((random_factor + 1)/2)))*time_tick_factor;
     [self sendNotification:@"CodeCamp" forSubtitle:@"Hunger" forBody:@"Hab Hunger!" forIntervall:hoursLeftTillNeed];
     NSLog(@"Current Hunger: %d Pet will be hungry in %f s",[myShareCreature getIntFromKey:HUNGER],hoursLeftTillNeed );
     
-    hoursLeftTillNeed = (([myShareCreature getIntFromKey:THIRST]-20) / ((random_factor + 1)/2))*time_tick_factor;
+    
+    needValue = [myShareCreature getIntFromKey:THIRST]-20;
+    if(needValue < 0 )
+    {
+        needValue = 0;
+    }
+    hoursLeftTillNeed = (needValue / ((random_factor + 1)/2))*time_tick_factor;
     [self sendNotification:@"CodeCamp" forSubtitle:@"Durscht" forBody:@"ICH HAB BRAND!" forIntervall:hoursLeftTillNeed];
     NSLog(@"Current thirst: %d Pet will be thirsty in %f s",[myShareCreature getIntFromKey:THIRST],hoursLeftTillNeed );
     
