@@ -35,16 +35,16 @@
 - (void)handleSwipe:(UISwipeGestureRecognizer *)sender {
     if (sender.direction == UISwipeGestureRecognizerDirectionLeft) {
         switch (self.tabBarController.selectedIndex) {
-            case 0:
-                self.tabBarController.selectedIndex = 1;
+            case 0:     // Home
+                self.tabBarController.selectedIndex = 1;    // to Saloon
                 break;
 
-            case 1:
-                self.tabBarController.selectedIndex = 2;
+            case 1:     // Saloon
+                self.tabBarController.selectedIndex = 2;    // to Mall
                 break;
 
-            case 2:
-                self.tabBarController.selectedIndex = 2;
+            case 2:     // Mall
+                self.tabBarController.selectedIndex = 2;    // stay
                 break;
 
             default:
@@ -54,16 +54,16 @@
     }
     if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
         switch (self.tabBarController.selectedIndex) {
-            case 0:
-                self.tabBarController.selectedIndex = 0;
+            case 0:     // Home
+                self.tabBarController.selectedIndex = 0;    // stay
                 break;
 
-            case 1:
-                self.tabBarController.selectedIndex = 0;
+            case 1:     // Saloon
+                self.tabBarController.selectedIndex = 0;    // to Home
                 break;
 
-            case 2:
-                self.tabBarController.selectedIndex = 1;
+            case 2:     // Mall
+                self.tabBarController.selectedIndex = 1;    // to Saloon
                 break;
 
             default:
