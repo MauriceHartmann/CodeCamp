@@ -18,10 +18,10 @@ const int MAX_VALUE_LIMIT = 100;
 
 //(random_factor + 1) is the max Number of Supply the pet loses per time_tick_factor
 //example: random_factor = 9 => 1-10 Supply loss per tick
-//time_tick_factor is the time the pet loses supply in seconds (600s = 10 min)
+//time_tick_factor is the time the pet loses supply in seconds (900s = 15 min)
 
 int random_factor = 1;
-double time_tick_factor = 2.0;
+double time_tick_factor = 900.0;
 
 //Name of the keys in the dictionary
 NSString* HUNGER =  @"hunger";
@@ -68,7 +68,14 @@ NSTimer *t;
     
     //decrease thirst and checks if the creature is hungry
     /*
-     [myShareCreature updateKeyBy:THIRST :(arc4random_uniform(random_factor) + 1)*(-1) ];
+     decrease_factor = (arc4random_uniform(random_factor) + 1)*(-1);
+     if([myShareCreature getIntFromKey:THIRST] - decrease_factor < 0){
+     [myShareCreature updateKeyBy:THIRST : decrease_factor +  [myShareCreature getIntFromKey:THIRST] - decrease_factor];
+     }
+     else
+     {
+     [myShareCreature updateKeyBy:THIRST :decrease_factor];
+     }
      [self checkNeeds];
      NSLog(@"thirst: %d" ,[myShareCreature getIntFromKey:THIRST]);
      */
@@ -80,11 +87,11 @@ NSTimer *t;
     //checks hunger
     if([myShareCreature getIntFromKey:HUNGER] <  HUNGER_LIMIT)
     {
-        NSLog(@"Hungry");
+        NSLog(@"hungry");
         
         //sets hunger back on 80+ for test reasons
-        //int value = 100 - [myShareCreature getIntFromKey:HUNGER];
-        //[myShareCreature updateKeyBy:HUNGER :value ];
+        int value = 100 - [myShareCreature getIntFromKey:HUNGER];
+        [myShareCreature updateKeyBy:HUNGER :value ];
     }
     
     //checks thirst
@@ -166,11 +173,11 @@ bool isGrantedNotificationAccess;
 {
     double hoursLeftTillNeed = ((([myShareCreature getIntFromKey:HUNGER]-20) / ((random_factor + 1)/2)))*time_tick_factor;
     [self sendNotification:@"CodeCamp" forSubtitle:@"Hunger" forBody:@"Hab Hunger!" forIntervall:hoursLeftTillNeed];
-        NSLog(@"Current Hunger: %d Pet will be hungry in %f s",[myShareCreature getIntFromKey:HUNGER],hoursLeftTillNeed );
+    NSLog(@"Current Hunger: %d Pet will be hungry in %f s",[myShareCreature getIntFromKey:HUNGER],hoursLeftTillNeed );
     
-    hoursLeftTillNeed = (([myShareCreature getIntFromKey:THIRST]-20) / ((random_factor + 1)/2))*2;
+    hoursLeftTillNeed = (([myShareCreature getIntFromKey:THIRST]-20) / ((random_factor + 1)/2))*time_tick_factor;
     [self sendNotification:@"CodeCamp" forSubtitle:@"Durscht" forBody:@"ICH HAB BRAND!" forIntervall:hoursLeftTillNeed];
-    
+    NSLog(@"Current thirst: %d Pet will be thirsty in %f s",[myShareCreature getIntFromKey:THIRST],hoursLeftTillNeed );
     
 }
 
