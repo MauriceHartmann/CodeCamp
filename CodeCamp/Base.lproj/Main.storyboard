@@ -13,7 +13,7 @@
         <!--Saloon-->
         <scene sceneID="gN3-Mf-aVa">
             <objects>
-                <viewController id="fCv-tj-xMK" sceneMemberID="viewController">
+                <viewController id="fCv-tj-xMK" customClass="PageViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bzz-UH-rfz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,12 +34,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BGS-Ns-voL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3783.1999999999998" y="753.37331334332839"/>
+            <point key="canvasLocation" x="-3033" y="287"/>
         </scene>
         <!--Home-->
         <scene sceneID="mU0-6a-YS3">
             <objects>
-                <viewController id="QS4-9e-m9m" sceneMemberID="viewController">
+                <viewController id="QS4-9e-m9m" customClass="PageViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gid-gp-Yqp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,7 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mzI-M8-Krg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2834.4000000000001" y="593.25337331334333"/>
+            <point key="canvasLocation" x="-3852" y="-179"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Apl-br-JzU">
@@ -74,41 +74,40 @@
                         <color key="selectedImageTintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="QS4-9e-m9m" kind="relationship" relationship="viewControllers" id="wae-Cb-iYS"/>
-                        <segue destination="fCv-tj-xMK" kind="relationship" relationship="viewControllers" id="1n3-eC-qte"/>
-                        <segue destination="Voj-gV-yme" kind="relationship" relationship="viewControllers" id="TLT-4G-Oqg"/>
+                        <segue destination="QS4-9e-m9m" kind="relationship" relationship="viewControllers" id="hjX-90-Kmt"/>
+                        <segue destination="fCv-tj-xMK" kind="relationship" relationship="viewControllers" id="AJD-Vl-5mc"/>
+                        <segue destination="Voj-gV-yme" kind="relationship" relationship="viewControllers" id="mWZ-ed-jTl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wio-r4-b31" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3783" y="13"/>
+            <point key="canvasLocation" x="-4686" y="136"/>
         </scene>
         <!--Mall-->
         <scene sceneID="sXb-l6-5vC">
             <objects>
-                <viewController id="Voj-gV-yme" sceneMemberID="viewController">
+                <viewController id="Voj-gV-yme" customClass="PageViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6ZU-lv-ny7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="mall" translatesAutoresizingMaskIntoConstraints="NO" id="ZpS-z2-YPP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mall" translatesAutoresizingMaskIntoConstraints="NO" id="8ts-Wk-pWh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="ZpS-z2-YPP" firstAttribute="trailing" secondItem="Pub-0C-NKL" secondAttribute="trailing" id="B1J-dM-lZE"/>
-                            <constraint firstItem="ZpS-z2-YPP" firstAttribute="leading" secondItem="Pub-0C-NKL" secondAttribute="leading" id="H6W-Uf-s9v"/>
-                            <constraint firstItem="ZpS-z2-YPP" firstAttribute="top" secondItem="6ZU-lv-ny7" secondAttribute="top" id="LEP-ie-SkR"/>
-                            <constraint firstAttribute="bottom" secondItem="ZpS-z2-YPP" secondAttribute="bottom" id="hMN-9R-rUw"/>
+                            <constraint firstAttribute="bottom" secondItem="8ts-Wk-pWh" secondAttribute="bottom" id="D7a-EK-qUC"/>
+                            <constraint firstItem="8ts-Wk-pWh" firstAttribute="top" secondItem="6ZU-lv-ny7" secondAttribute="top" id="c6T-o8-I8I"/>
+                            <constraint firstItem="8ts-Wk-pWh" firstAttribute="trailing" secondItem="Pub-0C-NKL" secondAttribute="trailing" id="gAk-7D-di2"/>
+                            <constraint firstItem="8ts-Wk-pWh" firstAttribute="leading" secondItem="Pub-0C-NKL" secondAttribute="leading" id="oTA-hJ-Qg0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pub-0C-NKL"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mall" id="iKx-Vc-0I8"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QAp-yt-rZq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2834.4000000000001" y="-77.811094452773617"/>
+            <point key="canvasLocation" x="-3852" y="676.91154422788611"/>
         </scene>
     </scenes>
     <resources>
