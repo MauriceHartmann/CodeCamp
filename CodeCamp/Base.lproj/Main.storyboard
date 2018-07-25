@@ -34,7 +34,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BGS-Ns-voL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3033" y="287"/>
+            <point key="canvasLocation" x="-3580" y="116"/>
         </scene>
         <!--Home-->
         <scene sceneID="mU0-6a-YS3">
@@ -60,7 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mzI-M8-Krg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3852" y="-179"/>
+            <point key="canvasLocation" x="-4310" y="-291"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Apl-br-JzU">
@@ -82,7 +82,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wio-r4-b31" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4686" y="136"/>
+            <point key="canvasLocation" x="-5087" y="116"/>
         </scene>
         <!--Mall-->
         <scene sceneID="sXb-l6-5vC">
@@ -108,9 +108,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QAp-yt-rZq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4399" y="752"/>
+            <point key="canvasLocation" x="-4311" y="505"/>
         </scene>
-        <!--options-->
+        <!--Options-->
         <scene sceneID="rhd-Ge-UAD">
             <objects>
                 <viewController storyboardIdentifier="Options" id="WMo-Hv-Emk" customClass="OptionViewController" sceneMemberID="viewController">
@@ -270,7 +270,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nuk-CK-SF7"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="options" id="cRa-yy-UVV">
+                    <tabBarItem key="tabBarItem" title="Options" image="options_button" id="cRa-yy-UVV">
                         <inset key="largeContentSizeImageInsets" minX="0.0" minY="-1" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -284,12 +284,13 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2qA-8f-nXE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="UBG-6o-UdS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2906.4000000000001" y="11.244377811094454"/>
+            <point key="canvasLocation" x="-5087" y="936"/>
         </scene>
     </scenes>
     <resources>
         <image name="living_room" width="474" height="643"/>
         <image name="mall" width="474" height="649"/>
+        <image name="options_button" width="35" height="35"/>
         <image name="saloon" width="474" height="649"/>
     </resources>
 </document>
