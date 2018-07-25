@@ -21,7 +21,7 @@ const int MAX_VALUE_LIMIT = 100;
 //time_tick_factor is the time the pet loses supply in seconds (900s = 15 min)
 
 int random_factor = 1;
-double time_tick_factor = 20.0;
+double time_tick_factor = 5.0;
 
 //Name of the keys in the dictionary
 NSString* HUNGER =  @"hunger";
@@ -84,6 +84,11 @@ NSTimer *t;
 //checks if the pet is hungry,thirsty etc.
 -(void) checkNeeds
 {
+    if([myShareCreature getIntFromKey:HUNGER] <  1){
+        [myShareCreature changeValueOfKey:@"life" :@0];
+        
+    }
+    
     //checks hunger
     if([myShareCreature getIntFromKey:HUNGER] <  HUNGER_LIMIT)
     {
@@ -103,7 +108,21 @@ NSTimer *t;
         int value = 100 - [myShareCreature getIntFromKey:THIRST];
         [myShareCreature updateKeyBy:THIRST :value ];
     }
-     
+    
+    if([myShareCreature getIntFromKey:@"life"] == 0){
+        UIViewController *myView = [[UIViewController alloc] init];
+        UIViewController *myView2 = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"GOScreen"];
+        [myView presentViewController:myView2 animated:NO completion:nil];
+        
+        NSLog(@"Dead");
+        NSString * storyboardName = @"Main";
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+        UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"GOScreen"];
+        [UIViewController presentViewController:vc animated:YES completion:nil];
+        //        [UIViewController presentViewController:viewController animated:NO completion:nil];
+        return;
+        
+    }
     
 }
 

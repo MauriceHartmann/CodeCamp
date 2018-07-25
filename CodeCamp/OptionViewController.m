@@ -43,8 +43,7 @@ Share* myShares;
     
 }
 - (IBAction)killAnimal:(UIButton *)sender {
-    NSNumber *num = [NSNumber numberWithInt:0];
-    [myShares changeValueOfKey:@"thirst":num];
+    [myShares updateKeyBy:@"life" :(-1)];
     
 }
 
