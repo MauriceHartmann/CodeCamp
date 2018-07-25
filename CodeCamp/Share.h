@@ -23,5 +23,6 @@
 -(void) dictToTxt:(NSString*) path;
 -(void) createKeyWith: (NSString*) key : (NSObject*) value;
 -(void) initDict;
+-(NSObject*) getObjectFromKey:(NSString*)key;
 @end
 #endif /* Share_h */

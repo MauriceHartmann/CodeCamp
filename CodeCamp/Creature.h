@@ -16,4 +16,5 @@
 -(void) checkNeeds;
 +(void) sendNotification:(NSString*) title forSubtitle:(NSString*) subtitle forBody:(NSString*) body forIntervall: (NSInteger) intervall;
 -(void) prepareBackgroundNotification;
++(void) updateAfterReturn;
 @end

@@ -88,17 +88,17 @@
 
 - (IBAction)deleteBtn:(UIButton *)sender {
 }
-
+*/
 //get current time as NSString
 -(NSString *) getCurrentTime {
     NSDate *currentTime = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//    [dateFormatter setDateFormat:@"hh:mm"];
+   [dateFormatter setDateFormat:@"hh:mm"];
     NSString *resultString = [dateFormatter stringFromDate: currentTime];
     
     return resultString;
 }
-
+/*
 
 -(void)showTime{
     NSDate *currentTime = [NSDate date];
