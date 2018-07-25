@@ -110,7 +110,7 @@
             </objects>
             <point key="canvasLocation" x="-4311" y="505"/>
         </scene>
-        <!--Option View Controller-->
+        <!--Options-->
         <scene sceneID="rhd-Ge-UAD">
             <objects>
                 <viewController storyboardIdentifier="Options" id="WMo-Hv-Emk" customClass="OptionViewController" sceneMemberID="viewController">
@@ -295,7 +295,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nuk-CK-SF7"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="cRa-yy-UVV">
+                    <tabBarItem key="tabBarItem" title="Options" image="options_button" id="cRa-yy-UVV">
                         <inset key="largeContentSizeImageInsets" minX="0.0" minY="-1" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -315,6 +315,7 @@
     <resources>
         <image name="living_room" width="474" height="643"/>
         <image name="mall" width="474" height="649"/>
+        <image name="options_button" width="35" height="35"/>
         <image name="saloon" width="474" height="649"/>
     </resources>
 </document>
