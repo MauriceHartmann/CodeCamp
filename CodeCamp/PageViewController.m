@@ -172,6 +172,8 @@ NSTimer *needViewTimer;
                 break;
         }
     }
+    
+    [PageViewController callOutARoom:self.tabBarController.selectedIndex :mySharesView];
 }
 
 
