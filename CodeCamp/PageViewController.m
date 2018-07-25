@@ -46,50 +46,17 @@ NSTimer *needViewTimer;
     self.rightSwipe.direction = UISwipeGestureRecognizerDirectionRight;
     [self.view addGestureRecognizer:self.rightSwipe];
     
+    self.tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    [self.view addGestureRecognizer:self.tapGR];
+    
     //creature Setup
     width = [UIScreen mainScreen].bounds.size.width;
     height = [UIScreen mainScreen].bounds.size.height;
-    petViewWidth = width * 0.5;
-    petViewHeight = height * 0.2;
-    
-    [self initViews];
-    [self checkNeedView];
-}
-
--(void)viewDidAppear:(BOOL)animated
-{
-    [self checkNeedView];
-    [super viewDidAppear:false];
-    needViewTimer = [NSTimer scheduledTimerWithTimeInterval: time_tick_factor
-                                         target: self
-                                       selector:@selector(onTick:)
-                                       userInfo: nil repeats:YES];
-}
-
--(void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:false];
-    [needViewTimer invalidate];
-}
-
-//timer method that ticks every Intervall of the timer
--(void)onTick:(NSTimer*)timer
-{
-    [self checkNeedView];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void) initViews
-{
-    petView= [[UIImageView alloc] init];
-    UIImage *myimg = [UIImage imageNamed:@"blob"];
-    petView.image=myimg;
-    petView.frame = CGRectMake(width/2 - petViewWidth /2, height/2 + petViewHeight/2, petViewWidth, petViewHeight);
-    [self.view addSubview:petView];
+//    petView= [[UIImageView alloc] init];
+//    UIImage *myimg = [UIImage imageNamed:@"blob"];
+//    petView.image=myimg;
+//    petView.frame = CGRectMake(width/2, height/2, 150, 150);
+//    [self.view addSubview:petView];
     
     hungerView= [[UIImageView alloc] init];
     myimg = [UIImage imageNamed:@"hunger"];
@@ -186,12 +153,13 @@ NSTimer *needViewTimer;
         }
     }
     
-    [self callOutARoom:self.tabBarController.selectedIndex :mySharesView];
+
 }
 
-- (void) callOutARoom:(NSUInteger)tabId :(Share*) mySharesView
+- (void) handleTap: (UITapGestureRecognizer*) recognize
 {
-    switch (tabId) {
+    
+    switch (self.tabBarController.selectedIndex) {
         case 0:
             [Kitchen doAction: mySharesView];
             break;
@@ -204,6 +172,8 @@ NSTimer *needViewTimer;
             break;
     }
 }
+       
+
 /*
 #pragma mark - Navigation
 

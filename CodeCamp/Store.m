@@ -9,12 +9,6 @@
 #import "Store.h"
 #import "PageViewController.h"
 
-UITableView *table;
-int tableWidth;
-int tableHeight;
-int tablePosX;
-int tablePosY;
-
 @implementation Store
 
 +(void) doAction : (Share *) myShares : (PageViewController *) pageView

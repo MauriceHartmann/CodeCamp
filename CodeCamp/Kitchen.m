@@ -15,25 +15,24 @@ int MAX_THIRST = 100;
 {
     NSLog(@"In Kitchen");
     
-    //Hunger gain 20 Point
-    if([myShares getIntFromKey:@"hunger"] < 100)
-        {
-            if([myShares getIntFromKey:@"hunger"] >= 80)
-            {
-                int difference = 100 - [myShares getIntFromKey:@"hunger"];
-                [myShares updateKeyBy:@"hunger" :difference];
-            }
-            else
-            {
-                [myShares updateKeyBy:@"hunger" :20];
-            }
-        }
-
-    
     //Fodder reduces 2
-        if([myShares getIntFromKey:@"fodder"] >= 0)
+        if([myShares getIntFromKey:@"fodder"] > 0)
         {
             [myShares updateKeyBy:@"fodder" :-2];
+           
+            //Hunger gain 20 Point
+            if([myShares getIntFromKey:@"hunger"] < 100)
+            {
+                if([myShares getIntFromKey:@"hunger"] >= 80)
+                {
+                    int difference = 100 - [myShares getIntFromKey:@"hunger"];
+                    [myShares updateKeyBy:@"hunger" :difference];
+                }
+                else
+                {
+                    [myShares updateKeyBy:@"hunger" :20];
+                }
+            }
         }
     
     

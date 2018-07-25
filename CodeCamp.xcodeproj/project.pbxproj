@@ -55,8 +55,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9604B62521089F9D0087278B /* GameOverController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameOverController.m; sourceTree = "<group>"; };
-		9604B62721089FB10087278B /* GameOverController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameOverController.h; sourceTree = "<group>"; };
 		96229C05210716EA00365EE1 /* Room.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
 		96229C082107170B00365EE1 /* Creature.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Creature.m; sourceTree = "<group>"; };
 		96229C0B2107176000365EE1 /* Saloon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Saloon.m; sourceTree = "<group>"; };
@@ -186,8 +184,6 @@
 				962606E72106038B005C7A1C /* PageViewController.m */,
 				96B3123F210731C20081FCA6 /* OptionViewController.h */,
 				96B31240210731E40081FCA6 /* OptionViewController.m */,
-				9604B62521089F9D0087278B /* GameOverController.m */,
-				9604B62721089FB10087278B /* GameOverController.h */,
 			);
 			path = CodeCamp;
 			sourceTree = "<group>";
