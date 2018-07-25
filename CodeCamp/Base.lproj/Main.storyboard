@@ -34,7 +34,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BGS-Ns-voL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3783.1999999999998" y="753.37331334332839"/>
+            <point key="canvasLocation" x="-3033" y="287"/>
         </scene>
         <!--Home-->
         <scene sceneID="mU0-6a-YS3">
@@ -82,7 +82,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wio-r4-b31" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3783" y="13"/>
+            <point key="canvasLocation" x="-4686" y="136"/>
         </scene>
         <!--Mall-->
         <scene sceneID="sXb-l6-5vC">
@@ -92,20 +92,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="mall" translatesAutoresizingMaskIntoConstraints="NO" id="ZpS-z2-YPP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mall" translatesAutoresizingMaskIntoConstraints="NO" id="8ts-Wk-pWh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="ZpS-z2-YPP" firstAttribute="trailing" secondItem="Pub-0C-NKL" secondAttribute="trailing" id="B1J-dM-lZE"/>
-                            <constraint firstItem="ZpS-z2-YPP" firstAttribute="leading" secondItem="Pub-0C-NKL" secondAttribute="leading" id="H6W-Uf-s9v"/>
-                            <constraint firstItem="ZpS-z2-YPP" firstAttribute="top" secondItem="6ZU-lv-ny7" secondAttribute="top" id="LEP-ie-SkR"/>
-                            <constraint firstAttribute="bottom" secondItem="ZpS-z2-YPP" secondAttribute="bottom" id="hMN-9R-rUw"/>
+                            <constraint firstAttribute="bottom" secondItem="8ts-Wk-pWh" secondAttribute="bottom" id="D7a-EK-qUC"/>
+                            <constraint firstItem="8ts-Wk-pWh" firstAttribute="top" secondItem="6ZU-lv-ny7" secondAttribute="top" id="c6T-o8-I8I"/>
+                            <constraint firstItem="8ts-Wk-pWh" firstAttribute="trailing" secondItem="Pub-0C-NKL" secondAttribute="trailing" id="gAk-7D-di2"/>
+                            <constraint firstItem="8ts-Wk-pWh" firstAttribute="leading" secondItem="Pub-0C-NKL" secondAttribute="leading" id="oTA-hJ-Qg0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pub-0C-NKL"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mall" id="iKx-Vc-0I8"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QAp-yt-rZq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
