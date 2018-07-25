@@ -53,6 +53,12 @@ CGFloat width;
 
 - (void)handleSwipe:(UISwipeGestureRecognizer *)sender {
     if (sender.direction == UISwipeGestureRecognizerDirectionLeft) {
+            /*
+                0 -> Home
+                1 -> Saloon
+                2 -> Mall
+                3 -> Options
+             */
         switch (self.tabBarController.selectedIndex) {
             case 0:
                 self.tabBarController.selectedIndex = 1;
@@ -72,6 +78,12 @@ CGFloat width;
         }
     }
     if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
+            /*
+                0 -> Home
+                1 -> Saloon
+                2 -> Mall
+                3 -> Options
+             */
         switch (self.tabBarController.selectedIndex) {
             case 0:
                 self.tabBarController.selectedIndex = 0;
