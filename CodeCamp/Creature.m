@@ -79,6 +79,7 @@ NSTimer *t;
      [self checkNeeds];
      NSLog(@"thirst: %d" ,[myShareCreature getIntFromKey:THIRST]);
      */
+    
 }
 
 //checks if the pet is hungry,thirsty etc.
@@ -173,7 +174,7 @@ bool isGrantedNotificationAccess;
         UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
         
         content.title = title;
-        content.subtitle = subtitle;
+        content.subtitle = @"";
         content.body = body;
         content.sound = [UNNotificationSound defaultSound];
         

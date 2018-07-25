@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "Room.h"
+#import "PageViewController.h"
 
 @interface Store : Room
-+(void) doAction: (Share*) myShares;
++(void) doAction: (Share*) myShares : (PageViewController*)pageView;
 @end
