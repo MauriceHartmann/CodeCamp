@@ -7,15 +7,27 @@
 //
 
 #import "AppDelegate.h"
-
+#import "Share.h"
+#import "Creature.h"
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
+NSMutableDictionary *dict;
+NSString *path;
+NSFileManager *myManager;
+Share* myShare;
+Creature* pet;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    myShare = Share.sharedSingleton;
+    [myShare initDict];
+    
+    pet = [[Creature alloc] init];
+    [pet initCreature];
+    
+    [AppDelegate setupFile]; //Prepares File and Dictionary
     // Override point for customization after application launch.
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     UITabBar *tabBar = tabBarController.tabBar;
@@ -28,6 +40,7 @@
     tabBarItem3 = [tabBarItem3 initWithTitle:@"Mall" image:[UIImage imageNamed:@"mall_button.png"] selectedImage:[UIImage imageNamed:@"mall_button.png"]];
     
     return YES;
+    
 }
 
 
@@ -38,8 +51,12 @@
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [myShare updateKeyBy:@"hunger" :-2];
+    [myShare dictToTxt:path]; // Write everything to file to save status
+    NSLog(@"written");
+    for (NSString *key in [myShare getAllKeys])
+        NSLog(@"%@", key) ;
+    [pet prepareBackgroundNotification];
 }
 
 
@@ -57,5 +74,44 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
++(void)deleteFile{
+    myManager = [NSFileManager defaultManager]; // create New Manager when called from another class
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    path = [documentsDirectory stringByAppendingPathComponent:@"values.txt"]; 
+    [myManager removeItemAtPath: path error: nil];
+    NSLog(@"delete");
+    [AppDelegate setupFile];
+}
+
++(void) setupFile{
+    //Create or find a file to write to or read from
+
+    myManager = [NSFileManager defaultManager];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    path = [documentsDirectory stringByAppendingPathComponent:@"values.txt"]; // Name of file is vaues.txt
+    
+    if([myManager fileExistsAtPath:path]){
+        [myShare createFromFile:path]; // Copy Values of file in our dictionary
+        NSLog(@"Read");
+        for (NSString *key in [myShare getAllKeys])
+            NSLog(@"%@",key) ;
+        // Copy files back into our singleton
+    }else{
+        NSLog(@"created");
+        [AppDelegate initDict];
+    }}
+
++(void) initDict{
+    NSLog(@"init");
+    [myShare createKeyWith:@"hunger" : @100];
+    //Create dict using default values if no file was found
+    [myShare changeValueOfKey:@"thirst" :@100];
+    [myShare changeValueOfKey:@"fodder" :@10];
+    [myShare changeValueOfKey:@"drinks" :@10];
+    for (NSString *key in [myShare getAllKeys])
+        NSLog(@"%@",key) ;
+}
 
 @end

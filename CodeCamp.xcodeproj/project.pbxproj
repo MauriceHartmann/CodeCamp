@@ -1,602 +1,712 @@
 // !$*UTF8*$!
 {
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 50;
-	objects = {
+    archiveVersion = 1;
+    classes = {
+    };
+    objectVersion = 50;
+    objects = {
 
 /* Begin PBXBuildFile section */
-		962606E82106038B005C7A1C /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962606E72106038B005C7A1C /* PageViewController.m */; };
-		963A19E72105C31D00C8C428 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A19E62105C31D00C8C428 /* AppDelegate.m */; };
-		963A19E92105C31D00C8C428 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 963A19E82105C31D00C8C428 /* GameScene.sks */; };
-		963A19EB2105C31D00C8C428 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 963A19EA2105C31D00C8C428 /* Actions.sks */; };
-		963A19EE2105C31D00C8C428 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A19ED2105C31D00C8C428 /* GameScene.m */; };
-		963A19F12105C31D00C8C428 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A19F02105C31D00C8C428 /* GameViewController.m */; };
-		963A19F42105C31D00C8C428 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 963A19F22105C31D00C8C428 /* Main.storyboard */; };
-		963A19F62105C31E00C8C428 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 963A19F52105C31E00C8C428 /* Assets.xcassets */; };
-		963A19F92105C31E00C8C428 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 963A19F72105C31E00C8C428 /* LaunchScreen.storyboard */; };
-		963A19FC2105C31E00C8C428 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A19FB2105C31E00C8C428 /* main.m */; };
-		963A1A062105C31E00C8C428 /* CodeCampTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A1A052105C31E00C8C428 /* CodeCampTests.m */; };
-		963A1A112105C31E00C8C428 /* CodeCampUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A1A102105C31E00C8C428 /* CodeCampUITests.m */; };
+        962606E82106038B005C7A1C /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962606E72106038B005C7A1C /* PageViewController.m */; };
+        963A19E72105C31D00C8C428 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A19E62105C31D00C8C428 /* AppDelegate.m */; };
+        963A19EE2105C31D00C8C428 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A19ED2105C31D00C8C428 /* GameScene.m */; };
+        963A19F12105C31D00C8C428 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A19F02105C31D00C8C428 /* GameViewController.m */; };
+        963A19F42105C31D00C8C428 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 963A19F22105C31D00C8C428 /* Main.storyboard */; };
+        963A19F62105C31E00C8C428 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 963A19F52105C31E00C8C428 /* Assets.xcassets */; };
+        963A19F92105C31E00C8C428 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 963A19F72105C31E00C8C428 /* LaunchScreen.storyboard */; };
+        963A19FC2105C31E00C8C428 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A19FB2105C31E00C8C428 /* main.m */; };
+        963A1A062105C31E00C8C428 /* CodeCampTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A1A052105C31E00C8C428 /* CodeCampTests.m */; };
+        963A1A112105C31E00C8C428 /* CodeCampUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A1A102105C31E00C8C428 /* CodeCampUITests.m */; };
+        963A1A282106039500C8C428 /* Share.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A1A272106039500C8C428 /* Share.m */; };
+        9663EA372105DE6E00F64A36 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+        966AD6A921071B77002AD49E /* Creature.m in Sources */ = {isa = PBXBuildFile; fileRef = 966AD6A821071B76002AD49E /* Creature.m */; };
+        966AD6AC21071B7C002AD49E /* Inventory.m in Sources */ = {isa = PBXBuildFile; fileRef = 966AD6AB21071B7C002AD49E /* Inventory.m */; };
+        966AD6AF21071B80002AD49E /* Kitchen.m in Sources */ = {isa = PBXBuildFile; fileRef = 966AD6AE21071B80002AD49E /* Kitchen.m */; };
+        966AD6B221071B84002AD49E /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 966AD6B121071B84002AD49E /* Room.m */; };
+        966AD6B521071B87002AD49E /* Saloon.m in Sources */ = {isa = PBXBuildFile; fileRef = 966AD6B421071B87002AD49E /* Saloon.m */; };
+        966AD6B721071B98002AD49E /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = 966AD6B621071B98002AD49E /* Store.m */; };
+        966AD6BB21071DD2002AD49E /* Room.m in Resources */ = {isa = PBXBuildFile; fileRef = 966AD6B121071B84002AD49E /* Room.m */; };
+        966AD6BC21071DD7002AD49E /* Store.m in Resources */ = {isa = PBXBuildFile; fileRef = 966AD6B621071B98002AD49E /* Store.m */; };
+        966AD6BD21071DDB002AD49E /* Saloon.m in Resources */ = {isa = PBXBuildFile; fileRef = 966AD6B421071B87002AD49E /* Saloon.m */; };
+        966AD6BE21071DED002AD49E /* Kitchen.m in Resources */ = {isa = PBXBuildFile; fileRef = 966AD6AE21071B80002AD49E /* Kitchen.m */; };
+        966AD6BF21071DF0002AD49E /* Saloon.h in Resources */ = {isa = PBXBuildFile; fileRef = 966AD6B321071B86002AD49E /* Saloon.h */; };
+        966AD6C021071DF3002AD49E /* Kitchen.h in Resources */ = {isa = PBXBuildFile; fileRef = 966AD6AD21071B7E002AD49E /* Kitchen.h */; };
+        96B31241210731E40081FCA6 /* OptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B31240210731E40081FCA6 /* OptionViewController.m */; };
+        96B312432107400F0081FCA6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 96B312422107400F0081FCA6 /* GameScene.sks */; };
+        96ECBAF12107103600B989DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96ECBAF02107103600B989DA /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		963A1A022105C31E00C8C428 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 963A19DA2105C31D00C8C428 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 963A19E12105C31D00C8C428;
-			remoteInfo = CodeCamp;
-		};
-		963A1A0D2105C31E00C8C428 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 963A19DA2105C31D00C8C428 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 963A19E12105C31D00C8C428;
-			remoteInfo = CodeCamp;
-		};
+        963A1A022105C31E00C8C428 /* PBXContainerItemProxy */ = {
+            isa = PBXContainerItemProxy;
+            containerPortal = 963A19DA2105C31D00C8C428 /* Project object */;
+            proxyType = 1;
+            remoteGlobalIDString = 963A19E12105C31D00C8C428;
+            remoteInfo = CodeCamp;
+        };
+        963A1A0D2105C31E00C8C428 /* PBXContainerItemProxy */ = {
+            isa = PBXContainerItemProxy;
+            containerPortal = 963A19DA2105C31D00C8C428 /* Project object */;
+            proxyType = 1;
+            remoteGlobalIDString = 963A19E12105C31D00C8C428;
+            remoteInfo = CodeCamp;
+        };
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		962606E62106038B005C7A1C /* PageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
-		962606E72106038B005C7A1C /* PageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
-		963A19E22105C31D00C8C428 /* CodeCamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeCamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		963A19E52105C31D00C8C428 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		963A19E62105C31D00C8C428 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		963A19E82105C31D00C8C428 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		963A19EA2105C31D00C8C428 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		963A19EC2105C31D00C8C428 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
-		963A19ED2105C31D00C8C428 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
-		963A19EF2105C31D00C8C428 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
-		963A19F02105C31D00C8C428 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
-		963A19F32105C31D00C8C428 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		963A19F52105C31E00C8C428 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		963A19F82105C31E00C8C428 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		963A19FA2105C31E00C8C428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		963A19FB2105C31E00C8C428 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		963A1A012105C31E00C8C428 /* CodeCampTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeCampTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		963A1A052105C31E00C8C428 /* CodeCampTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeCampTests.m; sourceTree = "<group>"; };
-		963A1A072105C31E00C8C428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		963A1A0C2105C31E00C8C428 /* CodeCampUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeCampUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		963A1A102105C31E00C8C428 /* CodeCampUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeCampUITests.m; sourceTree = "<group>"; };
-		963A1A122105C31E00C8C428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+        96229C05210716EA00365EE1 /* Room.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
+        96229C082107170B00365EE1 /* Creature.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Creature.m; sourceTree = "<group>"; };
+        96229C0B2107176000365EE1 /* Saloon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Saloon.m; sourceTree = "<group>"; };
+        96229C0E210717C500365EE1 /* Kitchen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Kitchen.m; sourceTree = "<group>"; };
+        96229C112107181E00365EE1 /* Store.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Store.m; sourceTree = "<group>"; };
+        96229C142107186800365EE1 /* Inventory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Inventory.m; sourceTree = "<group>"; };
+        962606E62106038B005C7A1C /* PageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
+        962606E72106038B005C7A1C /* PageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
+        963A19E22105C31D00C8C428 /* CodeCamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeCamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+        963A19E52105C31D00C8C428 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+        963A19E62105C31D00C8C428 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+        963A19EC2105C31D00C8C428 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+        963A19ED2105C31D00C8C428 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+        963A19EF2105C31D00C8C428 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+        963A19F02105C31D00C8C428 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+        963A19F32105C31D00C8C428 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+        963A19F52105C31E00C8C428 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+        963A19F82105C31E00C8C428 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+        963A19FA2105C31E00C8C428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+        963A19FB2105C31E00C8C428 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+        963A1A012105C31E00C8C428 /* CodeCampTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeCampTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+        963A1A052105C31E00C8C428 /* CodeCampTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeCampTests.m; sourceTree = "<group>"; };
+        963A1A072105C31E00C8C428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+        963A1A0C2105C31E00C8C428 /* CodeCampUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeCampUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+        963A1A102105C31E00C8C428 /* CodeCampUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeCampUITests.m; sourceTree = "<group>"; };
+        963A1A122105C31E00C8C428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+        963A1A1F2105C8D800C8C428 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+        963A1A272106039500C8C428 /* Share.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Share.m; sourceTree = "<group>"; };
+        963A1A29210603DE00C8C428 /* Share.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Share.h; sourceTree = "<group>"; };
+		96419CF22107636000DD39D3 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		96419CF42107637200DD39D3 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+        966AD6A721071B5A002AD49E /* Creature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Creature.h; sourceTree = "<group>"; };
+        966AD6A821071B76002AD49E /* Creature.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Creature.m; sourceTree = "<group>"; };
+        966AD6AA21071B79002AD49E /* Inventory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Inventory.h; sourceTree = "<group>"; };
+        966AD6AB21071B7C002AD49E /* Inventory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Inventory.m; sourceTree = "<group>"; };
+        966AD6AD21071B7E002AD49E /* Kitchen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Kitchen.h; sourceTree = "<group>"; };
+        966AD6AE21071B80002AD49E /* Kitchen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Kitchen.m; sourceTree = "<group>"; };
+        966AD6B021071B82002AD49E /* Room.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Room.h; sourceTree = "<group>"; };
+        966AD6B121071B84002AD49E /* Room.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
+        966AD6B321071B86002AD49E /* Saloon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Saloon.h; sourceTree = "<group>"; };
+        966AD6B421071B87002AD49E /* Saloon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Saloon.m; sourceTree = "<group>"; };
+        966AD6B621071B98002AD49E /* Store.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Store.m; sourceTree = "<group>"; };
+        966AD6B821071B9C002AD49E /* Store.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Store.h; sourceTree = "<group>"; };
+        96B3123F210731C20081FCA6 /* OptionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OptionViewController.h; sourceTree = "<group>"; };
+        96B31240210731E40081FCA6 /* OptionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OptionViewController.m; sourceTree = "<group>"; };
+        96B312422107400F0081FCA6 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+        96ECBAF02107103600B989DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = CodeCamp/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		963A19DF2105C31D00C8C428 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		963A19FE2105C31E00C8C428 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		963A1A092105C31E00C8C428 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+        963A19DF2105C31D00C8C428 /* Frameworks */ = {
+            isa = PBXFrameworksBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                9663EA372105DE6E00F64A36 /* (null) in Frameworks */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        963A19FE2105C31E00C8C428 /* Frameworks */ = {
+            isa = PBXFrameworksBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        963A1A092105C31E00C8C428 /* Frameworks */ = {
+            isa = PBXFrameworksBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		963A19D92105C31D00C8C428 = {
-			isa = PBXGroup;
-			children = (
-				963A19E42105C31D00C8C428 /* CodeCamp */,
-				963A1A042105C31E00C8C428 /* CodeCampTests */,
-				963A1A0F2105C31E00C8C428 /* CodeCampUITests */,
-				963A19E32105C31D00C8C428 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		963A19E32105C31D00C8C428 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				963A19E22105C31D00C8C428 /* CodeCamp.app */,
-				963A1A012105C31E00C8C428 /* CodeCampTests.xctest */,
-				963A1A0C2105C31E00C8C428 /* CodeCampUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		963A19E42105C31D00C8C428 /* CodeCamp */ = {
-			isa = PBXGroup;
-			children = (
-				963A19E52105C31D00C8C428 /* AppDelegate.h */,
-				963A19E62105C31D00C8C428 /* AppDelegate.m */,
-				963A19E82105C31D00C8C428 /* GameScene.sks */,
-				963A19EA2105C31D00C8C428 /* Actions.sks */,
-				963A19EC2105C31D00C8C428 /* GameScene.h */,
-				963A19ED2105C31D00C8C428 /* GameScene.m */,
-				963A19EF2105C31D00C8C428 /* GameViewController.h */,
-				963A19F02105C31D00C8C428 /* GameViewController.m */,
-				963A19F22105C31D00C8C428 /* Main.storyboard */,
-				963A19F52105C31E00C8C428 /* Assets.xcassets */,
-				963A19F72105C31E00C8C428 /* LaunchScreen.storyboard */,
-				963A19FA2105C31E00C8C428 /* Info.plist */,
-				963A19FB2105C31E00C8C428 /* main.m */,
-				962606E62106038B005C7A1C /* PageViewController.h */,
-				962606E72106038B005C7A1C /* PageViewController.m */,
-			);
-			path = CodeCamp;
-			sourceTree = "<group>";
-		};
-		963A1A042105C31E00C8C428 /* CodeCampTests */ = {
-			isa = PBXGroup;
-			children = (
-				963A1A052105C31E00C8C428 /* CodeCampTests.m */,
-				963A1A072105C31E00C8C428 /* Info.plist */,
-			);
-			path = CodeCampTests;
-			sourceTree = "<group>";
-		};
-		963A1A0F2105C31E00C8C428 /* CodeCampUITests */ = {
-			isa = PBXGroup;
-			children = (
-				963A1A102105C31E00C8C428 /* CodeCampUITests.m */,
-				963A1A122105C31E00C8C428 /* Info.plist */,
-			);
-			path = CodeCampUITests;
-			sourceTree = "<group>";
-		};
+        963A19D92105C31D00C8C428 = {
+            isa = PBXGroup;
+            children = (
+                96ECBAF02107103600B989DA /* Assets.xcassets */,
+                963A19E42105C31D00C8C428 /* CodeCamp */,
+                963A1A042105C31E00C8C428 /* CodeCampTests */,
+                963A1A0F2105C31E00C8C428 /* CodeCampUITests */,
+                963A19E32105C31D00C8C428 /* Products */,
+                9663EA352105DE6E00F64A36 /* Frameworks */,
+                966AD6A421071AAB002AD49E /* Recovered References */,
+            );
+            sourceTree = "<group>";
+        };
+        963A19E32105C31D00C8C428 /* Products */ = {
+            isa = PBXGroup;
+            children = (
+                963A19E22105C31D00C8C428 /* CodeCamp.app */,
+                963A1A012105C31E00C8C428 /* CodeCampTests.xctest */,
+                963A1A0C2105C31E00C8C428 /* CodeCampUITests.xctest */,
+            );
+            name = Products;
+            sourceTree = "<group>";
+        };
+        963A19E42105C31D00C8C428 /* CodeCamp */ = {
+            isa = PBXGroup;
+            children = (
+                966AD6B821071B9C002AD49E /* Store.h */,
+                966AD6B621071B98002AD49E /* Store.m */,
+                96B312422107400F0081FCA6 /* GameScene.sks */,
+                966AD6B321071B86002AD49E /* Saloon.h */,
+                966AD6B421071B87002AD49E /* Saloon.m */,
+                966AD6B021071B82002AD49E /* Room.h */,
+                966AD6B121071B84002AD49E /* Room.m */,
+                966AD6AE21071B80002AD49E /* Kitchen.m */,
+                966AD6AD21071B7E002AD49E /* Kitchen.h */,
+                966AD6AB21071B7C002AD49E /* Inventory.m */,
+                966AD6AA21071B79002AD49E /* Inventory.h */,
+                966AD6A821071B76002AD49E /* Creature.m */,
+                966AD6A721071B5A002AD49E /* Creature.h */,
+                963A19E52105C31D00C8C428 /* AppDelegate.h */,
+                963A19E62105C31D00C8C428 /* AppDelegate.m */,
+                963A19EC2105C31D00C8C428 /* GameScene.h */,
+                963A19ED2105C31D00C8C428 /* GameScene.m */,
+                963A19EF2105C31D00C8C428 /* GameViewController.h */,
+                963A19F02105C31D00C8C428 /* GameViewController.m */,
+                963A19F22105C31D00C8C428 /* Main.storyboard */,
+                963A19F52105C31E00C8C428 /* Assets.xcassets */,
+                963A19F72105C31E00C8C428 /* LaunchScreen.storyboard */,
+                963A19FA2105C31E00C8C428 /* Info.plist */,
+                963A19FB2105C31E00C8C428 /* main.m */,
+                963A1A272106039500C8C428 /* Share.m */,
+                963A1A29210603DE00C8C428 /* Share.h */,
+                962606E62106038B005C7A1C /* PageViewController.h */,
+                962606E72106038B005C7A1C /* PageViewController.m */,
+                96B3123F210731C20081FCA6 /* OptionViewController.h */,
+                96B31240210731E40081FCA6 /* OptionViewController.m */,
+            );
+            path = CodeCamp;
+            sourceTree = "<group>";
+        };
+        963A1A042105C31E00C8C428 /* CodeCampTests */ = {
+            isa = PBXGroup;
+            children = (
+                963A1A052105C31E00C8C428 /* CodeCampTests.m */,
+                963A1A072105C31E00C8C428 /* Info.plist */,
+            );
+            path = CodeCampTests;
+            sourceTree = "<group>";
+        };
+        963A1A0F2105C31E00C8C428 /* CodeCampUITests */ = {
+            isa = PBXGroup;
+            children = (
+                963A1A102105C31E00C8C428 /* CodeCampUITests.m */,
+                963A1A122105C31E00C8C428 /* Info.plist */,
+            );
+            path = CodeCampUITests;
+            sourceTree = "<group>";
+        };
+        9663EA352105DE6E00F64A36 /* Frameworks */ = {
+            isa = PBXGroup;
+            children = (
+            );
+            name = Frameworks;
+            sourceTree = "<group>";
+        };
+        966AD6A421071AAB002AD49E /* Recovered References */ = {
+            isa = PBXGroup;
+            children = (
+                96229C0B2107176000365EE1 /* Saloon.m */,
+                96229C05210716EA00365EE1 /* Room.m */,
+                96229C0E210717C500365EE1 /* Kitchen.m */,
+                96229C142107186800365EE1 /* Inventory.m */,
+                96229C082107170B00365EE1 /* Creature.m */,
+                96229C112107181E00365EE1 /* Store.m */,
+            );
+            name = "Recovered References";
+            sourceTree = "<group>";
+        };
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		963A19E12105C31D00C8C428 /* CodeCamp */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 963A1A152105C31E00C8C428 /* Build configuration list for PBXNativeTarget "CodeCamp" */;
-			buildPhases = (
-				963A19DE2105C31D00C8C428 /* Sources */,
-				963A19DF2105C31D00C8C428 /* Frameworks */,
-				963A19E02105C31D00C8C428 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = CodeCamp;
-			productName = CodeCamp;
-			productReference = 963A19E22105C31D00C8C428 /* CodeCamp.app */;
-			productType = "com.apple.product-type.application";
-		};
-		963A1A002105C31E00C8C428 /* CodeCampTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 963A1A182105C31E00C8C428 /* Build configuration list for PBXNativeTarget "CodeCampTests" */;
-			buildPhases = (
-				963A19FD2105C31E00C8C428 /* Sources */,
-				963A19FE2105C31E00C8C428 /* Frameworks */,
-				963A19FF2105C31E00C8C428 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				963A1A032105C31E00C8C428 /* PBXTargetDependency */,
-			);
-			name = CodeCampTests;
-			productName = CodeCampTests;
-			productReference = 963A1A012105C31E00C8C428 /* CodeCampTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		963A1A0B2105C31E00C8C428 /* CodeCampUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 963A1A1B2105C31E00C8C428 /* Build configuration list for PBXNativeTarget "CodeCampUITests" */;
-			buildPhases = (
-				963A1A082105C31E00C8C428 /* Sources */,
-				963A1A092105C31E00C8C428 /* Frameworks */,
-				963A1A0A2105C31E00C8C428 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				963A1A0E2105C31E00C8C428 /* PBXTargetDependency */,
-			);
-			name = CodeCampUITests;
-			productName = CodeCampUITests;
-			productReference = 963A1A0C2105C31E00C8C428 /* CodeCampUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
+        963A19E12105C31D00C8C428 /* CodeCamp */ = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = 963A1A152105C31E00C8C428 /* Build configuration list for PBXNativeTarget "CodeCamp" */;
+            buildPhases = (
+                963A19DE2105C31D00C8C428 /* Sources */,
+                963A19DF2105C31D00C8C428 /* Frameworks */,
+                963A19E02105C31D00C8C428 /* Resources */,
+            );
+            buildRules = (
+            );
+            dependencies = (
+            );
+            name = CodeCamp;
+            productName = CodeCamp;
+            productReference = 963A19E22105C31D00C8C428 /* CodeCamp.app */;
+            productType = "com.apple.product-type.application";
+        };
+        963A1A002105C31E00C8C428 /* CodeCampTests */ = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = 963A1A182105C31E00C8C428 /* Build configuration list for PBXNativeTarget "CodeCampTests" */;
+            buildPhases = (
+                963A19FD2105C31E00C8C428 /* Sources */,
+                963A19FE2105C31E00C8C428 /* Frameworks */,
+                963A19FF2105C31E00C8C428 /* Resources */,
+            );
+            buildRules = (
+            );
+            dependencies = (
+                963A1A032105C31E00C8C428 /* PBXTargetDependency */,
+            );
+            name = CodeCampTests;
+            productName = CodeCampTests;
+            productReference = 963A1A012105C31E00C8C428 /* CodeCampTests.xctest */;
+            productType = "com.apple.product-type.bundle.unit-test";
+        };
+        963A1A0B2105C31E00C8C428 /* CodeCampUITests */ = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = 963A1A1B2105C31E00C8C428 /* Build configuration list for PBXNativeTarget "CodeCampUITests" */;
+            buildPhases = (
+                963A1A082105C31E00C8C428 /* Sources */,
+                963A1A092105C31E00C8C428 /* Frameworks */,
+                963A1A0A2105C31E00C8C428 /* Resources */,
+            );
+            buildRules = (
+            );
+            dependencies = (
+                963A1A0E2105C31E00C8C428 /* PBXTargetDependency */,
+            );
+            name = CodeCampUITests;
+            productName = CodeCampUITests;
+            productReference = 963A1A0C2105C31E00C8C428 /* CodeCampUITests.xctest */;
+            productType = "com.apple.product-type.bundle.ui-testing";
+        };
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		963A19DA2105C31D00C8C428 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = Codecamp;
-				TargetAttributes = {
-					963A19E12105C31D00C8C428 = {
-						CreatedOnToolsVersion = 9.4.1;
-					};
-					963A1A002105C31E00C8C428 = {
-						CreatedOnToolsVersion = 9.4.1;
-						TestTargetID = 963A19E12105C31D00C8C428;
-					};
-					963A1A0B2105C31E00C8C428 = {
-						CreatedOnToolsVersion = 9.4.1;
-						TestTargetID = 963A19E12105C31D00C8C428;
-					};
-				};
-			};
-			buildConfigurationList = 963A19DD2105C31D00C8C428 /* Build configuration list for PBXProject "CodeCamp" */;
-			compatibilityVersion = "Xcode 9.3";
-			developmentRegion = en;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = 963A19D92105C31D00C8C428;
-			productRefGroup = 963A19E32105C31D00C8C428 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				963A19E12105C31D00C8C428 /* CodeCamp */,
-				963A1A002105C31E00C8C428 /* CodeCampTests */,
-				963A1A0B2105C31E00C8C428 /* CodeCampUITests */,
-			);
-		};
+        963A19DA2105C31D00C8C428 /* Project object */ = {
+            isa = PBXProject;
+            attributes = {
+                LastUpgradeCheck = 0940;
+                ORGANIZATIONNAME = Codecamp;
+                TargetAttributes = {
+                    963A19E12105C31D00C8C428 = {
+                        CreatedOnToolsVersion = 9.4.1;
+                        LastSwiftMigration = 0930;
+                    };
+                    963A1A002105C31E00C8C428 = {
+                        CreatedOnToolsVersion = 9.4.1;
+                        TestTargetID = 963A19E12105C31D00C8C428;
+                    };
+                    963A1A0B2105C31E00C8C428 = {
+                        CreatedOnToolsVersion = 9.4.1;
+                        TestTargetID = 963A19E12105C31D00C8C428;
+                    };
+                };
+            };
+            buildConfigurationList = 963A19DD2105C31D00C8C428 /* Build configuration list for PBXProject "CodeCamp" */;
+            compatibilityVersion = "Xcode 9.3";
+            developmentRegion = en;
+            hasScannedForEncodings = 0;
+            knownRegions = (
+                en,
+                Base,
+            );
+            mainGroup = 963A19D92105C31D00C8C428;
+            productRefGroup = 963A19E32105C31D00C8C428 /* Products */;
+            projectDirPath = "";
+            projectRoot = "";
+            targets = (
+                963A19E12105C31D00C8C428 /* CodeCamp */,
+                963A1A002105C31E00C8C428 /* CodeCampTests */,
+                963A1A0B2105C31E00C8C428 /* CodeCampUITests */,
+            );
+        };
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		963A19E02105C31D00C8C428 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				963A19F42105C31D00C8C428 /* Main.storyboard in Resources */,
-				963A19E92105C31D00C8C428 /* GameScene.sks in Resources */,
-				963A19F62105C31E00C8C428 /* Assets.xcassets in Resources */,
-				963A19F92105C31E00C8C428 /* LaunchScreen.storyboard in Resources */,
-				963A19EB2105C31D00C8C428 /* Actions.sks in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		963A19FF2105C31E00C8C428 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		963A1A0A2105C31E00C8C428 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+        963A19E02105C31D00C8C428 /* Resources */ = {
+            isa = PBXResourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                966AD6C021071DF3002AD49E /* Kitchen.h in Resources */,
+                966AD6BF21071DF0002AD49E /* Saloon.h in Resources */,
+                966AD6BE21071DED002AD49E /* Kitchen.m in Resources */,
+                96B312432107400F0081FCA6 /* GameScene.sks in Resources */,
+                966AD6BD21071DDB002AD49E /* Saloon.m in Resources */,
+                966AD6BC21071DD7002AD49E /* Store.m in Resources */,
+                966AD6BB21071DD2002AD49E /* Room.m in Resources */,
+                963A19F42105C31D00C8C428 /* Main.storyboard in Resources */,
+                963A19F62105C31E00C8C428 /* Assets.xcassets in Resources */,
+                963A19F92105C31E00C8C428 /* LaunchScreen.storyboard in Resources */,
+                96ECBAF12107103600B989DA /* Assets.xcassets in Resources */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        963A19FF2105C31E00C8C428 /* Resources */ = {
+            isa = PBXResourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        963A1A0A2105C31E00C8C428 /* Resources */ = {
+            isa = PBXResourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		963A19DE2105C31D00C8C428 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				963A19EE2105C31D00C8C428 /* GameScene.m in Sources */,
-				963A19F12105C31D00C8C428 /* GameViewController.m in Sources */,
-				963A19FC2105C31E00C8C428 /* main.m in Sources */,
-				962606E82106038B005C7A1C /* PageViewController.m in Sources */,
-				963A19E72105C31D00C8C428 /* AppDelegate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		963A19FD2105C31E00C8C428 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				963A1A062105C31E00C8C428 /* CodeCampTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		963A1A082105C31E00C8C428 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				963A1A112105C31E00C8C428 /* CodeCampUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+        963A19DE2105C31D00C8C428 /* Sources */ = {
+            isa = PBXSourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                966AD6B521071B87002AD49E /* Saloon.m in Sources */,
+                963A19EE2105C31D00C8C428 /* GameScene.m in Sources */,
+                966AD6A921071B77002AD49E /* Creature.m in Sources */,
+                963A1A282106039500C8C428 /* Share.m in Sources */,
+                966AD6AC21071B7C002AD49E /* Inventory.m in Sources */,
+                963A19F12105C31D00C8C428 /* GameViewController.m in Sources */,
+                963A19FC2105C31E00C8C428 /* main.m in Sources */,
+                962606E82106038B005C7A1C /* PageViewController.m in Sources */,
+                96B31241210731E40081FCA6 /* OptionViewController.m in Sources */,
+                963A19E72105C31D00C8C428 /* AppDelegate.m in Sources */,
+                966AD6B721071B98002AD49E /* Store.m in Sources */,
+                966AD6B221071B84002AD49E /* Room.m in Sources */,
+                966AD6AF21071B80002AD49E /* Kitchen.m in Sources */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        963A19FD2105C31E00C8C428 /* Sources */ = {
+            isa = PBXSourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                963A1A062105C31E00C8C428 /* CodeCampTests.m in Sources */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        963A1A082105C31E00C8C428 /* Sources */ = {
+            isa = PBXSourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                963A1A112105C31E00C8C428 /* CodeCampUITests.m in Sources */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		963A1A032105C31E00C8C428 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 963A19E12105C31D00C8C428 /* CodeCamp */;
-			targetProxy = 963A1A022105C31E00C8C428 /* PBXContainerItemProxy */;
-		};
-		963A1A0E2105C31E00C8C428 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 963A19E12105C31D00C8C428 /* CodeCamp */;
-			targetProxy = 963A1A0D2105C31E00C8C428 /* PBXContainerItemProxy */;
-		};
+        963A1A032105C31E00C8C428 /* PBXTargetDependency */ = {
+            isa = PBXTargetDependency;
+            target = 963A19E12105C31D00C8C428 /* CodeCamp */;
+            targetProxy = 963A1A022105C31E00C8C428 /* PBXContainerItemProxy */;
+        };
+        963A1A0E2105C31E00C8C428 /* PBXTargetDependency */ = {
+            isa = PBXTargetDependency;
+            target = 963A19E12105C31D00C8C428 /* CodeCamp */;
+            targetProxy = 963A1A0D2105C31E00C8C428 /* PBXContainerItemProxy */;
+        };
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		963A19F22105C31D00C8C428 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				963A19F32105C31D00C8C428 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		963A19F72105C31E00C8C428 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				963A19F82105C31E00C8C428 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
+        963A19F22105C31D00C8C428 /* Main.storyboard */ = {
+            isa = PBXVariantGroup;
+            children = (
+                963A19F32105C31D00C8C428 /* Base */,
+                963A1A1F2105C8D800C8C428 /* en */,
+            );
+            name = Main.storyboard;
+            sourceTree = "<group>";
+        };
+        963A19F72105C31E00C8C428 /* LaunchScreen.storyboard */ = {
+            isa = PBXVariantGroup;
+            children = (
+                963A19F82105C31E00C8C428 /* Base */,
+            );
+            name = LaunchScreen.storyboard;
+            sourceTree = "<group>";
+        };
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		963A1A132105C31E00C8C428 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-			};
-			name = Debug;
-		};
-		963A1A142105C31E00C8C428 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		963A1A162105C31E00C8C428 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R8D6BLX4HD;
-				INFOPLIST_FILE = CodeCamp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "de.uni-kassel.eecs.comtec.CodeCamp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		963A1A172105C31E00C8C428 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R8D6BLX4HD;
-				INFOPLIST_FILE = CodeCamp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "de.uni-kassel.eecs.comtec.CodeCamp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		963A1A192105C31E00C8C428 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R8D6BLX4HD;
-				INFOPLIST_FILE = CodeCampTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "de.uni-kassel.eecs.comtec.CodeCampTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeCamp.app/CodeCamp";
-			};
-			name = Debug;
-		};
-		963A1A1A2105C31E00C8C428 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R8D6BLX4HD;
-				INFOPLIST_FILE = CodeCampTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "de.uni-kassel.eecs.comtec.CodeCampTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeCamp.app/CodeCamp";
-			};
-			name = Release;
-		};
-		963A1A1C2105C31E00C8C428 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R8D6BLX4HD;
-				INFOPLIST_FILE = CodeCampUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "de.uni-kassel.eecs.comtec.CodeCampUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CodeCamp;
-			};
-			name = Debug;
-		};
-		963A1A1D2105C31E00C8C428 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R8D6BLX4HD;
-				INFOPLIST_FILE = CodeCampUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "de.uni-kassel.eecs.comtec.CodeCampUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CodeCamp;
-			};
-			name = Release;
-		};
+        963A1A132105C31E00C8C428 /* Debug */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ALWAYS_SEARCH_USER_PATHS = NO;
+                CLANG_ANALYZER_NONNULL = YES;
+                CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+                CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+                CLANG_CXX_LIBRARY = "libc++";
+                CLANG_ENABLE_MODULES = YES;
+                CLANG_ENABLE_OBJC_ARC = YES;
+                CLANG_ENABLE_OBJC_WEAK = YES;
+                CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+                CLANG_WARN_BOOL_CONVERSION = YES;
+                CLANG_WARN_COMMA = YES;
+                CLANG_WARN_CONSTANT_CONVERSION = YES;
+                CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+                CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+                CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+                CLANG_WARN_EMPTY_BODY = YES;
+                CLANG_WARN_ENUM_CONVERSION = YES;
+                CLANG_WARN_INFINITE_RECURSION = YES;
+                CLANG_WARN_INT_CONVERSION = YES;
+                CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+                CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+                CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+                CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+                CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+                CLANG_WARN_STRICT_PROTOTYPES = YES;
+                CLANG_WARN_SUSPICIOUS_MOVE = YES;
+                CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+                CLANG_WARN_UNREACHABLE_CODE = YES;
+                CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+                CODE_SIGN_IDENTITY = "iPhone Developer";
+                COPY_PHASE_STRIP = NO;
+                DEBUG_INFORMATION_FORMAT = dwarf;
+                ENABLE_STRICT_OBJC_MSGSEND = YES;
+                ENABLE_TESTABILITY = YES;
+                GCC_C_LANGUAGE_STANDARD = gnu11;
+                GCC_DYNAMIC_NO_PIC = NO;
+                GCC_NO_COMMON_BLOCKS = YES;
+                GCC_OPTIMIZATION_LEVEL = 0;
+                GCC_PREPROCESSOR_DEFINITIONS = (
+                    "DEBUG=1",
+                    "$(inherited)",
+                );
+                GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+                GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+                GCC_WARN_UNDECLARED_SELECTOR = YES;
+                GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+                GCC_WARN_UNUSED_FUNCTION = YES;
+                GCC_WARN_UNUSED_VARIABLE = YES;
+                IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+                MTL_ENABLE_DEBUG_INFO = YES;
+                ONLY_ACTIVE_ARCH = YES;
+                SDKROOT = iphoneos;
+            };
+            name = Debug;
+        };
+        963A1A142105C31E00C8C428 /* Release */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ALWAYS_SEARCH_USER_PATHS = NO;
+                CLANG_ANALYZER_NONNULL = YES;
+                CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+                CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+                CLANG_CXX_LIBRARY = "libc++";
+                CLANG_ENABLE_MODULES = YES;
+                CLANG_ENABLE_OBJC_ARC = YES;
+                CLANG_ENABLE_OBJC_WEAK = YES;
+                CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+                CLANG_WARN_BOOL_CONVERSION = YES;
+                CLANG_WARN_COMMA = YES;
+                CLANG_WARN_CONSTANT_CONVERSION = YES;
+                CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+                CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+                CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+                CLANG_WARN_EMPTY_BODY = YES;
+                CLANG_WARN_ENUM_CONVERSION = YES;
+                CLANG_WARN_INFINITE_RECURSION = YES;
+                CLANG_WARN_INT_CONVERSION = YES;
+                CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+                CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+                CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+                CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+                CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+                CLANG_WARN_STRICT_PROTOTYPES = YES;
+                CLANG_WARN_SUSPICIOUS_MOVE = YES;
+                CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+                CLANG_WARN_UNREACHABLE_CODE = YES;
+                CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+                CODE_SIGN_IDENTITY = "iPhone Developer";
+                COPY_PHASE_STRIP = NO;
+                DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+                ENABLE_NS_ASSERTIONS = NO;
+                ENABLE_STRICT_OBJC_MSGSEND = YES;
+                GCC_C_LANGUAGE_STANDARD = gnu11;
+                GCC_NO_COMMON_BLOCKS = YES;
+                GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+                GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+                GCC_WARN_UNDECLARED_SELECTOR = YES;
+                GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+                GCC_WARN_UNUSED_FUNCTION = YES;
+                GCC_WARN_UNUSED_VARIABLE = YES;
+                IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+                MTL_ENABLE_DEBUG_INFO = NO;
+                SDKROOT = iphoneos;
+                VALIDATE_PRODUCT = YES;
+            };
+            name = Release;
+        };
+        963A1A162105C31E00C8C428 /* Debug */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+                CLANG_ENABLE_MODULES = YES;
+                CODE_SIGN_STYLE = Automatic;
+                DEVELOPMENT_TEAM = R8D6BLX4HD;
+                GCC_NO_COMMON_BLOCKS = YES;
+                INFOPLIST_FILE = CodeCamp/Info.plist;
+                IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+                LD_RUNPATH_SEARCH_PATHS = (
+                    "$(inherited)",
+                    "@executable_path/Frameworks",
+                );
+                PRODUCT_BUNDLE_IDENTIFIER = "de.uni-kassel.eecs.comtec.CodeCamp";
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                SWIFT_OBJC_BRIDGING_HEADER = "CodeCamp-Bridging-Header.h";
+                SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+                SWIFT_VERSION = 3.0;
+                TARGETED_DEVICE_FAMILY = "1,2";
+            };
+            name = Debug;
+        };
+        963A1A172105C31E00C8C428 /* Release */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+                CLANG_ENABLE_MODULES = YES;
+                CODE_SIGN_STYLE = Automatic;
+                DEVELOPMENT_TEAM = R8D6BLX4HD;
+                GCC_NO_COMMON_BLOCKS = YES;
+                INFOPLIST_FILE = CodeCamp/Info.plist;
+                IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+                LD_RUNPATH_SEARCH_PATHS = (
+                    "$(inherited)",
+                    "@executable_path/Frameworks",
+                );
+                PRODUCT_BUNDLE_IDENTIFIER = "de.uni-kassel.eecs.comtec.CodeCamp";
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                SWIFT_OBJC_BRIDGING_HEADER = "CodeCamp-Bridging-Header.h";
+                SWIFT_VERSION = 3.0;
+                TARGETED_DEVICE_FAMILY = "1,2";
+            };
+            name = Release;
+        };
+        963A1A192105C31E00C8C428 /* Debug */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                BUNDLE_LOADER = "$(TEST_HOST)";
+                CODE_SIGN_STYLE = Automatic;
+                DEVELOPMENT_TEAM = R8D6BLX4HD;
+                INFOPLIST_FILE = CodeCampTests/Info.plist;
+                IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+                LD_RUNPATH_SEARCH_PATHS = (
+                    "$(inherited)",
+                    "@executable_path/Frameworks",
+                    "@loader_path/Frameworks",
+                );
+                PRODUCT_BUNDLE_IDENTIFIER = "de.uni-kassel.eecs.comtec.CodeCampTests";
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                TARGETED_DEVICE_FAMILY = "1,2";
+                TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeCamp.app/CodeCamp";
+            };
+            name = Debug;
+        };
+        963A1A1A2105C31E00C8C428 /* Release */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                BUNDLE_LOADER = "$(TEST_HOST)";
+                CODE_SIGN_STYLE = Automatic;
+                DEVELOPMENT_TEAM = R8D6BLX4HD;
+                INFOPLIST_FILE = CodeCampTests/Info.plist;
+                IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+                LD_RUNPATH_SEARCH_PATHS = (
+                    "$(inherited)",
+                    "@executable_path/Frameworks",
+                    "@loader_path/Frameworks",
+                );
+                PRODUCT_BUNDLE_IDENTIFIER = "de.uni-kassel.eecs.comtec.CodeCampTests";
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                TARGETED_DEVICE_FAMILY = "1,2";
+                TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeCamp.app/CodeCamp";
+            };
+            name = Release;
+        };
+        963A1A1C2105C31E00C8C428 /* Debug */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                CODE_SIGN_STYLE = Automatic;
+                DEVELOPMENT_TEAM = R8D6BLX4HD;
+                INFOPLIST_FILE = CodeCampUITests/Info.plist;
+                IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+                LD_RUNPATH_SEARCH_PATHS = (
+                    "$(inherited)",
+                    "@executable_path/Frameworks",
+                    "@loader_path/Frameworks",
+                );
+                PRODUCT_BUNDLE_IDENTIFIER = "de.uni-kassel.eecs.comtec.CodeCampUITests";
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                TARGETED_DEVICE_FAMILY = "1,2";
+                TEST_TARGET_NAME = CodeCamp;
+            };
+            name = Debug;
+        };
+        963A1A1D2105C31E00C8C428 /* Release */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                CODE_SIGN_STYLE = Automatic;
+                DEVELOPMENT_TEAM = R8D6BLX4HD;
+                INFOPLIST_FILE = CodeCampUITests/Info.plist;
+                IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+                LD_RUNPATH_SEARCH_PATHS = (
+                    "$(inherited)",
+                    "@executable_path/Frameworks",
+                    "@loader_path/Frameworks",
+                );
+                PRODUCT_BUNDLE_IDENTIFIER = "de.uni-kassel.eecs.comtec.CodeCampUITests";
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                TARGETED_DEVICE_FAMILY = "1,2";
+                TEST_TARGET_NAME = CodeCamp;
+            };
+            name = Release;
+        };
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		963A19DD2105C31D00C8C428 /* Build configuration list for PBXProject "CodeCamp" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				963A1A132105C31E00C8C428 /* Debug */,
-				963A1A142105C31E00C8C428 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		963A1A152105C31E00C8C428 /* Build configuration list for PBXNativeTarget "CodeCamp" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				963A1A162105C31E00C8C428 /* Debug */,
-				963A1A172105C31E00C8C428 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		963A1A182105C31E00C8C428 /* Build configuration list for PBXNativeTarget "CodeCampTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				963A1A192105C31E00C8C428 /* Debug */,
-				963A1A1A2105C31E00C8C428 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		963A1A1B2105C31E00C8C428 /* Build configuration list for PBXNativeTarget "CodeCampUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				963A1A1C2105C31E00C8C428 /* Debug */,
-				963A1A1D2105C31E00C8C428 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
+        963A19DD2105C31D00C8C428 /* Build configuration list for PBXProject "CodeCamp" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                963A1A132105C31E00C8C428 /* Debug */,
+                963A1A142105C31E00C8C428 /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
+        963A1A152105C31E00C8C428 /* Build configuration list for PBXNativeTarget "CodeCamp" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                963A1A162105C31E00C8C428 /* Debug */,
+                963A1A172105C31E00C8C428 /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
+        963A1A182105C31E00C8C428 /* Build configuration list for PBXNativeTarget "CodeCampTests" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                963A1A192105C31E00C8C428 /* Debug */,
+                963A1A1A2105C31E00C8C428 /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
+        963A1A1B2105C31E00C8C428 /* Build configuration list for PBXNativeTarget "CodeCampUITests" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                963A1A1C2105C31E00C8C428 /* Debug */,
+                963A1A1D2105C31E00C8C428 /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
 /* End XCConfigurationList section */
-	};
-	rootObject = 963A19DA2105C31D00C8C428 /* Project object */;
+    };
+    rootObject = 963A19DA2105C31D00C8C428 /* Project object */;
 }

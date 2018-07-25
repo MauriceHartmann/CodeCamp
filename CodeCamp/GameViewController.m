@@ -8,12 +8,21 @@
 
 #import "GameViewController.h"
 #import "GameScene.h"
+#import "AppDelegate.h"
+
+//NotificationHandler* notifications;
 
 @implementation GameViewController
+/*
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    notifications = [[NotificationHandler alloc]init];
+    
+    [notifications initNotification];
+    
     // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
     // including entities and graphs.
     GKScene *scene = [GKScene sceneWithFileNamed:@"GameScene"];
@@ -35,6 +44,20 @@
     
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
+    */
+    /*
+     Showing time on screen
+     */
+/*
+    _timeLabel.hidden = YES;
+    _timeLabel.text = [[NSDate date] description];
+    [NSTimer scheduledTimerWithTimeInterval:1
+                                     target:self
+                                   selector:@selector(showTime)
+                                   userInfo:nil
+                                    repeats:YES];
+    
+    
 }
 
 - (BOOL)shouldAutorotate {
@@ -58,4 +81,35 @@
     return YES;
 }
 
+- (IBAction)showNotification:(id)sender {
+    [notifications sendNotification:@"XYZ hat Hunger" forSubtitle:@"" forBody:@"XYZ hat eine Weile nichts gegessen. Schaue doch mal nach ihm" forIntervall:5];
+    
+}
+
+- (IBAction)deleteBtn:(UIButton *)sender {
+}
+
+//get current time as NSString
+-(NSString *) getCurrentTime {
+    NSDate *currentTime = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//    [dateFormatter setDateFormat:@"hh:mm"];
+    NSString *resultString = [dateFormatter stringFromDate: currentTime];
+    
+    return resultString;
+}
+
+
+-(void)showTime{
+    NSDate *currentTime = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"hh:mm"];
+    NSString *resultString = [dateFormatter stringFromDate: currentTime];
+    _timeLabel.hidden = NO;
+    _timeLabel.text=resultString;
+}
+
+
+- (IBAction)deleteFileBtn:(id)sender {
+}*/
 @end
