@@ -16,6 +16,4 @@
 
 @property (nonatomic, strong) UITapGestureRecognizer *tapGR;
 
-+ (void) callOutARoom: (NSUInteger) tabId;
-
 @end

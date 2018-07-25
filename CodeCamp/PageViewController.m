@@ -129,13 +129,7 @@ CGFloat width;
             break;
     }
 }
-
-+ (void) callOutARoom:(NSUInteger)tabId
-{
-   
-    
-}
-             
+       
 
 /*
 #pragma mark - Navigation
