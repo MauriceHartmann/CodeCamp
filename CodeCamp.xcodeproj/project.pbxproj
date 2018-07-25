@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9604B62621089F9D0087278B /* GameOverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9604B62521089F9D0087278B /* GameOverController.m */; };
 		962606E82106038B005C7A1C /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962606E72106038B005C7A1C /* PageViewController.m */; };
 		963A19E72105C31D00C8C428 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A19E62105C31D00C8C428 /* AppDelegate.m */; };
 		963A19EE2105C31D00C8C428 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A19ED2105C31D00C8C428 /* GameScene.m */; };
@@ -19,6 +18,7 @@
 		963A1A062105C31E00C8C428 /* CodeCampTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A1A052105C31E00C8C428 /* CodeCampTests.m */; };
 		963A1A112105C31E00C8C428 /* CodeCampUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A1A102105C31E00C8C428 /* CodeCampUITests.m */; };
 		963A1A282106039500C8C428 /* Share.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A1A272106039500C8C428 /* Share.m */; };
+		963C5E7C2108BD7600CD30DE /* GameOverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9604B62521089F9D0087278B /* GameOverController.m */; };
 		9663EA372105DE6E00F64A36 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		966AD6A921071B77002AD49E /* Creature.m in Sources */ = {isa = PBXBuildFile; fileRef = 966AD6A821071B76002AD49E /* Creature.m */; };
 		966AD6AC21071B7C002AD49E /* Inventory.m in Sources */ = {isa = PBXBuildFile; fileRef = 966AD6AB21071B7C002AD49E /* Inventory.m */; };
@@ -376,7 +376,7 @@
 				966AD6AC21071B7C002AD49E /* Inventory.m in Sources */,
 				963A19F12105C31D00C8C428 /* GameViewController.m in Sources */,
 				963A19FC2105C31E00C8C428 /* main.m in Sources */,
-				9604B62621089F9D0087278B /* GameOverController.m in Sources */,
+				963C5E7C2108BD7600CD30DE /* GameOverController.m in Sources */,
 				962606E82106038B005C7A1C /* PageViewController.m in Sources */,
 				96B31241210731E40081FCA6 /* OptionViewController.m in Sources */,
 				963A19E72105C31D00C8C428 /* AppDelegate.m in Sources */,

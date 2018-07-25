@@ -90,14 +90,16 @@ NSTimer *t;
         
     }
     
+    if([myShareCreature getIntFromKey:THIRST] <  1){
+        [myShareCreature changeValueOfKey:@"life" :@0];
+        
+    }
+    
     //checks hunger
     if([myShareCreature getIntFromKey:HUNGER] <  HUNGER_LIMIT)
     {
         NSLog(@"hungry");
-        
-        //sets hunger back on 80+ for test reasons
-        int value = 100 - [myShareCreature getIntFromKey:HUNGER];
-        [myShareCreature updateKeyBy:HUNGER :value ];
+    
     }
     
     //checks thirst
@@ -105,9 +107,6 @@ NSTimer *t;
     {
         NSLog(@"thirsty");
         
-        //sets hunger back on 80+ for test reasons
-        int value = 100 - [myShareCreature getIntFromKey:THIRST];
-        [myShareCreature updateKeyBy:THIRST :value ];
     }
     
 }
