@@ -9,11 +9,14 @@
 #import "Saloon.h"
 #import "Share.h"
 #import "Creature.h"
+#import "PageViewController.h"
 
 @implementation Saloon
 
 +(void) doAction: (Share*) myShares
 {
+    
+    
     NSLog(@"In Saloon");
     
     //drinks reduces 2
@@ -41,4 +44,6 @@
     
     
 }
+
+
 @end

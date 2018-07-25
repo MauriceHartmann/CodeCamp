@@ -7,6 +7,7 @@
 //
 
 #import "Store.h"
+#import "PageViewController.h"
 
 @implementation Store
 

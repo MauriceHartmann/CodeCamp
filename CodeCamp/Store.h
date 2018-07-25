@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Room.h"
+#import "PageViewController.h"
 
 @interface Store : Room
 +(void) doAction: (Share*) myShares;

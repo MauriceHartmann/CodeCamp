@@ -36,14 +36,17 @@ CGFloat width;
     self.rightSwipe.direction = UISwipeGestureRecognizerDirectionRight;
     [self.view addGestureRecognizer:self.rightSwipe];
     
+    self.tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    [self.view addGestureRecognizer:self.tapGR];
+    
     //creature Setup
     width = [UIScreen mainScreen].bounds.size.width;
     height = [UIScreen mainScreen].bounds.size.height;
-    petView= [[UIImageView alloc] init];
-    UIImage *myimg = [UIImage imageNamed:@"blob"];
-    petView.image=myimg;
-    petView.frame = CGRectMake(width/2, height/2, 150, 150);
-    [self.view addSubview:petView];
+//    petView= [[UIImageView alloc] init];
+//    UIImage *myimg = [UIImage imageNamed:@"blob"];
+//    petView.image=myimg;
+//    petView.frame = CGRectMake(width/2, height/2, 150, 150);
+//    [self.view addSubview:petView];
     
     
     mySharesView = Share.sharedSingleton;
@@ -107,12 +110,13 @@ CGFloat width;
         }
     }
     
-    [PageViewController callOutARoom:self.tabBarController.selectedIndex :mySharesView];
+
 }
 
-+ (void) callOutARoom:(NSUInteger)tabId :(Share*) mySharesView
+- (void) handleTap: (UITapGestureRecognizer*) recognize
 {
-    switch (tabId) {
+    
+    switch (self.tabBarController.selectedIndex) {
         case 0:
             [Kitchen doAction: mySharesView];
             break;
@@ -125,6 +129,14 @@ CGFloat width;
             break;
     }
 }
+
++ (void) callOutARoom:(NSUInteger)tabId
+{
+   
+    
+}
+             
+
 /*
 #pragma mark - Navigation
 
