@@ -10,4 +10,7 @@
 
 @interface PageViewController : UIViewController
 
+@property (nonatomic, strong) UISwipeGestureRecognizer *leftSwipe;
+@property (nonatomic, strong) UISwipeGestureRecognizer *rightSwipe;
+
 @end

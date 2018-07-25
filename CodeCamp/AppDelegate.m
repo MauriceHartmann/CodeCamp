@@ -19,7 +19,6 @@ NSString *path;
 NSFileManager *myManager;
 Share* myShare;
 Creature* pet;
-int counter = 4; // remove later
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     myShare = Share.sharedSingleton;
