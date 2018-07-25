@@ -10,6 +10,7 @@
 #import "OptionViewController.h"
 #import "AppDelegate.h"
 #import "Share.h"
+#import "Creature.h"
 @interface OptionViewController ()
 
 @end
@@ -21,6 +22,11 @@ Share* myShares;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     myShares = Share.sharedSingleton;
+}
+
+- (IBAction)delayedNot:(UIButton *)sender {
+    [Creature sendNotification:@"Debug" forSubtitle:@"delayed" forBody:@"Called by Debug Menu" forIntervall:20];
+    
 }
 
 - (IBAction)deleteFile:(UIButton *)sender {

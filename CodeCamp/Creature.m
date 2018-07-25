@@ -145,7 +145,7 @@ bool isGrantedNotificationAccess;
 //body:      smaller Text part for informations
 //intervall: amount of seconds until the notifications pops up
 
-- (void) sendNotification:(NSString*) title forSubtitle:(NSString*) subtitle forBody:(NSString*) body forIntervall: (NSInteger) intervall
++ (void) sendNotification:(NSString*) title forSubtitle:(NSString*) subtitle forBody:(NSString*) body forIntervall: (NSInteger) intervall
 {
     if(isGrantedNotificationAccess)
     {
@@ -177,7 +177,7 @@ bool isGrantedNotificationAccess;
         needValue = 1;
     }
     double hoursLeftTillNeed = ((needValue / ((random_factor + 1)/2)))*time_tick_factor;
-    [self sendNotification:@"CodeCamp" forSubtitle:@"Hunger" forBody:@"Hab Hunger!" forIntervall:hoursLeftTillNeed];
+    [Creature sendNotification:@"CodeCamp" forSubtitle:@"Hunger" forBody:@"Hab Hunger!" forIntervall:hoursLeftTillNeed];
     NSLog(@"Current Hunger: %d Pet will be hungry in %f minutes",[myShareCreature getIntFromKey:HUNGER],(hoursLeftTillNeed/60) );
     
     
@@ -187,7 +187,7 @@ bool isGrantedNotificationAccess;
         needValue = 1;
     }
     hoursLeftTillNeed = (needValue / ((random_factor + 1)/2))*time_tick_factor;
-    [self sendNotification:@"CodeCamp" forSubtitle:@"Durscht" forBody:@"ICH HAB BRAND!" forIntervall:hoursLeftTillNeed];
+    [Creature sendNotification:@"CodeCamp" forSubtitle:@"Durscht" forBody:@"ICH HAB BRAND!" forIntervall:hoursLeftTillNeed];
     NSLog(@"Current thirst: %d Pet will be thirsty in %f minutes",[myShareCreature getIntFromKey:THIRST],(hoursLeftTillNeed/60) );
     
 }
