@@ -14,6 +14,5 @@
 @property (nonatomic, strong) UISwipeGestureRecognizer *leftSwipe;
 @property (nonatomic, strong) UISwipeGestureRecognizer *rightSwipe;
 
-+ (void) callOutARoom: (NSUInteger) tabId :(Share*) myShares;
-
+- (void) callOutARoom: (NSUInteger) tabId :(Share*) myShares;
 @end

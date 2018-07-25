@@ -21,7 +21,7 @@ const int MAX_VALUE_LIMIT = 100;
 //time_tick_factor is the time the pet loses supply in seconds (900s = 15 min)
 
 int random_factor = 1;
-double time_tick_factor = 20.0;
+double time_tick_factor = 900.0;
 
 //Name of the keys in the dictionary
 NSString* HUNGER =  @"hunger";
@@ -79,10 +79,6 @@ NSTimer *t;
      [self checkNeeds];
      NSLog(@"thirst: %d" ,[myShareCreature getIntFromKey:THIRST]);
      */
-    
-    
-    
-    //check Needs in View
     
 }
 
@@ -159,7 +155,7 @@ bool isGrantedNotificationAccess;
         UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
         
         content.title = title;
-        content.subtitle = subtitle;
+        content.subtitle = @"";
         content.body = body;
         content.sound = [UNNotificationSound defaultSound];
         

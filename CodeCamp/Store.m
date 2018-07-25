@@ -7,14 +7,29 @@
 //
 
 #import "Store.h"
+#import "PageViewController.h"
+
+UITableView *table;
+int tableWidth;
+int tableHeight;
+int tablePosX;
+int tablePosY;
 
 @implementation Store
 
-+(void) doAction : (Share *) myShares
++(void) doAction : (Share *) myShares : (PageViewController *) pageView
 {
-    NSLog(@"In Store");
-    //add Stuff to Inventory
-    //lose money ?!?
+    
+    table = [[UITableView alloc] init];
+    tableWidth = [UIScreen mainScreen].bounds.size.width *0.9;
+    tableHeight = [UIScreen mainScreen].bounds.size.height*0.8;
+    tablePosX = ([UIScreen mainScreen].bounds.size.width - tableWidth) / 2;
+    tablePosY = ([UIScreen mainScreen].bounds.size.height - tableHeight) / 2;
+    table.frame = CGRectMake(tablePosX, tablePosY, tableWidth, tableHeight);
+    [pageView.view addSubview:table];
+    
 }
+
+
 
 @end
