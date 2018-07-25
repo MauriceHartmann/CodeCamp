@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9604B62621089F9D0087278B /* GameOverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9604B62521089F9D0087278B /* GameOverController.m */; };
 		962606E82106038B005C7A1C /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962606E72106038B005C7A1C /* PageViewController.m */; };
 		963A19E72105C31D00C8C428 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A19E62105C31D00C8C428 /* AppDelegate.m */; };
 		963A19EE2105C31D00C8C428 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A19ED2105C31D00C8C428 /* GameScene.m */; };
@@ -55,8 +54,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9604B62521089F9D0087278B /* GameOverController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameOverController.m; sourceTree = "<group>"; };
-		9604B62721089FB10087278B /* GameOverController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameOverController.h; sourceTree = "<group>"; };
 		96229C05210716EA00365EE1 /* Room.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
 		96229C082107170B00365EE1 /* Creature.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Creature.m; sourceTree = "<group>"; };
 		96229C0B2107176000365EE1 /* Saloon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Saloon.m; sourceTree = "<group>"; };
@@ -186,8 +183,6 @@
 				962606E72106038B005C7A1C /* PageViewController.m */,
 				96B3123F210731C20081FCA6 /* OptionViewController.h */,
 				96B31240210731E40081FCA6 /* OptionViewController.m */,
-				9604B62521089F9D0087278B /* GameOverController.m */,
-				9604B62721089FB10087278B /* GameOverController.h */,
 			);
 			path = CodeCamp;
 			sourceTree = "<group>";
@@ -376,7 +371,6 @@
 				966AD6AC21071B7C002AD49E /* Inventory.m in Sources */,
 				963A19F12105C31D00C8C428 /* GameViewController.m in Sources */,
 				963A19FC2105C31E00C8C428 /* main.m in Sources */,
-				9604B62621089F9D0087278B /* GameOverController.m in Sources */,
 				962606E82106038B005C7A1C /* PageViewController.m in Sources */,
 				96B31241210731E40081FCA6 /* OptionViewController.m in Sources */,
 				963A19E72105C31D00C8C428 /* AppDelegate.m in Sources */,

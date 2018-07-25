@@ -8,6 +8,7 @@
 
 #import "Creature.h"
 #import "Share.h"
+#import <SpriteKit/SpriteKit.h>
 
 //If values fall below the specified Limits the pet is considered hungry, thirsty etc.
 const int THIRST_LIMIT = 20;
