@@ -13,4 +13,5 @@
 
 @interface Store : Room
 +(void) doAction: (Share*) myShares : (PageViewController*)pageView;
+
 @end
