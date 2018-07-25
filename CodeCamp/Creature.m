@@ -79,6 +79,11 @@ NSTimer *t;
      [self checkNeeds];
      NSLog(@"thirst: %d" ,[myShareCreature getIntFromKey:THIRST]);
      */
+    
+    
+    
+    //check Needs in View
+    
 }
 
 //checks if the pet is hungry,thirsty etc.
