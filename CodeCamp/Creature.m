@@ -110,21 +110,6 @@ NSTimer *t;
         [myShareCreature updateKeyBy:THIRST :value ];
     }
     
-    if([myShareCreature getIntFromKey:@"life"] == 0){
-        UIViewController *myView = [[UIViewController alloc] init];
-        UIViewController *myView2 = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"GOScreen"];
-        [myView presentViewController:myView2 animated:NO completion:nil];
-        
-        NSLog(@"Dead");
-        NSString * storyboardName = @"Main";
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
-        UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"GOScreen"];
-        [UIViewController presentViewController:vc animated:YES completion:nil];
-        //        [UIViewController presentViewController:viewController animated:NO completion:nil];
-        return;
-        
-    }
-    
 }
 
 

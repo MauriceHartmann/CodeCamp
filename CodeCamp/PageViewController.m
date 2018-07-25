@@ -121,6 +121,17 @@ NSTimer *needViewTimer;
     {
         [thirstView removeFromSuperview];
     }
+    
+    if([mySharesView getIntFromKey:@"life"] == 0){
+        NSLog(@"Dead");
+        NSString * storyboardName = @"Main";
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+        UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"GOScreen"];
+        [self presentViewController:vc animated:YES completion:nil];
+        //[UIViewController presentViewController:viewController animated:NO completion:nil];
+        return;
+        
+    }
 }
 
 - (void)handleSwipe:(UISwipeGestureRecognizer *)sender {
