@@ -82,6 +82,7 @@ int counter = 4; // remove later
     path = [documentsDirectory stringByAppendingPathComponent:@"values.txt"]; 
     [myManager removeItemAtPath: path error: nil];
     NSLog(@"delete");
+    [AppDelegate setupFile];
 }
 
 +(void) setupFile{
