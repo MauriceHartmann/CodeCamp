@@ -72,6 +72,13 @@ static Share *sharedSingleton = nil;
     
 }
 
+-(NSObject*) getObjectFromKey:(NSString*)key{
+    @synchronized(passedMutableDict){
+        return [passedMutableDict objectForKey:key];
+    }
+    
+}
+
 -(void) dictToTxt:(NSString*) path{
     [passedMutableDict writeToFile:path atomically:YES];
 }

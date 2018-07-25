@@ -19,7 +19,6 @@ NSString *path;
 NSFileManager *myManager;
 Share* myShare;
 Creature* pet;
-int counter = 4; // remove later
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     myShare = Share.sharedSingleton;
@@ -54,6 +53,7 @@ int counter = 4; // remove later
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     [myShare updateKeyBy:@"hunger" :-2];
     [myShare dictToTxt:path]; // Write everything to file to save status
+    [myShare createKeyWith:@"time" :[NSDate date]];
     NSLog(@"written");
     for (NSString *key in [myShare getAllKeys])
         NSLog(@"%@", key) ;
@@ -62,7 +62,7 @@ int counter = 4; // remove later
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    [Creature updateAfterReturn];
 }
 
 
@@ -82,6 +82,7 @@ int counter = 4; // remove later
     path = [documentsDirectory stringByAppendingPathComponent:@"values.txt"]; 
     [myManager removeItemAtPath: path error: nil];
     NSLog(@"delete");
+    [AppDelegate setupFile];
 }
 
 +(void) setupFile{
@@ -110,6 +111,7 @@ int counter = 4; // remove later
     [myShare changeValueOfKey:@"thirst" :@100];
     [myShare changeValueOfKey:@"fodder" :@10];
     [myShare changeValueOfKey:@"drinks" :@10];
+    [myShare createKeyWith:@"time" :[NSDate date]];
     for (NSString *key in [myShare getAllKeys])
         NSLog(@"%@",key) ;
 }

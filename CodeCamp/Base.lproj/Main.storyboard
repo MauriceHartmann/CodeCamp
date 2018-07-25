@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SGV-OX-3JS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SGV-OX-3JS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -34,7 +34,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BGS-Ns-voL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3783.1999999999998" y="753.37331334332839"/>
+            <point key="canvasLocation" x="-3580" y="116"/>
         </scene>
         <!--Home-->
         <scene sceneID="mU0-6a-YS3">
@@ -60,7 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mzI-M8-Krg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3164" y="753"/>
+            <point key="canvasLocation" x="-4310" y="-291"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Apl-br-JzU">
@@ -82,7 +82,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wio-r4-b31" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3783" y="13"/>
+            <point key="canvasLocation" x="-5087" y="116"/>
         </scene>
         <!--Mall-->
         <scene sceneID="sXb-l6-5vC">
@@ -92,26 +92,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="mall" translatesAutoresizingMaskIntoConstraints="NO" id="ZpS-z2-YPP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mall" translatesAutoresizingMaskIntoConstraints="NO" id="8ts-Wk-pWh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="ZpS-z2-YPP" firstAttribute="trailing" secondItem="Pub-0C-NKL" secondAttribute="trailing" id="B1J-dM-lZE"/>
-                            <constraint firstItem="ZpS-z2-YPP" firstAttribute="leading" secondItem="Pub-0C-NKL" secondAttribute="leading" id="H6W-Uf-s9v"/>
-                            <constraint firstItem="ZpS-z2-YPP" firstAttribute="top" secondItem="6ZU-lv-ny7" secondAttribute="top" id="LEP-ie-SkR"/>
-                            <constraint firstAttribute="bottom" secondItem="ZpS-z2-YPP" secondAttribute="bottom" id="hMN-9R-rUw"/>
+                            <constraint firstAttribute="bottom" secondItem="8ts-Wk-pWh" secondAttribute="bottom" id="D7a-EK-qUC"/>
+                            <constraint firstItem="8ts-Wk-pWh" firstAttribute="top" secondItem="6ZU-lv-ny7" secondAttribute="top" id="c6T-o8-I8I"/>
+                            <constraint firstItem="8ts-Wk-pWh" firstAttribute="trailing" secondItem="Pub-0C-NKL" secondAttribute="trailing" id="gAk-7D-di2"/>
+                            <constraint firstItem="8ts-Wk-pWh" firstAttribute="leading" secondItem="Pub-0C-NKL" secondAttribute="leading" id="oTA-hJ-Qg0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pub-0C-NKL"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mall" id="iKx-Vc-0I8"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QAp-yt-rZq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4399" y="752"/>
+            <point key="canvasLocation" x="-4311" y="505"/>
         </scene>
-        <!--options-->
+        <!--Options-->
         <scene sceneID="rhd-Ge-UAD">
             <objects>
                 <viewController storyboardIdentifier="Options" id="WMo-Hv-Emk" customClass="OptionViewController" sceneMemberID="viewController">
@@ -190,36 +189,76 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="triggers hunger" translatesAutoresizingMaskIntoConstraints="NO" id="it4-6H-cDu">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="triggers hunger" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="it4-6H-cDu">
                                 <rect key="frame" x="159" y="83" width="187" height="71"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="resets Values" translatesAutoresizingMaskIntoConstraints="NO" id="nNa-di-5vR">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="resets Values" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNa-di-5vR">
                                 <rect key="frame" x="163" y="227" width="187" height="71"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="triggers thirst" translatesAutoresizingMaskIntoConstraints="NO" id="L62-Gz-OLS">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="triggers thirst" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L62-Gz-OLS">
                                 <rect key="frame" x="159" y="157" width="187" height="71"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="trigger GameOver" translatesAutoresizingMaskIntoConstraints="NO" id="fap-an-mMx">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="trigger GameOver" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fap-an-mMx">
                                 <rect key="frame" x="163" y="284" width="187" height="74"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LdQ-D7-0yT" userLabel="deleteFile">
+                                <rect key="frame" x="30" y="373" width="125" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.97120847170000002" green="0.96747359669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Delayed Notif.">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="1" green="0.1158826245" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="delayedNot:" destination="WMo-Hv-Emk" eventType="touchUpInside" id="aSO-6J-cbP"/>
+                                    <action selector="deleteBtn:" destination="UBG-6o-UdS" eventType="touchUpInside" id="vxd-Da-8XV"/>
+                                    <action selector="deleteFile:" destination="WMo-Hv-Emk" eventType="touchUpInside" id="GWv-eB-Btm"/>
+                                    <action selector="deleteFile:" destination="UBG-6o-UdS" eventType="touchUpInside" id="zdi-gq-Unr"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="send Notification in 20 Seconds after closing" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcB-xt-BmY">
+                                <rect key="frame" x="163" y="366" width="187" height="88"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -231,7 +270,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nuk-CK-SF7"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="options" id="cRa-yy-UVV">
+                    <tabBarItem key="tabBarItem" title="Options" image="options_button" id="cRa-yy-UVV">
                         <inset key="largeContentSizeImageInsets" minX="0.0" minY="-1" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -245,12 +284,13 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2qA-8f-nXE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="UBG-6o-UdS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2906.4000000000001" y="11.244377811094454"/>
+            <point key="canvasLocation" x="-5087" y="936"/>
         </scene>
     </scenes>
     <resources>
         <image name="living_room" width="474" height="643"/>
         <image name="mall" width="474" height="649"/>
+        <image name="options_button" width="35" height="35"/>
         <image name="saloon" width="474" height="649"/>
     </resources>
 </document>

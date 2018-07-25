@@ -30,8 +30,19 @@ NSTimer *needViewTimer;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    // Handle Swipes
+    self.leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    self.leftSwipe.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.view addGestureRecognizer:self.leftSwipe];
+    
     mySharesView = Share.sharedSingleton;
     
+
+    self.rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    self.rightSwipe.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:self.rightSwipe];
+    
+    //creature Setup
     width = [UIScreen mainScreen].bounds.size.width;
     height = [UIScreen mainScreen].bounds.size.height;
     petViewWidth = width * 0.5;
@@ -110,6 +121,58 @@ NSTimer *needViewTimer;
     }
 }
 
+- (void)handleSwipe:(UISwipeGestureRecognizer *)sender {
+    if (sender.direction == UISwipeGestureRecognizerDirectionLeft) {
+            /*
+                0 -> Home
+                1 -> Saloon
+                2 -> Mall
+                3 -> Options
+             */
+        switch (self.tabBarController.selectedIndex) {
+            case 0:
+                self.tabBarController.selectedIndex = 1;
+                break;
+
+            case 1:
+                self.tabBarController.selectedIndex = 2;
+                break;
+
+            case 2:
+                self.tabBarController.selectedIndex = 2;
+                break;
+
+            default:
+                self.tabBarController.selectedIndex = 0;
+                break;
+        }
+    }
+    if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
+            /*
+                0 -> Home
+                1 -> Saloon
+                2 -> Mall
+                3 -> Options
+             */
+        switch (self.tabBarController.selectedIndex) {
+            case 0:
+                self.tabBarController.selectedIndex = 0;
+                break;
+
+            case 1:
+                self.tabBarController.selectedIndex = 0;
+                break;
+
+            case 2:
+                self.tabBarController.selectedIndex = 1;
+                break;
+
+            default:
+                self.tabBarController.selectedIndex = 0;
+                break;
+        }
+    }
+}
 
 
 
