@@ -92,7 +92,18 @@ NSTimer *needViewTimer;
     UIImage *myimg = [UIImage imageNamed:@"blob"];
     petView.image=myimg;
     petView.frame = CGRectMake(width/2 - petViewWidth /2, height/2 + petViewHeight/2, petViewWidth, petViewHeight);
-    [self.view addSubview:petView];}
+    [self.view addSubview:petView];
+    
+    hungerView= [[UIImageView alloc] init];
+    myimg = [UIImage imageNamed:@"hunger"];
+    hungerView.image=myimg;
+    hungerView.frame = CGRectMake(width/2 , height/2 , petViewWidth , petViewHeight);
+    
+    thirstView= [[UIImageView alloc] init];
+    myimg = [UIImage imageNamed:@"thirst"];
+    thirstView.image=myimg;
+    thirstView.frame = CGRectMake(width/2 - petViewWidth , height/2 , petViewWidth , petViewHeight);
+}
 
 -(void) checkNeedView
 {
