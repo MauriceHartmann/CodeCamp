@@ -29,6 +29,8 @@ NSString* HUNGER =  @"hunger";
 NSString* THIRST =  @"thirst";
 NSString* FODDER =  @"fodder";
 NSString* DRINKS =  @"drinks";
+NSString* LIFE = @"life";
+NSString* MONEY = @"money";
 
 NSMutableDictionary *dictCreature;
 UITabBarController* mainView;

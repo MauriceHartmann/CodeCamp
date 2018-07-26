@@ -24,7 +24,7 @@ Share* mySharesInventory;
     
     _drinkInventory.text = [NSString stringWithFormat:@"%i", [mySharesInventory getIntFromKey:DRINKS]];
     
-    _moneyLabel.text = [NSString stringWithFormat:@"%i", [mySharesInventory getIntFromKey:DRINKS] + 1000];
+    _moneyLabel.text = [NSString stringWithFormat:@"%i", [mySharesInventory getIntFromKey:MONEY]];
 }
 
 - (IBAction)retrunAction:(id)sender
@@ -33,15 +33,25 @@ Share* mySharesInventory;
 }
 
 - (IBAction)buyDrinkAction:(id)sender {
-    [mySharesInventory updateKeyBy:DRINKS :1];
-    _drinkInventory.text = [NSString stringWithFormat:@"%i", [mySharesInventory getIntFromKey:DRINKS]];
+    if([mySharesInventory getIntFromKey:MONEY] >= 10)
+       {
+           [mySharesInventory updateKeyBy:DRINKS :1];
+           [mySharesInventory updateKeyBy:MONEY :-10];
+           _drinkInventory.text = [NSString stringWithFormat:@"%i", [mySharesInventory getIntFromKey:DRINKS]];
+           _moneyLabel.text = [NSString stringWithFormat:@"%i", [mySharesInventory getIntFromKey:MONEY]];
+       }
 }
 
 
 - (IBAction)buyFoodAction:(id)sender
 {
-    [mySharesInventory updateKeyBy:FODDER :1];
-    _foodInventory.text = [NSString stringWithFormat:@"%i", [mySharesInventory getIntFromKey:FODDER]];
+    if([mySharesInventory getIntFromKey:MONEY] >= 10)
+    {
+        [mySharesInventory updateKeyBy:FODDER :1];
+        [mySharesInventory updateKeyBy:MONEY :-10];
+        _foodInventory.text = [NSString stringWithFormat:@"%i", [mySharesInventory getIntFromKey:FODDER]];
+        _moneyLabel.text = [NSString stringWithFormat:@"%i", [mySharesInventory getIntFromKey:MONEY]];
+    }
 }
 
 @end
