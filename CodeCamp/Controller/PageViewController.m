@@ -31,6 +31,8 @@ int petViewWidth;
 int petViewHeight;
 NSTimer *needViewTimer;
 int myUpdateTime = 1;
+int noDrinkWarning = 1;
+int noFoodWarning = 1;
 
 - (void)viewDidLoad {
     
@@ -160,6 +162,7 @@ int myUpdateTime = 1;
     }
     else
     {
+        NSLog(@"removing view");
         [hungerView removeFromSuperview];
     }
     
@@ -184,6 +187,22 @@ int myUpdateTime = 1;
         UIImage *myimg = [UIImage imageNamed:@"blob"];
         petView.image=myimg;
         [self.view addSubview:petView];
+    }
+    
+    if([mySharesView getIntFromKey:DRINKS]<3){
+        if(noDrinkWarning == 1){
+            [self disptachDrinkWarning];
+        }
+    }else{
+        noDrinkWarning = 1;
+    }
+    
+    if([mySharesView getIntFromKey:HUNGER]<3){
+        if(noFoodWarning == 1){
+            [self disptachDrinkWarning];
+        }
+    }else{
+        noFoodWarning = 1;
     }
     
     if([mySharesView getIntFromKey:@"life"] == 0){
@@ -289,7 +308,26 @@ int myUpdateTime = 1;
     }
     [self checkNeedView];
 }
-       
+
+
+-(void)disptachDrinkWarning{
+    noDrinkWarning = 0;
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Drinks are almost empty!" preferredStyle:UIAlertControllerStyleActionSheet];
+    [self presentViewController:alert animated:YES completion:nil];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    });
+}
+
+
+-(void)disptachFoodWarning{
+    noFoodWarning = 0;
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Food is almost empty!" preferredStyle:UIAlertControllerStyleActionSheet];
+    [self presentViewController:alert animated:YES completion:nil];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    });
+}
 
 /*
 #pragma mark - Navigation
