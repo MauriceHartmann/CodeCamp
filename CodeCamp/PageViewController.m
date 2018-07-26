@@ -29,6 +29,7 @@ CGFloat width;
 int petViewWidth;
 int petViewHeight;
 NSTimer *needViewTimer;
+int myUpdateTime = 1;
 
 - (void)viewDidLoad {
     
@@ -107,7 +108,7 @@ NSTimer *needViewTimer;
 {
     [self checkNeedView];
     [super viewDidAppear:false];
-    needViewTimer = [NSTimer scheduledTimerWithTimeInterval: time_tick_factor
+    needViewTimer = [NSTimer scheduledTimerWithTimeInterval: myUpdateTime
                                          target: self
                                        selector:@selector(onTick:)
                                        userInfo: nil repeats:YES];
@@ -135,7 +136,7 @@ NSTimer *needViewTimer;
     petView= [[UIImageView alloc] init];
     UIImage *myimg = [UIImage imageNamed:@"blob"];
     petView.image=myimg;
-    petView.frame = CGRectMake(width/2 - petViewWidth /2, height/2 + petViewHeight*1.1 /*petViewHeight/2*/, petViewWidth, petViewHeight);
+    petView.frame = CGRectMake(width/2 - petViewWidth /2, height/2 + petViewHeight /*petViewHeight/2*/, petViewWidth, petViewHeight);
     [self.view addSubview:petView];
     
     hungerView= [[UIImageView alloc] init];
@@ -248,9 +249,11 @@ NSTimer *needViewTimer;
     switch (self.tabBarController.selectedIndex) {
         case 0:
             [Kitchen doAction: mySharesView :self];
+            AudioServicesPlaySystemSound(soundBlobIsEating);
             break;
         case 1:
             [Saloon doAction: mySharesView :self];
+            AudioServicesPlaySystemSound(soundBlobIsDrinking);
             break;
         case 2:
             [Store doAction: mySharesView:self];

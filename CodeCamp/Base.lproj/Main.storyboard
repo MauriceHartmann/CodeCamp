@@ -24,9 +24,9 @@
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="QSX-bV-ppO" secondAttribute="bottom" id="Drq-uz-kCx"/>
-                            <constraint firstItem="QSX-bV-ppO" firstAttribute="trailing" secondItem="tKJ-ve-MC1" secondAttribute="trailing" id="I5m-cu-EWg"/>
-                            <constraint firstItem="QSX-bV-ppO" firstAttribute="top" secondItem="bzz-UH-rfz" secondAttribute="top" id="Yjr-Lp-Cw8"/>
+                            <constraint firstItem="QSX-bV-ppO" firstAttribute="top" secondItem="bzz-UH-rfz" secondAttribute="top" id="lTv-xU-NW5"/>
                             <constraint firstItem="QSX-bV-ppO" firstAttribute="leading" secondItem="tKJ-ve-MC1" secondAttribute="leading" id="wki-x2-9mx"/>
+                            <constraint firstItem="QSX-bV-ppO" firstAttribute="trailing" secondItem="tKJ-ve-MC1" secondAttribute="trailing" id="xVK-V3-DMD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tKJ-ve-MC1"/>
                     </view>
@@ -50,12 +50,8 @@
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Sqg-Ot-SCU" secondAttribute="bottom" id="0qd-w8-1Nh"/>
-                            <constraint firstItem="Sqg-Ot-SCU" firstAttribute="trailing" secondItem="UIm-b0-ZkQ" secondAttribute="trailing" id="HRv-aT-j0x"/>
-                            <constraint firstItem="Sqg-Ot-SCU" firstAttribute="leading" secondItem="UIm-b0-ZkQ" secondAttribute="leading" id="Khw-Kf-l2e"/>
                             <constraint firstItem="Sqg-Ot-SCU" firstAttribute="top" secondItem="gid-gp-Yqp" secondAttribute="top" id="TYC-yR-IU4"/>
                             <constraint firstItem="Sqg-Ot-SCU" firstAttribute="trailing" secondItem="UIm-b0-ZkQ" secondAttribute="trailing" id="VFK-po-GPU"/>
-                            <constraint firstItem="Sqg-Ot-SCU" firstAttribute="bottom" secondItem="UIm-b0-ZkQ" secondAttribute="bottom" constant="49" id="jYK-82-CGh"/>
-                            <constraint firstItem="Sqg-Ot-SCU" firstAttribute="top" secondItem="gid-gp-Yqp" secondAttribute="top" id="oHT-2B-GNT"/>
                             <constraint firstItem="Sqg-Ot-SCU" firstAttribute="leading" secondItem="UIm-b0-ZkQ" secondAttribute="leading" id="wwL-ME-nQE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UIm-b0-ZkQ"/>
@@ -103,9 +99,9 @@
                             </imageView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="8ts-Wk-pWh" firstAttribute="trailing" secondItem="Pub-0C-NKL" secondAttribute="trailing" id="1be-H2-V6Y"/>
                             <constraint firstAttribute="bottom" secondItem="8ts-Wk-pWh" secondAttribute="bottom" id="D7a-EK-qUC"/>
-                            <constraint firstItem="8ts-Wk-pWh" firstAttribute="top" secondItem="6ZU-lv-ny7" secondAttribute="top" id="c6T-o8-I8I"/>
-                            <constraint firstItem="8ts-Wk-pWh" firstAttribute="trailing" secondItem="Pub-0C-NKL" secondAttribute="trailing" id="gAk-7D-di2"/>
+                            <constraint firstItem="8ts-Wk-pWh" firstAttribute="top" secondItem="6ZU-lv-ny7" secondAttribute="top" id="U8A-74-hOi"/>
                             <constraint firstItem="8ts-Wk-pWh" firstAttribute="leading" secondItem="Pub-0C-NKL" secondAttribute="leading" id="oTA-hJ-Qg0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pub-0C-NKL"/>
@@ -688,6 +684,7 @@
         <image name="Food" width="400" height="200"/>
         <image name="Money" width="600" height="519"/>
         <image name="Store" width="1080" height="1920"/>
+        <image name="home_background" width="474" height="649"/>
         <image name="home_button" width="35" height="33"/>
         <image name="mall_background" width="474" height="649"/>
         <image name="mall_button" width="35" height="35"/>
