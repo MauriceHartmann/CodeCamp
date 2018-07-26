@@ -115,8 +115,17 @@ Creature* pet;
     [myShare createKeyWith:@"time" :[NSDate date]];
     [myShare changeValueOfKey:@"life" :@1];
     [myShare changeValueOfKey:@"money" :@1000];
+    
+   
+    [myShare createKeyWith:@"awake" :@10];
+    [myShare createKeyWith:@"sleep" :@1];
+    [myShare createKeyWith:@"sleepTime" :@21.00];
+    
+    
     for (NSString *key in [myShare getAllKeys])
         NSLog(@"%@",key) ;
+    
+    
 }
 
 @end

@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "Room.h"
+#import "PageViewController.h"
 
 @interface Saloon : Room
-+(void) doAction: (Share*) myShares;
++(void) doAction: (Share*) myShares :(PageViewController*)pageView;
+
 @end

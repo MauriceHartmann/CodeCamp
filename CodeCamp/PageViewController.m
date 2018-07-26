@@ -62,6 +62,11 @@ NSTimer *needViewTimer;
 -(void)viewDidAppear:(BOOL)animated
 {
     [self checkNeedView];
+    [super viewDidAppear:false];
+    needViewTimer = [NSTimer scheduledTimerWithTimeInterval: time_tick_factor
+                                         target: self
+                                       selector:@selector(onTick:)
+                                       userInfo: nil repeats:YES];
     [super viewDidAppear:true];
     needViewTimer = [NSTimer scheduledTimerWithTimeInterval: 20.0
                                                      target: self
@@ -210,12 +215,10 @@ NSTimer *needViewTimer;
     
     switch (self.tabBarController.selectedIndex) {
         case 0:
-            [Kitchen doAction: mySharesView];
-            [self checkNeedView];
+            [Kitchen doAction: mySharesView :self];
             break;
         case 1:
-            [Saloon doAction: mySharesView];
-            [self checkNeedView];
+            [Saloon doAction: mySharesView :self];
             break;
         case 2:
             [Store doAction: mySharesView:self];

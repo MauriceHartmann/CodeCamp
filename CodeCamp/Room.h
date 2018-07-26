@@ -9,11 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "Creature.h"
 #import "Share.h"
+#import "PageViewController.h"
 
 @interface Room : NSObject
-{
-    Share * myShareInRoom;
-}
+
+
 
 +(void) doAction;
+
++(BOOL) checkNoItemLeft: (Share *) myShareInRoom :(PageViewController*) pageView;
++(BOOL) checkFullness: (Share *) myShareInRoom :(PageViewController*) pageView;
+
 @end
