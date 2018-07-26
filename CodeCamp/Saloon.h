@@ -10,5 +10,5 @@
 #import "Room.h"
 
 @interface Saloon : Room
--(void) doAction;
++(void) doAction: (Share*) myShares;
 @end

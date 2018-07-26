@@ -10,7 +10,9 @@
 
 @implementation Room
 
--(void) doAction{
+
+
++(void) doAction{
     
 }
 @end

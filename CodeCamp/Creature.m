@@ -8,6 +8,7 @@
 
 #import "Creature.h"
 #import "Share.h"
+#import <SpriteKit/SpriteKit.h>
 
 //If values fall below the specified Limits the pet is considered hungry, thirsty etc.
 const int THIRST_LIMIT = 20;
@@ -21,7 +22,7 @@ const int MAX_VALUE_LIMIT = 100;
 //time_tick_factor is the time the pet loses supply in seconds (900s = 15 min)
 
 int random_factor = 1;
-double time_tick_factor = 900.0;
+double time_tick_factor = 5.0;
 
 //Name of the keys in the dictionary
 NSString* HUNGER =  @"hunger";
@@ -79,19 +80,27 @@ NSTimer *t;
      [self checkNeeds];
      NSLog(@"thirst: %d" ,[myShareCreature getIntFromKey:THIRST]);
      */
+    
 }
 
 //checks if the pet is hungry,thirsty etc.
 -(void) checkNeeds
 {
+    if([myShareCreature getIntFromKey:HUNGER] <  1){
+        [myShareCreature changeValueOfKey:@"life" :@0];
+        
+    }
+    
+    if([myShareCreature getIntFromKey:THIRST] <  1){
+        [myShareCreature changeValueOfKey:@"life" :@0];
+        
+    }
+    
     //checks hunger
     if([myShareCreature getIntFromKey:HUNGER] <  HUNGER_LIMIT)
     {
         NSLog(@"hungry");
-        
-        //sets hunger back on 80+ for test reasons
-        int value = 100 - [myShareCreature getIntFromKey:HUNGER];
-        [myShareCreature updateKeyBy:HUNGER :value ];
+    
     }
     
     //checks thirst
@@ -99,11 +108,7 @@ NSTimer *t;
     {
         NSLog(@"thirsty");
         
-        //sets hunger back on 80+ for test reasons
-        int value = 100 - [myShareCreature getIntFromKey:THIRST];
-        [myShareCreature updateKeyBy:THIRST :value ];
     }
-     
     
 }
 
@@ -145,7 +150,7 @@ bool isGrantedNotificationAccess;
 //body:      smaller Text part for informations
 //intervall: amount of seconds until the notifications pops up
 
-- (void) sendNotification:(NSString*) title forSubtitle:(NSString*) subtitle forBody:(NSString*) body forIntervall: (NSInteger) intervall
++ (void) sendNotification:(NSString*) title forSubtitle:(NSString*) subtitle forBody:(NSString*) body forIntervall: (NSInteger) intervall
 {
     if(isGrantedNotificationAccess)
     {
@@ -154,7 +159,7 @@ bool isGrantedNotificationAccess;
         UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
         
         content.title = title;
-        content.subtitle = subtitle;
+        content.subtitle = @"";
         content.body = body;
         content.sound = [UNNotificationSound defaultSound];
         
@@ -171,14 +176,16 @@ bool isGrantedNotificationAccess;
 //prepares the notifications when the app is in background
 -(void) prepareBackgroundNotification
 {
+    int correction = 0;
     int needValue = [myShareCreature getIntFromKey:HUNGER]-20;
     if(needValue < 1 )
     {
         needValue = 1;
+        correction = time_tick_factor;
     }
     double hoursLeftTillNeed = ((needValue / ((random_factor + 1)/2)))*time_tick_factor;
-    [self sendNotification:@"CodeCamp" forSubtitle:@"Hunger" forBody:@"Hab Hunger!" forIntervall:hoursLeftTillNeed];
-    NSLog(@"Current Hunger: %d Pet will be hungry in %f minutes",[myShareCreature getIntFromKey:HUNGER],(hoursLeftTillNeed/60) );
+    [Creature sendNotification:@"CodeCamp" forSubtitle:@"Hunger" forBody:@"Hab Hunger!" forIntervall:hoursLeftTillNeed];
+    NSLog(@"Current Hunger: %d Pet will be hungry in %f minutes",[myShareCreature getIntFromKey:HUNGER],((hoursLeftTillNeed-correction)/60) );
     
     
     needValue = [myShareCreature getIntFromKey:THIRST]-20;
@@ -187,9 +194,28 @@ bool isGrantedNotificationAccess;
         needValue = 1;
     }
     hoursLeftTillNeed = (needValue / ((random_factor + 1)/2))*time_tick_factor;
-    [self sendNotification:@"CodeCamp" forSubtitle:@"Durscht" forBody:@"ICH HAB BRAND!" forIntervall:hoursLeftTillNeed];
-    NSLog(@"Current thirst: %d Pet will be thirsty in %f minutes",[myShareCreature getIntFromKey:THIRST],(hoursLeftTillNeed/60) );
+    [Creature sendNotification:@"CodeCamp" forSubtitle:@"Durscht" forBody:@"ICH HAB BRAND!" forIntervall:hoursLeftTillNeed];
+    NSLog(@"Current thirst: %d Pet will be thirsty in %f minutes",[myShareCreature getIntFromKey:THIRST],((hoursLeftTillNeed-correction)/60) );
     
+}
+
++(void) updateAfterReturn{
+    //[t invalidate];
+    NSTimeInterval interval = [(NSDate*)[myShareCreature getObjectFromKey:@"time"] timeIntervalSinceNow];
+    NSLog(@"Interval: %f" ,interval);
+    while(interval<(-(time_tick_factor-1))){
+        interval += time_tick_factor;
+        
+        [myShareCreature updateKeyBy:@"hunger" :(-1)];
+        [myShareCreature updateKeyBy:@"thirst" :(-1)];
+        NSLog(@"reappear");
+        NSLog(@"Rhunger: %d" ,[myShareCreature getIntFromKey:HUNGER]);
+        
+    }
+   // t = [NSTimer scheduledTimerWithTimeInterval: time_tick_factor
+   //                                      target: self
+   //                                    selector:@selector(onTick:)
+   //                                    userInfo: nil repeats:YES];
 }
 
 

@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Creature.h"
+#import "Share.h"
 
 @interface Room : NSObject
--(void) doAction;
+{
+    Share * myShareInRoom;
+}
+
++(void) doAction;
 @end
