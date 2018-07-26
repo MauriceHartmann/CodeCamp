@@ -13,6 +13,7 @@
 #import "Store.h"
 #import "Saloon.h"
 #import "Kitchen.h"
+#import "Shower.h"
 
 @interface PageViewController ()
 
@@ -67,11 +68,6 @@ NSTimer *needViewTimer;
                                          target: self
                                        selector:@selector(onTick:)
                                        userInfo: nil repeats:YES];
-    [super viewDidAppear:true];
-    needViewTimer = [NSTimer scheduledTimerWithTimeInterval: 20.0
-                                                     target: self
-                                                   selector:@selector(onTick:)
-                                                   userInfo: nil repeats:YES];
 }
 
 -(void)viewDidDisappear:(BOOL)animated
@@ -162,6 +158,7 @@ NSTimer *needViewTimer;
                 1 -> Saloon
                 2 -> Mall
                 3 -> Options
+                4 -> Shower
              */
         switch (self.tabBarController.selectedIndex) {
             case 0:
@@ -173,7 +170,10 @@ NSTimer *needViewTimer;
                 break;
 
             case 2:
-                self.tabBarController.selectedIndex = 2;
+                self.tabBarController.selectedIndex = 4;
+                break;
+            case 4:
+                self.tabBarController.selectedIndex = 4;
                 break;
 
             default:
@@ -187,6 +187,7 @@ NSTimer *needViewTimer;
                 1 -> Saloon
                 2 -> Mall
                 3 -> Options
+                4 -> Shower
              */
         switch (self.tabBarController.selectedIndex) {
             case 0:
@@ -199,6 +200,9 @@ NSTimer *needViewTimer;
 
             case 2:
                 self.tabBarController.selectedIndex = 1;
+                break;
+            case 4:
+                self.tabBarController.selectedIndex = 2;
                 break;
 
             default:
@@ -222,13 +226,14 @@ NSTimer *needViewTimer;
             break;
         case 2:
             [Store doAction: mySharesView:self];
-            [self checkNeedView];
+        case 4:
+            [Shower doAction: mySharesView:self];
         default:
-            [self checkNeedView];
             break;
             
             
     }
+    [self checkNeedView];
 }
        
 

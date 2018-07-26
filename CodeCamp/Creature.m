@@ -14,6 +14,7 @@
 const int THIRST_LIMIT = 20;
 const int HUNGER_LIMIT = 20;
 const int DIRT_LIMIT = 20;
+const double AWAKE_LIMIT = 5;
 
 //Max value for the needs.
 const int MAX_VALUE_LIMIT = 100;
@@ -33,6 +34,8 @@ NSString* DRINKS =  @"drinks";
 NSString* LIFE = @"life";
 NSString* MONEY = @"money";
 NSString* DIRT = @"dirt";
+NSString* AWAKE  =  @"awake";
+NSString* SLEEP  =  @"sleep";
 
 NSMutableDictionary *dictCreature;
 UITabBarController* mainView;
@@ -78,7 +81,7 @@ NSTimer *t2;
         [myShareCreature updateKeyBy:HUNGER :decrease_factor];
     }
     [self checkNeeds];
-    NSLog(@"hunger: %d" ,[myShareCreature getIntFromKey:HUNGER]);
+    //NSLog(@"hunger: %d" ,[myShareCreature getIntFromKey:HUNGER]);
     
     //decrease thirst and checks if the creature is thirsty
     
@@ -105,7 +108,14 @@ NSTimer *t2;
         [myShareCreature updateKeyBy:DIRT :decrease_factor];
     }
     [self checkNeeds];
-    NSLog(@"DIRT: %d" ,[myShareCreature getIntFromKey:DIRT]);
+    //NSLog(@"DIRT: %d" ,[myShareCreature getIntFromKey:DIRT]);
+    }
+}
+
+-(void)onTickEnergie:(NSTimer*) timer
+{
+    //decrease energie every 30s
+    int decrease_sleep_factor;
     
     if([myShareCreature getIntFromKey:AWAKE] <= 30)
     {
