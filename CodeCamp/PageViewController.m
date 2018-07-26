@@ -125,6 +125,19 @@ NSTimer *needViewTimer;
         [thirstView removeFromSuperview];
     }
     
+    if([mySharesView getIntFromKey:DIRT] <= DIRT_LIMIT)
+    {
+        UIImage *myimg = [UIImage imageNamed:@"dirt"];
+        petView.image=myimg;
+        [self.view addSubview:petView];
+    }
+    else
+    {
+        UIImage *myimg = [UIImage imageNamed:@"blob"];
+        petView.image=myimg;
+        [self.view addSubview:petView];
+    }
+    
     if([mySharesView getIntFromKey:@"life"] == 0){
         NSLog(@"Dead");
         NSString * storyboardName = @"Main";

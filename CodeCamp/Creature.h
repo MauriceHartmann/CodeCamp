@@ -13,6 +13,7 @@
 //If values fall below the specified Limits the pet is considered hungry, thirsty etc.
 extern const int THIRST_LIMIT;
 extern const int HUNGER_LIMIT;
+extern const int DIRT_LIMIT;
 
 //Max value for the needs.
 extern const int MAX_VALUE_LIMIT;
@@ -24,6 +25,7 @@ extern NSString* FODDER;
 extern NSString* DRINKS;
 extern NSString* LIFE;
 extern NSString* MONEY;
+extern NSString* DIRT;
 
 //(random_factor + 1) is the max Number of Supply the pet loses per time_tick_factor
 //example: random_factor = 9 => 1-10 Supply loss per tick
