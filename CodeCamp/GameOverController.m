@@ -18,6 +18,7 @@ int gOpetViewHeight;
 UIImageView * gOpetView;
 
 -(void) viewDidLoad{
+    
     gOwidth = [UIScreen mainScreen].bounds.size.width;
     gOheight = [UIScreen mainScreen].bounds.size.height;
     gOpetViewWidth = gOwidth * 0.5;

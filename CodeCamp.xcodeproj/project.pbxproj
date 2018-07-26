@@ -35,6 +35,14 @@
 		966AD6C021071DF3002AD49E /* Kitchen.h in Resources */ = {isa = PBXBuildFile; fileRef = 966AD6AD21071B7E002AD49E /* Kitchen.h */; };
 		96B31241210731E40081FCA6 /* OptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B31240210731E40081FCA6 /* OptionViewController.m */; };
 		96B312432107400F0081FCA6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 96B312422107400F0081FCA6 /* GameScene.sks */; };
+		96EA41E52109C78D001F7104 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EA41E42109C78D001F7104 /* AudioToolbox.framework */; };
+		96EA41EC2109D3B4001F7104 /* blob_is_eating.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96EA41E62109D3B3001F7104 /* blob_is_eating.mp3 */; };
+		96EA41ED2109D3B4001F7104 /* game_over.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96EA41E72109D3B3001F7104 /* game_over.mp3 */; };
+		96EA41EE2109D3B4001F7104 /* blob_is_drinking.wav in Resources */ = {isa = PBXBuildFile; fileRef = 96EA41E82109D3B3001F7104 /* blob_is_drinking.wav */; };
+		96EA41EF2109D3B4001F7104 /* buy_drinks.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96EA41E92109D3B3001F7104 /* buy_drinks.mp3 */; };
+		96EA41F02109D3B4001F7104 /* buy_food.wav in Resources */ = {isa = PBXBuildFile; fileRef = 96EA41EA2109D3B3001F7104 /* buy_food.wav */; };
+		96EA41F12109D3B4001F7104 /* blob_is_sad.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96EA41EB2109D3B4001F7104 /* blob_is_sad.mp3 */; };
+		96EA41F32109E3FA001F7104 /* blob_is_angry.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96EA41F22109E3FA001F7104 /* blob_is_angry.mp3 */; };
 		96ECBAF12107103600B989DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96ECBAF02107103600B989DA /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +110,14 @@
 		96B3123F210731C20081FCA6 /* OptionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OptionViewController.h; sourceTree = "<group>"; };
 		96B31240210731E40081FCA6 /* OptionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OptionViewController.m; sourceTree = "<group>"; };
 		96B312422107400F0081FCA6 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		96EA41E42109C78D001F7104 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		96EA41E62109D3B3001F7104 /* blob_is_eating.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = blob_is_eating.mp3; sourceTree = "<group>"; };
+		96EA41E72109D3B3001F7104 /* game_over.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = game_over.mp3; sourceTree = "<group>"; };
+		96EA41E82109D3B3001F7104 /* blob_is_drinking.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = blob_is_drinking.wav; sourceTree = "<group>"; };
+		96EA41E92109D3B3001F7104 /* buy_drinks.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buy_drinks.mp3; sourceTree = "<group>"; };
+		96EA41EA2109D3B3001F7104 /* buy_food.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = buy_food.wav; sourceTree = "<group>"; };
+		96EA41EB2109D3B4001F7104 /* blob_is_sad.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = blob_is_sad.mp3; sourceTree = "<group>"; };
+		96EA41F22109E3FA001F7104 /* blob_is_angry.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = blob_is_angry.mp3; sourceTree = "<group>"; };
 		96ECBAF02107103600B989DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = CodeCamp/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96EA41E52109C78D001F7104 /* AudioToolbox.framework in Frameworks */,
 				9663EA372105DE6E00F64A36 /* (null) in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,6 +206,13 @@
 				962606E72106038B005C7A1C /* PageViewController.m */,
 				96B3123F210731C20081FCA6 /* OptionViewController.h */,
 				96B31240210731E40081FCA6 /* OptionViewController.m */,
+				96EA41E82109D3B3001F7104 /* blob_is_drinking.wav */,
+				96EA41E62109D3B3001F7104 /* blob_is_eating.mp3 */,
+				96EA41EB2109D3B4001F7104 /* blob_is_sad.mp3 */,
+				96EA41F22109E3FA001F7104 /* blob_is_angry.mp3 */,
+				96EA41E92109D3B3001F7104 /* buy_drinks.mp3 */,
+				96EA41EA2109D3B3001F7104 /* buy_food.wav */,
+				96EA41E72109D3B3001F7104 /* game_over.mp3 */,
 			);
 			path = CodeCamp;
 			sourceTree = "<group>";
@@ -214,6 +238,7 @@
 		9663EA352105DE6E00F64A36 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				96EA41E42109C78D001F7104 /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -336,16 +361,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				966AD6C021071DF3002AD49E /* Kitchen.h in Resources */,
+				96EA41F12109D3B4001F7104 /* blob_is_sad.mp3 in Resources */,
 				966AD6BF21071DF0002AD49E /* Saloon.h in Resources */,
 				966AD6BE21071DED002AD49E /* Kitchen.m in Resources */,
+				96EA41EE2109D3B4001F7104 /* blob_is_drinking.wav in Resources */,
 				96B312432107400F0081FCA6 /* GameScene.sks in Resources */,
 				966AD6BD21071DDB002AD49E /* Saloon.m in Resources */,
+				96EA41EC2109D3B4001F7104 /* blob_is_eating.mp3 in Resources */,
+				96EA41EF2109D3B4001F7104 /* buy_drinks.mp3 in Resources */,
+				96EA41F32109E3FA001F7104 /* blob_is_angry.mp3 in Resources */,
+				96EA41ED2109D3B4001F7104 /* game_over.mp3 in Resources */,
 				966AD6BC21071DD7002AD49E /* Store.m in Resources */,
 				966AD6BB21071DD2002AD49E /* Room.m in Resources */,
 				963A19F42105C31D00C8C428 /* Main.storyboard in Resources */,
 				963A19F62105C31E00C8C428 /* Assets.xcassets in Resources */,
 				963A19F92105C31E00C8C428 /* LaunchScreen.storyboard in Resources */,
 				96ECBAF12107103600B989DA /* Assets.xcassets in Resources */,
+				96EA41F02109D3B4001F7104 /* buy_food.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

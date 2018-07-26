@@ -31,8 +31,31 @@ int petViewHeight;
 NSTimer *needViewTimer;
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // Sound
+    NSURL *soundGameOverURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"game_over" ofType:@"mp3"]];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundGameOverURL, &soundGameOver);
+    
+    NSURL *soundBlobIsSadURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"blob_is_sad" ofType:@"mp3"]];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundBlobIsSadURL, &soundBlobIsSad);
+    
+    NSURL *soundBlobIsAngryURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"blob_is_angry" ofType:@"mp3"]];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundBlobIsAngryURL, &soundBlobIsAngry);
+    
+    NSURL *soundBlobIsEatingURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"blob_is_eating" ofType:@"mp3"]];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundBlobIsEatingURL, &soundBlobIsEating);
+    
+    NSURL *soundBlobIsDrinkingURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"blob_is_drinking" ofType:@"wav"]];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundBlobIsDrinkingURL, &soundBlobIsDrinking);
+    
+    NSURL *soundBuyDrinksURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"buy_drinks" ofType:@"mp3"]];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundBuyDrinksURL, &soundBuyDrinks);
+    
+    NSURL *soundBuyFoodURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"buy_food" ofType:@"wav"]];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundBuyFoodURL, &soundBuyFood);
     
     // Hide the Tab Bar by default
     [self.tabBarController.tabBar setHidden:YES];
@@ -122,15 +145,17 @@ NSTimer *needViewTimer;
     if([mySharesView getIntFromKey:HUNGER] <= HUNGER_LIMIT )
     {
         [self.view addSubview:hungerView];
+        AudioServicesPlaySystemSound(soundBlobIsAngry);
     }
     else
     {
         [hungerView removeFromSuperview];
     }
     
-    if([mySharesView getIntFromKey:THIRST] <= THIRST_LIMIT)
+    if([mySharesView getIntFromKey:THIRST] <= THIRST_LIMIT )
     {
         [self.view addSubview:thirstView];
+        AudioServicesPlaySystemSound(soundBlobIsAngry);
     }
     else
     {
@@ -143,6 +168,7 @@ NSTimer *needViewTimer;
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
         UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"GOScreen"];
         [self presentViewController:vc animated:YES completion:nil];
+        AudioServicesPlaySystemSound(soundGameOver);
         //[UIViewController presentViewController:viewController animated:NO completion:nil];
         return;
         
@@ -158,21 +184,10 @@ NSTimer *needViewTimer;
                 3 -> Options
              */
         switch (self.tabBarController.selectedIndex) {
-            case 0:
-                self.tabBarController.selectedIndex = 1;
-                break;
-
-            case 1:
-                self.tabBarController.selectedIndex = 2;
-                break;
-
-            case 2:
-                self.tabBarController.selectedIndex = 2;
-                break;
-
-            default:
-                self.tabBarController.selectedIndex = 0;
-                break;
+            case 0: self.tabBarController.selectedIndex = 1; break;
+            case 1: self.tabBarController.selectedIndex = 2; break;
+            case 2: self.tabBarController.selectedIndex = 2; break;
+            default: self.tabBarController.selectedIndex = 0; break;
         }
     }
     if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
@@ -183,21 +198,10 @@ NSTimer *needViewTimer;
                 3 -> Options
              */
         switch (self.tabBarController.selectedIndex) {
-            case 0:
-                self.tabBarController.selectedIndex = 0;
-                break;
-
-            case 1:
-                self.tabBarController.selectedIndex = 0;
-                break;
-
-            case 2:
-                self.tabBarController.selectedIndex = 1;
-                break;
-
-            default:
-                self.tabBarController.selectedIndex = 0;
-                break;
+            case 0: self.tabBarController.selectedIndex = 0; break;
+            case 1: self.tabBarController.selectedIndex = 0; break;
+            case 2: self.tabBarController.selectedIndex = 1; break;
+            default: self.tabBarController.selectedIndex = 0; break;
         }
     }
     if (sender.direction == UISwipeGestureRecognizerDirectionUp) {
@@ -210,18 +214,19 @@ NSTimer *needViewTimer;
 
 - (void) handleTap: (UITapGestureRecognizer*) recognize
 {
-    
     switch (self.tabBarController.selectedIndex) {
         case 0:
             [Kitchen doAction: mySharesView];
+            AudioServicesPlaySystemSound(soundBlobIsEating);
             break;
         case 1:
             [Saloon doAction: mySharesView];
+            AudioServicesPlaySystemSound(soundBlobIsDrinking);
             break;
         case 2:
             [Store doAction: mySharesView:self];
-        default:
             break;
+        default: break;
     }
 }
        

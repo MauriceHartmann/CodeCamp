@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Saloon-->
+        <!--Pub-->
         <scene sceneID="gN3-Mf-aVa">
             <objects>
                 <viewController id="fCv-tj-xMK" customClass="PageViewController" sceneMemberID="viewController">
@@ -30,7 +30,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tKJ-ve-MC1"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Saloon" image="saloon_button" id="PvU-cj-ICT"/>
+                    <tabBarItem key="tabBarItem" title="Pub" image="saloon_button" id="PvU-cj-ICT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BGS-Ns-voL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

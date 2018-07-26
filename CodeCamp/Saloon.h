@@ -10,5 +10,6 @@
 #import "Room.h"
 
 @interface Saloon : Room
+
 +(void) doAction: (Share*) myShares;
 @end

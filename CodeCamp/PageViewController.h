@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "Share.h"
+#import <AudioToolbox/AudioToolbox.h>
 
-@interface PageViewController : UIViewController
+@interface PageViewController : UIViewController  {
+    SystemSoundID soundGameOver;
+    SystemSoundID soundBlobIsSad;
+    SystemSoundID soundBlobIsAngry;
+    SystemSoundID soundBlobIsEating;
+    SystemSoundID soundBlobIsDrinking;
+    SystemSoundID soundBuyDrinks;
+    SystemSoundID soundBuyFood;
+}
 
 @property (nonatomic, strong) UISwipeGestureRecognizer *leftSwipe;
 @property (nonatomic, strong) UISwipeGestureRecognizer *rightSwipe;
