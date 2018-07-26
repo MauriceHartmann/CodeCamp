@@ -91,7 +91,7 @@ NSTimer *needViewTimer;
     petView= [[UIImageView alloc] init];
     UIImage *myimg = [UIImage imageNamed:@"blob"];
     petView.image=myimg;
-    petView.frame = CGRectMake(width/2 - petViewWidth /2, height/2 + petViewHeight/2, petViewWidth, petViewHeight);
+    petView.frame = CGRectMake(width/2 - petViewWidth /2, height/2 + petViewHeight*1.1 /*petViewHeight/2*/, petViewWidth, petViewHeight);
     [self.view addSubview:petView];
     
     hungerView= [[UIImageView alloc] init];
