@@ -17,7 +17,7 @@
 {
     NSLog(@"In Saloon");
     
-    if([Room checkFullness:myShares :pageView])
+    if(![Room checkFullness:myShares :pageView])
     {
         if(![Room checkNoItemLeft:myShares :pageView])
         {

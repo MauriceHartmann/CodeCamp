@@ -24,5 +24,6 @@
 -(void) createKeyWith: (NSString*) key : (NSObject*) value;
 -(void) initDict;
 -(NSObject*) getObjectFromKey:(NSString*)key;
+-(void)printAll;
 @end
 #endif /* Share_h */
