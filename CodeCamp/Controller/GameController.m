@@ -42,6 +42,11 @@ int lastNum;
 }
 
 -(void)viewDidLoad{
+    
+    // Sounds
+    NSURL *soundClickMiniGameURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"click_minigame" ofType:@"mp3"]];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundClickMiniGameURL, &soundClickMinigame);
+    
     gameCondition = 0;
     timeLeft = 1.5;
     btnArray = [[NSMutableArray alloc]initWithCapacity:9];
@@ -65,6 +70,7 @@ int lastNum;
     if(gameCondition!=2){
         return;
     }
+    AudioServicesPlaySystemSound(soundClickMinigame);
     sender.backgroundColor = [UIColor whiteColor];
     if([gameTimer isValid])
         [gameTimer invalidate];
