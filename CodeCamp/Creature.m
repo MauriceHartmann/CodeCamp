@@ -67,8 +67,8 @@ NSTimer *t;
     [self checkNeeds];
     NSLog(@"hunger: %d" ,[myShareCreature getIntFromKey:HUNGER]);
     
-    //decrease thirst and checks if the creature is hungry
-    /*
+    //decrease thirst and checks if the creature is thirsty
+    
      decrease_factor = (arc4random_uniform(random_factor) + 1)*(-1);
      if([myShareCreature getIntFromKey:THIRST] - decrease_factor < 0){
      [myShareCreature updateKeyBy:THIRST : decrease_factor +  [myShareCreature getIntFromKey:THIRST] - decrease_factor];
@@ -79,7 +79,7 @@ NSTimer *t;
      }
      [self checkNeeds];
      NSLog(@"thirst: %d" ,[myShareCreature getIntFromKey:THIRST]);
-     */
+    
     
 }
 
@@ -189,9 +189,11 @@ bool isGrantedNotificationAccess;
     
     
     needValue = [myShareCreature getIntFromKey:THIRST]-20;
+    correction = 0;
     if(needValue < 1 )
     {
         needValue = 1;
+        correction = time_tick_factor;
     }
     hoursLeftTillNeed = (needValue / ((random_factor + 1)/2))*time_tick_factor;
     [Creature sendNotification:@"CodeCamp" forSubtitle:@"Durscht" forBody:@"ICH HAB BRAND!" forIntervall:hoursLeftTillNeed];
@@ -200,7 +202,6 @@ bool isGrantedNotificationAccess;
 }
 
 +(void) updateAfterReturn{
-    //[t invalidate];
     NSTimeInterval interval = [(NSDate*)[myShareCreature getObjectFromKey:@"time"] timeIntervalSinceNow];
     NSLog(@"Interval: %f" ,interval);
     while(interval<(-(time_tick_factor-1))){
@@ -212,10 +213,7 @@ bool isGrantedNotificationAccess;
         NSLog(@"Rhunger: %d" ,[myShareCreature getIntFromKey:HUNGER]);
         
     }
-   // t = [NSTimer scheduledTimerWithTimeInterval: time_tick_factor
-   //                                      target: self
-   //                                    selector:@selector(onTick:)
-   //                                    userInfo: nil repeats:YES];
+    
 }
 
 

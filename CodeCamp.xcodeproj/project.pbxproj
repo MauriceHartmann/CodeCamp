@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9613489C2109C3CB00CF484E /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9613489B2109C3CB00CF484E /* GameController.m */; };
 		962606E82106038B005C7A1C /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962606E72106038B005C7A1C /* PageViewController.m */; };
 		963A19E72105C31D00C8C428 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A19E62105C31D00C8C428 /* AppDelegate.m */; };
-		963A19EE2105C31D00C8C428 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A19ED2105C31D00C8C428 /* GameScene.m */; };
 		963A19F12105C31D00C8C428 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A19F02105C31D00C8C428 /* GameViewController.m */; };
 		963A19F42105C31D00C8C428 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 963A19F22105C31D00C8C428 /* Main.storyboard */; };
 		963A19F62105C31E00C8C428 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 963A19F52105C31E00C8C428 /* Assets.xcassets */; };
@@ -56,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9613489A2109C3BE00CF484E /* GameController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
+		9613489B2109C3CB00CF484E /* GameController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
 		96229C05210716EA00365EE1 /* Room.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
 		96229C082107170B00365EE1 /* Creature.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Creature.m; sourceTree = "<group>"; };
 		96229C0B2107176000365EE1 /* Saloon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Saloon.m; sourceTree = "<group>"; };
@@ -67,8 +69,6 @@
 		963A19E22105C31D00C8C428 /* CodeCamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeCamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		963A19E52105C31D00C8C428 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		963A19E62105C31D00C8C428 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		963A19EC2105C31D00C8C428 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
-		963A19ED2105C31D00C8C428 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		963A19EF2105C31D00C8C428 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		963A19F02105C31D00C8C428 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		963A19F32105C31D00C8C428 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -174,8 +174,6 @@
 				966AD6A721071B5A002AD49E /* Creature.h */,
 				963A19E52105C31D00C8C428 /* AppDelegate.h */,
 				963A19E62105C31D00C8C428 /* AppDelegate.m */,
-				963A19EC2105C31D00C8C428 /* GameScene.h */,
-				963A19ED2105C31D00C8C428 /* GameScene.m */,
 				963A19EF2105C31D00C8C428 /* GameViewController.h */,
 				963A19F02105C31D00C8C428 /* GameViewController.m */,
 				963A19F22105C31D00C8C428 /* Main.storyboard */,
@@ -189,6 +187,8 @@
 				962606E72106038B005C7A1C /* PageViewController.m */,
 				96B3123F210731C20081FCA6 /* OptionViewController.h */,
 				96B31240210731E40081FCA6 /* OptionViewController.m */,
+				9613489A2109C3BE00CF484E /* GameController.h */,
+				9613489B2109C3CB00CF484E /* GameController.m */,
 			);
 			path = CodeCamp;
 			sourceTree = "<group>";
@@ -371,7 +371,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				966AD6B521071B87002AD49E /* Saloon.m in Sources */,
-				963A19EE2105C31D00C8C428 /* GameScene.m in Sources */,
 				966AD6A921071B77002AD49E /* Creature.m in Sources */,
 				963A1A282106039500C8C428 /* Share.m in Sources */,
 				966AD6AC21071B7C002AD49E /* Inventory.m in Sources */,
@@ -381,6 +380,7 @@
 				962606E82106038B005C7A1C /* PageViewController.m in Sources */,
 				963C5E822108C7BE00CD30DE /* GameOverController.m in Sources */,
 				96B31241210731E40081FCA6 /* OptionViewController.m in Sources */,
+				9613489C2109C3CB00CF484E /* GameController.m in Sources */,
 				963A19E72105C31D00C8C428 /* AppDelegate.m in Sources */,
 				966AD6B721071B98002AD49E /* Store.m in Sources */,
 				966AD6B221071B84002AD49E /* Room.m in Sources */,

@@ -15,8 +15,6 @@
 
 +(void) doAction: (Share*) myShares
 {
-    
-    
     NSLog(@"In Saloon");
     
     //drinks reduces 2
