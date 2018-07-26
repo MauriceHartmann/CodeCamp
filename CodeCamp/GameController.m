@@ -98,6 +98,7 @@ int lastNum;
     }
     temp = [btnArray objectAtIndex:num];
     temp.backgroundColor = [UIColor redColor];
+    lastNum = num;
     
 }
 
