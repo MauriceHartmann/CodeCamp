@@ -9,6 +9,9 @@
 #import "Store.h"
 #import "PageViewController.h"
 
+UILabel *foodInventory;
+UILabel *drinkInventory;
+Share * storeShare;
 @implementation Store
 
 +(void) doAction : (Share *) myShares : (PageViewController *) pageView
@@ -23,7 +26,5 @@
 //    [pageView.view addSubview:table];
     
 }
-
-
 
 @end
