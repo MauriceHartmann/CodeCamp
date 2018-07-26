@@ -87,6 +87,15 @@ static Share *sharedSingleton = nil;
     if(passedMutableDict == nil)
     passedMutableDict = [NSMutableDictionary dictionary];
 }
+
+-(void)printAll{
+    @synchronized(passedMutableDict){
+        for(NSString *key in [passedMutableDict allKeys]) {
+            NSLog(@"%@ :%@",key,[passedMutableDict objectForKey:key]);
+        }
+        
+    }
+}
 @end
 
 

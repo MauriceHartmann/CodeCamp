@@ -71,7 +71,7 @@ int lastNum;
     gameTimer = nil;
     if(sender == temp){
         
-        if(timeLeft < 0.6){
+        if(timeLeft < 0.4){
             [self gameFinished:@"Won"];
             return;
         }

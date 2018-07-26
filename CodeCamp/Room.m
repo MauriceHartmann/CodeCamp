@@ -7,6 +7,7 @@
 //
 
 #import "Room.h"
+#import "Creature.h"
 #import "PageViewController.h"
 
 @implementation Room
@@ -39,11 +40,15 @@
     
     switch (pageView.tabBarController.selectedIndex) {
         case 0:
-            check = ([myShareInRoom getIntFromKey:@"hungry"] >= 80);
+            if([myShareInRoom getIntFromKey:HUNGER] >= 80){
+                check = true;
+            }
             break;
             
         case 1:
-            check = ([myShareInRoom getIntFromKey:@"thirsty"] >= 80);
+            if([myShareInRoom getIntFromKey:THIRST] >= 80){
+                check = true;
+            };
             break;
     }
     

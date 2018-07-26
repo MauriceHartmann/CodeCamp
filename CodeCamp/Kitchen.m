@@ -21,7 +21,7 @@ int MAX_THIRST = 100;
     
     NSLog(@"Time: %@.", [timeFormat stringFromDate:dateNow]);
     
-    if([Room checkFullness:myShares :pageView])
+    if(![Room checkFullness:myShares :pageView])
     {
         if(![Room checkNoItemLeft:myShares :pageView])
         {

@@ -51,12 +51,10 @@ Creature* pet;
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    [myShare updateKeyBy:@"hunger" :-2];
     [myShare dictToTxt:path]; // Write everything to file to save status
     [myShare createKeyWith:@"time" :[NSDate date]];
     NSLog(@"written");
-    for (NSString *key in [myShare getAllKeys])
-        NSLog(@"%@", key) ;
+    [myShare printAll];
     [pet prepareBackgroundNotification];
 }
 
@@ -72,7 +70,9 @@ Creature* pet;
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [myShare dictToTxt:path]; // Write everything to file to save status
+    [myShare createKeyWith:@"time" :[NSDate date]];
+    [pet prepareBackgroundNotification];
 }
 
 +(void)deleteFile{
