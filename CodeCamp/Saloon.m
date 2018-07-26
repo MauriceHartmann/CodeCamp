@@ -37,11 +37,7 @@
                 [myShares updateKeyBy:@"thirst" :20];
             }
         }
-    }
-    
-    for (NSString *key in [myShares getAllKeys])
-        NSLog(@"%@", key) ;
-    
+    }    
     
 }
 

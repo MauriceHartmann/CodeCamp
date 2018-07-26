@@ -33,12 +33,6 @@ int MAX_THIRST = 100;
                     [myShares updateKeyBy:@"hunger" :20];
                 }
             }
-        }
-    
-    
-    for (NSString *key in [myShares getAllKeys])
-        NSLog(@"%@", key) ;
-    
-   
+        }   
 }
 @end
