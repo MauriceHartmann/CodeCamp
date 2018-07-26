@@ -12,5 +12,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *foodInventory;
 @property (weak, nonatomic) IBOutlet UILabel *drinkInventory;
 @property (weak, nonatomic) IBOutlet UILabel *moneyLabel;
+@property (weak, nonatomic) IBOutlet UILabel *shampooInventory;
+@property (weak, nonatomic) IBOutlet UILabel *foodPriceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *drinkPriceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *shampooPriceLabel;
 
 @end

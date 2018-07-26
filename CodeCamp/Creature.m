@@ -36,6 +36,7 @@ NSString* MONEY = @"money";
 NSString* DIRT = @"dirt";
 NSString* AWAKE  =  @"awake";
 NSString* SLEEP  =  @"sleep";
+NSString* SHAMPOO = @"shampoo";
 
 NSMutableDictionary *dictCreature;
 UITabBarController* mainView;
@@ -272,6 +273,29 @@ bool isGrantedNotificationAccess;
     hoursLeftTillNeed = (needValue / ((random_factor + 1)/2))*time_tick_factor;
     [Creature sendNotification:@"CodeCamp" forSubtitle:@"Durscht" forBody:@"ICH HAB BRAND!" forIntervall:hoursLeftTillNeed];
     NSLog(@"Current thirst: %d Pet will be thirsty in %f minutes",[myShareCreature getIntFromKey:THIRST],((hoursLeftTillNeed-correction)/60) );
+    
+    //random Notifications if an item in the inventory is almost empty
+    int randomNotification = 0;
+    if([myShareCreature getIntFromKey:FODDER] < 5)
+    {
+        //3600s = 1h => notification will pop between 1 and 6 hours;
+        randomNotification = arc4random_uniform(3600*5) + 3600;
+        [Creature sendNotification:@"CodeCamp" forSubtitle:FODDER forBody:@"Das Essen wird knapp" forIntervall:randomNotification];
+    }
+    
+    if([myShareCreature getIntFromKey:DRINKS] < 5)
+    {
+        //3600s = 1h => notification will pop between 1 and 6 hours;
+        randomNotification = arc4random_uniform(3600*5) + 3600;
+        [Creature sendNotification:@"CodeCamp" forSubtitle:DRINKS forBody:@"Das Trinken wird knapp" forIntervall:randomNotification];
+    }
+    
+    if([myShareCreature getIntFromKey:SHAMPOO] < 5)
+    {
+        //3600s = 1h => notification will pop between 1 and 6 hours;
+        randomNotification = arc4random_uniform(3600*5) + 3600;
+        [Creature sendNotification:@"CodeCamp" forSubtitle:SHAMPOO forBody:@"Das Shampoo wird knapp" forIntervall:randomNotification];
+    }
     
 }
 
