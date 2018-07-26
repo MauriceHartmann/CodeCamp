@@ -11,5 +11,6 @@
 @interface StoreViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *foodInventory;
 @property (weak, nonatomic) IBOutlet UILabel *drinkInventory;
+@property (weak, nonatomic) IBOutlet UILabel *moneyLabel;
 
 @end
