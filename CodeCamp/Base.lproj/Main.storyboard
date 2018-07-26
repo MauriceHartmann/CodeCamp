@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" image="pub_background" translatesAutoresizingMaskIntoConstraints="NO" id="QSX-bV-ppO">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="pub_background" translatesAutoresizingMaskIntoConstraints="NO" id="QSX-bV-ppO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <constraints>
@@ -44,8 +44,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" image="home_background" translatesAutoresizingMaskIntoConstraints="NO" id="Sqg-Ot-SCU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="home_background" translatesAutoresizingMaskIntoConstraints="NO" id="Sqg-Ot-SCU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <constraints>
@@ -83,7 +83,7 @@
                         <segue destination="Voj-gV-yme" kind="relationship" relationship="viewControllers" id="TLT-4G-Oqg"/>
                         <segue destination="WMo-Hv-Emk" kind="relationship" relationship="viewControllers" id="jt1-kx-gwd"/>
                         <segue destination="mUS-8Y-ue1" kind="show" identifier="GameOverScreenSegue" id="cWR-2M-lWs"/>
-                        <segue destination="7mL-hq-7Oa" kind="show" id="vyc-dH-Q1c"/>
+                        <segue destination="7mL-hq-7Oa" kind="show" identifier="FoodAndDrinkScreenSegue" id="vyc-dH-Q1c"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wio-r4-b31" userLabel="First Responder" sceneMemberID="firstResponder"/>
