@@ -80,6 +80,7 @@
                         <segue destination="WMo-Hv-Emk" kind="relationship" relationship="viewControllers" id="jt1-kx-gwd"/>
                         <segue destination="mUS-8Y-ue1" kind="show" identifier="GameOverScreenSegue" id="cWR-2M-lWs"/>
                         <segue destination="7mL-hq-7Oa" kind="show" identifier="FoodAndDrinkScreenSegue" id="vyc-dH-Q1c"/>
+                        <segue destination="S3r-3o-Oef" kind="relationship" relationship="viewControllers" id="S8d-W7-v9T"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wio-r4-b31" userLabel="First Responder" sceneMemberID="firstResponder"/>

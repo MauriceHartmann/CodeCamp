@@ -248,6 +248,10 @@ int myUpdateTime = 1;
                 self.tabBarController.selectedIndex = 1;
                 AudioServicesPlaySystemSound(soundPageturn);
                 break;
+            case 4:
+                self.tabBarController.selectedIndex = 2;
+                break;
+
             default:
                 self.tabBarController.selectedIndex = 0;
                 break;
