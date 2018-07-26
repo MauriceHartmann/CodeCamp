@@ -8,6 +8,7 @@
 #import <UIKit/UIKit.h>
 
 @interface GameOverController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UIButton *restartBtn;
 
 @end

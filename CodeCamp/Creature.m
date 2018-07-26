@@ -142,12 +142,10 @@ NSTimer *t2;
 {
     if([myShareCreature getIntFromKey:HUNGER] <  1){
         [myShareCreature changeValueOfKey:@"life" :@0];
-        
     }
     
     if([myShareCreature getIntFromKey:THIRST] <  1){
         [myShareCreature changeValueOfKey:@"life" :@0];
-        
     }
 
     
@@ -156,7 +154,7 @@ NSTimer *t2;
     if([myShareCreature getIntFromKey:HUNGER] <  HUNGER_LIMIT)
     {
         NSLog(@"hungry");
-    
+        
     }
     
     //checks thirst

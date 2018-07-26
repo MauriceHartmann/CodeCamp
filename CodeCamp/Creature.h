@@ -34,7 +34,6 @@ extern double time_tick_factor;
 
 @interface Creature : NSObject
 
-
 -(void) initCreature;
 -(void) checkNeeds;
 +(void) sendNotification:(NSString*) title forSubtitle:(NSString*) subtitle forBody:(NSString*) body forIntervall: (NSInteger) intervall;

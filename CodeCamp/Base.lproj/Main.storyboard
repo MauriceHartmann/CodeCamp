@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Saloon-->
+        <!--Pub-->
         <scene sceneID="gN3-Mf-aVa">
             <objects>
                 <viewController id="fCv-tj-xMK" customClass="PageViewController" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="saloon" translatesAutoresizingMaskIntoConstraints="NO" id="QSX-bV-ppO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="pub_background" translatesAutoresizingMaskIntoConstraints="NO" id="QSX-bV-ppO">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
@@ -30,11 +30,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tKJ-ve-MC1"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Saloon" image="saloon_button" id="PvU-cj-ICT"/>
+                    <tabBarItem key="tabBarItem" title="Pub" image="saloon_button" id="PvU-cj-ICT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BGS-Ns-voL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3580" y="116"/>
+            <point key="canvasLocation" x="-3580" y="115.59220389805098"/>
         </scene>
         <!--Home-->
         <scene sceneID="mU0-6a-YS3">
@@ -44,7 +44,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="living_room" translatesAutoresizingMaskIntoConstraints="NO" id="Sqg-Ot-SCU">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="home_background" translatesAutoresizingMaskIntoConstraints="NO" id="Sqg-Ot-SCU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
@@ -53,6 +53,10 @@
                             <constraint firstItem="Sqg-Ot-SCU" firstAttribute="trailing" secondItem="UIm-b0-ZkQ" secondAttribute="trailing" id="HRv-aT-j0x"/>
                             <constraint firstItem="Sqg-Ot-SCU" firstAttribute="leading" secondItem="UIm-b0-ZkQ" secondAttribute="leading" id="Khw-Kf-l2e"/>
                             <constraint firstItem="Sqg-Ot-SCU" firstAttribute="top" secondItem="gid-gp-Yqp" secondAttribute="top" id="TYC-yR-IU4"/>
+                            <constraint firstItem="Sqg-Ot-SCU" firstAttribute="trailing" secondItem="UIm-b0-ZkQ" secondAttribute="trailing" id="VFK-po-GPU"/>
+                            <constraint firstItem="Sqg-Ot-SCU" firstAttribute="bottom" secondItem="UIm-b0-ZkQ" secondAttribute="bottom" constant="49" id="jYK-82-CGh"/>
+                            <constraint firstItem="Sqg-Ot-SCU" firstAttribute="top" secondItem="gid-gp-Yqp" secondAttribute="top" id="oHT-2B-GNT"/>
+                            <constraint firstItem="Sqg-Ot-SCU" firstAttribute="leading" secondItem="UIm-b0-ZkQ" secondAttribute="leading" id="wwL-ME-nQE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UIm-b0-ZkQ"/>
                     </view>
@@ -60,7 +64,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mzI-M8-Krg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4310" y="-291"/>
+            <point key="canvasLocation" x="-4311.1999999999998" y="-291.00449775112446"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Apl-br-JzU">
@@ -79,7 +83,7 @@
                         <segue destination="Voj-gV-yme" kind="relationship" relationship="viewControllers" id="TLT-4G-Oqg"/>
                         <segue destination="WMo-Hv-Emk" kind="relationship" relationship="viewControllers" id="jt1-kx-gwd"/>
                         <segue destination="mUS-8Y-ue1" kind="show" identifier="GameOverScreenSegue" id="cWR-2M-lWs"/>
-                        <segue destination="7mL-hq-7Oa" kind="show" id="vyc-dH-Q1c"/>
+                        <segue destination="7mL-hq-7Oa" kind="show" identifier="FoodAndDrinkScreenSegue" id="vyc-dH-Q1c"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wio-r4-b31" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -94,7 +98,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mall" translatesAutoresizingMaskIntoConstraints="NO" id="8ts-Wk-pWh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mall_background" translatesAutoresizingMaskIntoConstraints="NO" id="8ts-Wk-pWh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
@@ -685,11 +689,10 @@
         <image name="Money" width="600" height="519"/>
         <image name="Store" width="1080" height="1920"/>
         <image name="home_button" width="35" height="33"/>
-        <image name="living_room" width="474" height="643"/>
-        <image name="mall" width="474" height="649"/>
+        <image name="mall_background" width="474" height="649"/>
         <image name="mall_button" width="35" height="35"/>
         <image name="options_button" width="35" height="35"/>
-        <image name="saloon" width="474" height="649"/>
+        <image name="pub_background" width="474" height="649"/>
         <image name="saloon_button" width="35" height="35"/>
     </resources>
 </document>
