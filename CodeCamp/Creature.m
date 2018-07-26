@@ -221,7 +221,7 @@ bool isGrantedNotificationAccess;
 }
 //allows you to send a push notification
 //title:     headline for the notification
-//subtitle:  second headline ?!?
+//subtitle:  second headline ?!? Is used as notifiactionIdentifier
 //body:      smaller Text part for informations
 //intervall: amount of seconds until the notifications pops up
 
@@ -258,6 +258,8 @@ bool isGrantedNotificationAccess;
         needValue = 1;
         correction = time_tick_factor;
     }
+    
+    //hoursLeftTillNeed is the approx. time until the pet is hungry,thirst etc.
     double hoursLeftTillNeed = ((needValue / ((random_factor + 1)/2)))*time_tick_factor;
     [Creature sendNotification:@"CodeCamp" forSubtitle:@"Hunger" forBody:@"Hab Hunger!" forIntervall:hoursLeftTillNeed];
     NSLog(@"Current Hunger: %d Pet will be hungry in %f minutes",[myShareCreature getIntFromKey:HUNGER],((hoursLeftTillNeed-correction)/60) );
@@ -270,9 +272,24 @@ bool isGrantedNotificationAccess;
         needValue = 1;
         correction = time_tick_factor;
     }
+    
+    //hoursLeftTillNeed is the approx. time until the pet is hungry,thirst etc.
     hoursLeftTillNeed = (needValue / ((random_factor + 1)/2))*time_tick_factor;
     [Creature sendNotification:@"CodeCamp" forSubtitle:@"Durscht" forBody:@"ICH HAB BRAND!" forIntervall:hoursLeftTillNeed];
     NSLog(@"Current thirst: %d Pet will be thirsty in %f minutes",[myShareCreature getIntFromKey:THIRST],((hoursLeftTillNeed-correction)/60) );
+    
+    needValue = [myShareCreature getIntFromKey:DIRT]-20;
+    correction = 0;
+    if(needValue < 1 )
+    {
+        needValue = 1;
+        correction = time_tick_factor;
+    }
+    
+    //hoursLeftTillNeed is the approx. time until the pet is hungry,thirst etc.
+    hoursLeftTillNeed = (needValue / ((random_factor + 1)/2))*time_tick_factor;
+    [Creature sendNotification:@"CodeCamp" forSubtitle:DIRT forBody:@"Ich bin dreckig. FeelsBadMan" forIntervall:hoursLeftTillNeed];
+    NSLog(@"Current dirt: %d Pet will be dirty in %f minutes",[myShareCreature getIntFromKey:DIRT],((hoursLeftTillNeed-correction)/60) );
     
     //random Notifications if an item in the inventory is almost empty
     int randomNotification = 0;

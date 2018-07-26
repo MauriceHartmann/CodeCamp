@@ -19,6 +19,7 @@
     {
         if(![Room checkNoItemLeft:myShares :pageView])
         {
+            //puts Dirt on max Value
             [myShares changeValueOfKey:DIRT :@100];
             [myShares updateKeyBy:SHAMPOO :-1];
         }else
