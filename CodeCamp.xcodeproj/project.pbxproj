@@ -18,7 +18,8 @@
 		963A1A062105C31E00C8C428 /* CodeCampTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A1A052105C31E00C8C428 /* CodeCampTests.m */; };
 		963A1A112105C31E00C8C428 /* CodeCampUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A1A102105C31E00C8C428 /* CodeCampUITests.m */; };
 		963A1A282106039500C8C428 /* Share.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A1A272106039500C8C428 /* Share.m */; };
-		963C5E7C2108BD7600CD30DE /* GameOverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9604B62521089F9D0087278B /* GameOverController.m */; };
+		963C5E7C2108BD7600CD30DE /* (null) in Sources */ = {isa = PBXBuildFile; };
+		963C5E822108C7BE00CD30DE /* GameOverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 963C5E812108C7BE00CD30DE /* GameOverController.m */; };
 		9663EA372105DE6E00F64A36 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		966AD6A921071B77002AD49E /* Creature.m in Sources */ = {isa = PBXBuildFile; fileRef = 966AD6A821071B76002AD49E /* Creature.m */; };
 		966AD6AC21071B7C002AD49E /* Inventory.m in Sources */ = {isa = PBXBuildFile; fileRef = 966AD6AB21071B7C002AD49E /* Inventory.m */; };
@@ -84,6 +85,8 @@
 		963A1A1F2105C8D800C8C428 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		963A1A272106039500C8C428 /* Share.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Share.m; sourceTree = "<group>"; };
 		963A1A29210603DE00C8C428 /* Share.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Share.h; sourceTree = "<group>"; };
+		963C5E802108C7B700CD30DE /* GameOverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverController.h; sourceTree = "<group>"; };
+		963C5E812108C7BE00CD30DE /* GameOverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverController.m; sourceTree = "<group>"; };
 		966AD6A721071B5A002AD49E /* Creature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Creature.h; sourceTree = "<group>"; };
 		966AD6A821071B76002AD49E /* Creature.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Creature.m; sourceTree = "<group>"; };
 		966AD6AA21071B79002AD49E /* Inventory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Inventory.h; sourceTree = "<group>"; };
@@ -154,6 +157,8 @@
 		963A19E42105C31D00C8C428 /* CodeCamp */ = {
 			isa = PBXGroup;
 			children = (
+				963C5E812108C7BE00CD30DE /* GameOverController.m */,
+				963C5E802108C7B700CD30DE /* GameOverController.h */,
 				966AD6B821071B9C002AD49E /* Store.h */,
 				966AD6B621071B98002AD49E /* Store.m */,
 				96B312422107400F0081FCA6 /* GameScene.sks */,
@@ -372,8 +377,9 @@
 				966AD6AC21071B7C002AD49E /* Inventory.m in Sources */,
 				963A19F12105C31D00C8C428 /* GameViewController.m in Sources */,
 				963A19FC2105C31E00C8C428 /* main.m in Sources */,
-				963C5E7C2108BD7600CD30DE /* GameOverController.m in Sources */,
+				963C5E7C2108BD7600CD30DE /* (null) in Sources */,
 				962606E82106038B005C7A1C /* PageViewController.m in Sources */,
+				963C5E822108C7BE00CD30DE /* GameOverController.m in Sources */,
 				96B31241210731E40081FCA6 /* OptionViewController.m in Sources */,
 				963A19E72105C31D00C8C428 /* AppDelegate.m in Sources */,
 				966AD6B721071B98002AD49E /* Store.m in Sources */,
