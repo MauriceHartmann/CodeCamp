@@ -63,7 +63,7 @@ NSTimer *needViewTimer;
 {
     [self checkNeedView];
     [super viewDidAppear:true];
-    needViewTimer = [NSTimer scheduledTimerWithTimeInterval: 20.0
+    needViewTimer = [NSTimer scheduledTimerWithTimeInterval: 1.0
                                                      target: self
                                                    selector:@selector(onTick:)
                                                    userInfo: nil repeats:YES];
