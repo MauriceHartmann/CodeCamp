@@ -13,6 +13,8 @@
 
 @property (nonatomic, strong) UISwipeGestureRecognizer *leftSwipe;
 @property (nonatomic, strong) UISwipeGestureRecognizer *rightSwipe;
+@property (nonatomic, strong) UISwipeGestureRecognizer *upSwipe;
+@property (nonatomic, strong) UISwipeGestureRecognizer *downSwipe;
 
 @property (nonatomic, strong) UITapGestureRecognizer *tapGR;
 

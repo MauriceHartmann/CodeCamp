@@ -34,17 +34,29 @@ NSTimer *needViewTimer;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    // Handle Swipes
+    // Hide the Tab Bar by default
+    [self.tabBarController.tabBar setHidden:YES];
+    
+    // Handle Swipes to change between screens
     self.leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
     self.leftSwipe.direction = UISwipeGestureRecognizerDirectionLeft;
     [self.view addGestureRecognizer:self.leftSwipe];
     
-    mySharesView = Share.sharedSingleton;
-    
-
     self.rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
     self.rightSwipe.direction = UISwipeGestureRecognizerDirectionRight;
     [self.view addGestureRecognizer:self.rightSwipe];
+    
+    // Handle Swipes to show or hide the Tab Bar
+    self.upSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    self.upSwipe.direction = UISwipeGestureRecognizerDirectionUp;
+    [self.view addGestureRecognizer:self.upSwipe];
+    
+    self.downSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    self.downSwipe.direction = UISwipeGestureRecognizerDirectionDown;
+    [self.view addGestureRecognizer:self.downSwipe];
+
+    // Handle tap on screen
+    mySharesView = Share.sharedSingleton;
     
     self.tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     [self.view addGestureRecognizer:self.tapGR];
@@ -188,8 +200,12 @@ NSTimer *needViewTimer;
                 break;
         }
     }
-    
-
+    if (sender.direction == UISwipeGestureRecognizerDirectionUp) {
+        [self.tabBarController.tabBar setHidden:NO];
+    }
+    if (sender.direction == UISwipeGestureRecognizerDirectionDown) {
+        [self.tabBarController.tabBar setHidden:YES];
+    }
 }
 
 - (void) handleTap: (UITapGestureRecognizer*) recognize
