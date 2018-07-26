@@ -75,6 +75,7 @@ Creature* pet;
     [pet prepareBackgroundNotification];
 }
 
+// deletes File and resets all values
 +(void)deleteFile{
     myManager = [NSFileManager defaultManager]; // create New Manager when called from another class
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -87,7 +88,6 @@ Creature* pet;
 
 +(void) setupFile{
     //Create or find a file to write to or read from
-
     myManager = [NSFileManager defaultManager];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -96,18 +96,17 @@ Creature* pet;
     if([myManager fileExistsAtPath:path]){
         [myShare createFromFile:path]; // Copy Values of file in our dictionary
         NSLog(@"Read");
-        for (NSString *key in [myShare getAllKeys])
-            NSLog(@"%@",key) ;
-        // Copy files back into our singleton
+        [myShare printAll];
     }else{
         NSLog(@"created");
         [AppDelegate initDict];
     }}
 
+//Create dict using default values if no file was found
 +(void) initDict{
     NSLog(@"init");
     [myShare createKeyWith:@"hunger" : @100];
-    //Create dict using default values if no file was found
+    
     [myShare changeValueOfKey:@"thirst" :@100];
     [myShare changeValueOfKey:@"dirt" :@100];
     [myShare changeValueOfKey:@"fodder" :@10];
