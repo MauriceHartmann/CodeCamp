@@ -112,6 +112,9 @@ NSTimer *t2;
     }
 }
 
+/*
+ Timer method, that check tiredness of creature
+ */
 -(void)onTickEnergie:(NSTimer*) timer
 {
     //decrease energie every 30s
@@ -124,11 +127,13 @@ NSTimer *t2;
     {
         decrease_sleep_factor = - 1;
     }
-    NSLog(@"I am here");
     [myShareCreature updateKeyBy:AWAKE :decrease_sleep_factor];
     [self checkEnergie];
 }
 
+/*
+ NOT DONE YET!
+ */
 -(void) checkEnergie
 {
     if([myShareCreature getIntFromKey:AWAKE] < 1){
