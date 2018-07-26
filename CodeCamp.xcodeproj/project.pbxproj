@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		962528912109AFC1007B4C7D /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962528902109AFC1007B4C7D /* StoreViewController.m */; };
 		962606E82106038B005C7A1C /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962606E72106038B005C7A1C /* PageViewController.m */; };
 		963A19E72105C31D00C8C428 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A19E62105C31D00C8C428 /* AppDelegate.m */; };
 		963A19EE2105C31D00C8C428 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A19ED2105C31D00C8C428 /* GameScene.m */; };
@@ -62,6 +63,8 @@
 		96229C0E210717C500365EE1 /* Kitchen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Kitchen.m; sourceTree = "<group>"; };
 		96229C112107181E00365EE1 /* Store.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Store.m; sourceTree = "<group>"; };
 		96229C142107186800365EE1 /* Inventory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Inventory.m; sourceTree = "<group>"; };
+		962528902109AFC1007B4C7D /* StoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
+		962528922109AFCF007B4C7D /* StoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
 		962606E62106038B005C7A1C /* PageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
 		962606E72106038B005C7A1C /* PageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		963A19E22105C31D00C8C428 /* CodeCamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeCamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +188,8 @@
 				963A19FB2105C31E00C8C428 /* main.m */,
 				963A1A272106039500C8C428 /* Share.m */,
 				963A1A29210603DE00C8C428 /* Share.h */,
+				962528902109AFC1007B4C7D /* StoreViewController.m */,
+				962528922109AFCF007B4C7D /* StoreViewController.h */,
 				962606E62106038B005C7A1C /* PageViewController.h */,
 				962606E72106038B005C7A1C /* PageViewController.m */,
 				96B3123F210731C20081FCA6 /* OptionViewController.h */,
@@ -382,6 +387,7 @@
 				963C5E822108C7BE00CD30DE /* GameOverController.m in Sources */,
 				96B31241210731E40081FCA6 /* OptionViewController.m in Sources */,
 				963A19E72105C31D00C8C428 /* AppDelegate.m in Sources */,
+				962528912109AFC1007B4C7D /* StoreViewController.m in Sources */,
 				966AD6B721071B98002AD49E /* Store.m in Sources */,
 				966AD6B221071B84002AD49E /* Room.m in Sources */,
 				966AD6AF21071B80002AD49E /* Kitchen.m in Sources */,
