@@ -13,6 +13,7 @@
 #import "Store.h"
 #import "Saloon.h"
 #import "Kitchen.h"
+#import "Shower.h"
 
 @interface PageViewController ()
 
@@ -172,6 +173,19 @@ int myUpdateTime = 1;
         [thirstView removeFromSuperview];
     }
     
+    if([mySharesView getIntFromKey:DIRT] <= DIRT_LIMIT)
+    {
+        UIImage *myimg = [UIImage imageNamed:@"dirt"];
+        petView.image=myimg;
+        [self.view addSubview:petView];
+    }
+    else
+    {
+        UIImage *myimg = [UIImage imageNamed:@"blob"];
+        petView.image=myimg;
+        [self.view addSubview:petView];
+    }
+    
     if([mySharesView getIntFromKey:@"life"] == 0){
         NSLog(@"Dead");
         NSString * storyboardName = @"Main";
@@ -192,6 +206,7 @@ int myUpdateTime = 1;
                 1 -> Saloon
                 2 -> Mall
                 3 -> Options
+                4 -> Shower
              */
         switch (self.tabBarController.selectedIndex) {
             case 0:
@@ -203,7 +218,10 @@ int myUpdateTime = 1;
                 AudioServicesPlaySystemSound(soundPageturn);
                 break;
             case 2:
-                self.tabBarController.selectedIndex = 2;
+                self.tabBarController.selectedIndex = 4;
+                break;
+            case 4:
+                self.tabBarController.selectedIndex = 4;
                 break;
             default:
                 self.tabBarController.selectedIndex = 0;
@@ -216,6 +234,7 @@ int myUpdateTime = 1;
                 1 -> Saloon
                 2 -> Mall
                 3 -> Options
+                4 -> Shower
              */
         switch (self.tabBarController.selectedIndex) {
             case 0:
@@ -257,13 +276,14 @@ int myUpdateTime = 1;
             break;
         case 2:
             [Store doAction: mySharesView:self];
-            [self checkNeedView];
+        case 4:
+            [Shower doAction: mySharesView:self];
         default:
-            [self checkNeedView];
             break;
             
             
     }
+    [self checkNeedView];
 }
        
 

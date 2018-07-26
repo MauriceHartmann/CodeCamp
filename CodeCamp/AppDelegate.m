@@ -109,6 +109,7 @@ Creature* pet;
     [myShare createKeyWith:@"hunger" : @100];
     //Create dict using default values if no file was found
     [myShare changeValueOfKey:@"thirst" :@100];
+    [myShare changeValueOfKey:@"dirt" :@100];
     [myShare changeValueOfKey:@"fodder" :@10];
     [myShare changeValueOfKey:@"drinks" :@10];
     [myShare createKeyWith:@"time" :[NSDate date]];

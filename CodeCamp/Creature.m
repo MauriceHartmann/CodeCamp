@@ -13,6 +13,7 @@
 //If values fall below the specified Limits the pet is considered hungry, thirsty etc.
 const int THIRST_LIMIT = 20;
 const int HUNGER_LIMIT = 20;
+const int DIRT_LIMIT = 20;
 const double AWAKE_LIMIT = 5;
 
 //Max value for the needs.
@@ -32,6 +33,7 @@ NSString* FODDER =  @"fodder";
 NSString* DRINKS =  @"drinks";
 NSString* LIFE = @"life";
 NSString* MONEY = @"money";
+NSString* DIRT = @"dirt";
 NSString* AWAKE  =  @"awake";
 NSString* SLEEP  =  @"sleep";
 
@@ -79,7 +81,7 @@ NSTimer *t2;
         [myShareCreature updateKeyBy:HUNGER :decrease_factor];
     }
     [self checkNeeds];
-    NSLog(@"hunger: %d" ,[myShareCreature getIntFromKey:HUNGER]);
+    //NSLog(@"hunger: %d" ,[myShareCreature getIntFromKey:HUNGER]);
     
     //decrease thirst and checks if the creature is thirsty
     
@@ -92,8 +94,21 @@ NSTimer *t2;
      [myShareCreature updateKeyBy:THIRST :decrease_factor];
      }
      [self checkNeeds];
-     NSLog(@"thirst: %d" ,[myShareCreature getIntFromKey:THIRST]);
-     
+    // NSLog(@"thirst: %d" ,[myShareCreature getIntFromKey:THIRST]);
+    
+    
+   // decrease dirt and checks if the creature is dirty
+    
+    decrease_factor = (arc4random_uniform(random_factor) + 1)*(-1);
+    if([myShareCreature getIntFromKey:DIRT] - decrease_factor < 0){
+        [myShareCreature updateKeyBy:DIRT : decrease_factor +  [myShareCreature getIntFromKey:DIRT] - decrease_factor];
+    }
+    else
+    {
+        [myShareCreature updateKeyBy:DIRT :decrease_factor];
+    }
+    [self checkNeeds];
+    //NSLog(@"DIRT: %d" ,[myShareCreature getIntFromKey:DIRT]);
     }
 }
 

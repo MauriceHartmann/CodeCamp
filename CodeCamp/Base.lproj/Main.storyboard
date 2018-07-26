@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SGV-OX-3JS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SGV-OX-3JS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -110,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QAp-yt-rZq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4311.1999999999998" y="504.19790104947532"/>
+            <point key="canvasLocation" x="-2615" y="116"/>
         </scene>
         <!--Game Over Controller-->
         <scene sceneID="u1E-O1-Tdj">
@@ -677,6 +677,32 @@
             </objects>
             <point key="canvasLocation" x="-6634.3999999999996" y="935.98200899550227"/>
         </scene>
+        <!--Shower-->
+        <scene sceneID="wgd-OU-oY3">
+            <objects>
+                <viewController id="S3r-3o-Oef" userLabel="Shower" customClass="PageViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nrm-n4-04Q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="shower" translatesAutoresizingMaskIntoConstraints="NO" id="mbb-y3-xXV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="mbb-y3-xXV" firstAttribute="top" secondItem="Nrm-n4-04Q" secondAttribute="top" id="FJc-c9-Mxx"/>
+                            <constraint firstItem="mbb-y3-xXV" firstAttribute="trailing" secondItem="T6o-uE-j7p" secondAttribute="trailing" id="PgT-PE-2Ng"/>
+                            <constraint firstAttribute="bottom" secondItem="mbb-y3-xXV" secondAttribute="bottom" id="Wey-33-7fU"/>
+                            <constraint firstItem="mbb-y3-xXV" firstAttribute="leading" secondItem="T6o-uE-j7p" secondAttribute="leading" id="s8c-Ae-Uo9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="T6o-uE-j7p"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="home_button" id="Zvd-ja-2Cl" userLabel="Shower"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VMf-gx-nsf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3844" y="116"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Button" width="400" height="200"/>
@@ -691,5 +717,6 @@
         <image name="options_button" width="35" height="35"/>
         <image name="pub_background" width="474" height="649"/>
         <image name="saloon_button" width="35" height="35"/>
+        <image name="shower" width="375" height="667"/>
     </resources>
 </document>
