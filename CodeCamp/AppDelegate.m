@@ -112,6 +112,7 @@ Creature* pet;
     [myShare changeValueOfKey:@"dirt" :@100];
     [myShare changeValueOfKey:@"fodder" :@10];
     [myShare changeValueOfKey:@"drinks" :@10];
+    [myShare createKeyWith:@"shampoo" :@10];
     [myShare createKeyWith:@"time" :[NSDate date]];
     [myShare changeValueOfKey:@"life" :@1];
     [myShare changeValueOfKey:@"money" :@1000];
