@@ -35,7 +35,7 @@ NSTimer *needViewTimer;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    // Sound
+    // Sounds
     NSURL *soundGameOverURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"game_over" ofType:@"mp3"]];
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundGameOverURL, &soundGameOver);
     
@@ -56,6 +56,15 @@ NSTimer *needViewTimer;
     
     NSURL *soundBuyFoodURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"buy_food" ofType:@"wav"]];
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundBuyFoodURL, &soundBuyFood);
+    
+    NSURL *soundPageturnURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"page_turn" ofType:@"mp3"]];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundPageturnURL, &soundPageturn);
+    
+    NSURL *soundClickMenuURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"click_menu" ofType:@"mp3"]];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundClickMenuURL, &soundClickMenu);
+    
+    NSURL *soundClickMiniGameURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"click_minigame" ofType:@"mp3"]];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundClickMiniGameURL, &soundClickMinigame);
     
     // Hide the Tab Bar by default
     [self.tabBarController.tabBar setHidden:YES];
@@ -184,10 +193,20 @@ NSTimer *needViewTimer;
                 3 -> Options
              */
         switch (self.tabBarController.selectedIndex) {
-            case 0: self.tabBarController.selectedIndex = 1; break;
-            case 1: self.tabBarController.selectedIndex = 2; break;
-            case 2: self.tabBarController.selectedIndex = 2; break;
-            default: self.tabBarController.selectedIndex = 0; break;
+            case 0:
+                self.tabBarController.selectedIndex = 1;
+                AudioServicesPlaySystemSound(soundPageturn);
+                break;
+            case 1:
+                self.tabBarController.selectedIndex = 2;
+                AudioServicesPlaySystemSound(soundPageturn);
+                break;
+            case 2:
+                self.tabBarController.selectedIndex = 2;
+                break;
+            default:
+                self.tabBarController.selectedIndex = 0;
+                break;
         }
     }
     if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
@@ -198,17 +217,29 @@ NSTimer *needViewTimer;
                 3 -> Options
              */
         switch (self.tabBarController.selectedIndex) {
-            case 0: self.tabBarController.selectedIndex = 0; break;
-            case 1: self.tabBarController.selectedIndex = 0; break;
-            case 2: self.tabBarController.selectedIndex = 1; break;
-            default: self.tabBarController.selectedIndex = 0; break;
+            case 0:
+                self.tabBarController.selectedIndex = 0;
+                break;
+            case 1:
+                self.tabBarController.selectedIndex = 0;
+                AudioServicesPlaySystemSound(soundPageturn);
+                break;
+            case 2:
+                self.tabBarController.selectedIndex = 1;
+                AudioServicesPlaySystemSound(soundPageturn);
+                break;
+            default:
+                self.tabBarController.selectedIndex = 0;
+                break;
         }
     }
     if (sender.direction == UISwipeGestureRecognizerDirectionUp) {
         [self.tabBarController.tabBar setHidden:NO];
+        AudioServicesPlaySystemSound(soundClickMenu);
     }
     if (sender.direction == UISwipeGestureRecognizerDirectionDown) {
         [self.tabBarController.tabBar setHidden:YES];
+        AudioServicesPlaySystemSound(soundClickMenu);
     }
 }
 
