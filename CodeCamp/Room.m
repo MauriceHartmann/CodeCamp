@@ -17,22 +17,32 @@
     
 }
 
+/*
+ Check if creature still has item to use
+ ----> true, if creature has less than 1 item
+ */
 +(BOOL) checkNoItemLeft: (Share *) myShareInRoom :(PageViewController*) pageView
 {
     BOOL check = NO;
     
     switch (pageView.tabBarController.selectedIndex) {
         case 0:
-            check = ([myShareInRoom getIntFromKey:@"fodder"] == 0);
+            check = ([myShareInRoom getIntFromKey:@"fodder"] <= 1);
             break;
             
         case 1:
-            check = ([myShareInRoom getIntFromKey:@"drinks"] == 0);
+            check = ([myShareInRoom getIntFromKey:@"drinks"] <= 1);
             break;
     }
     
     return check;
 }
+
+
+/*
+ Check if creature already full or not
+  ----> true, if hunger / thirst of creature more than 80
+ */
 
 +(BOOL) checkFullness: (Share *) myShareInRoom :(PageViewController*) pageView
 {
