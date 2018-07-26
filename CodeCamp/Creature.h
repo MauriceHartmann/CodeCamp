@@ -22,6 +22,8 @@ extern NSString* HUNGER;
 extern NSString* THIRST;
 extern NSString* FODDER;
 extern NSString* DRINKS;
+extern NSString* LIFE;
+extern NSString* MONEY;
 
 //(random_factor + 1) is the max Number of Supply the pet loses per time_tick_factor
 //example: random_factor = 9 => 1-10 Supply loss per tick

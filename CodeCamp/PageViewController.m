@@ -71,7 +71,7 @@ NSTimer *needViewTimer;
 
 -(void)viewDidDisappear:(BOOL)animated
 {
-    [super viewDidDisappear:false];
+    [super viewDidDisappear:true];
     [needViewTimer invalidate];
 }
 
@@ -204,8 +204,12 @@ NSTimer *needViewTimer;
             break;
         case 2:
             [Store doAction: mySharesView:self];
+            [self checkNeedView];
         default:
+            [self checkNeedView];
             break;
+            
+            
     }
 }
        

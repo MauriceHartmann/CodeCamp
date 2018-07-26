@@ -17,6 +17,8 @@
 
 @implementation OptionViewController
 Share* myShares;
+- (IBAction)BackButton:(UIButton *)sender {
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,6 +46,15 @@ Share* myShares;
 }
 - (IBAction)killAnimal:(UIButton *)sender {
     [myShares updateKeyBy:@"life" :(-1)];
+    
+}
+- (IBAction)gameStart:(UIButton *)sender {
+    NSString * storyboardName = @"Main";
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+    UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"GameScreen"];
+    [self presentViewController:vc animated:YES completion:nil];
+    //[UIViewController presentViewController:viewController animated:NO completion:nil];
+    return;
     
 }
 
