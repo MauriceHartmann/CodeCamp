@@ -14,7 +14,7 @@
 const int THIRST_LIMIT = 20;
 const int HUNGER_LIMIT = 20;
 const int DIRT_LIMIT = 20;
-const double AWAKE_LIMIT = 5;
+const int AWAKE_LIMIT = 5;
 
 //Max value for the needs.
 const int MAX_VALUE_LIMIT = 100;
@@ -43,6 +43,8 @@ UIImageView* imageview;
 Share* myShareCreature;
 NSTimer *t;
 NSTimer *t2;
+NSDate* currentTime;
+NSString *strCurrentTime;
 
 @implementation Creature
 
@@ -60,10 +62,17 @@ NSTimer *t2;
                                                                                                     target: self
                                                                                                        selector:@selector(onTick:)
                                                                                                     userInfo: nil repeats:YES];
-    t2 = [NSTimer scheduledTimerWithTimeInterval: 30.0
+    t2 = [NSTimer scheduledTimerWithTimeInterval: 5.0
                                           target: self
                                         selector:@selector(onTickEnergie:)
                                         userInfo: nil repeats:YES];
+    
+    
+    NSDateFormatter *timeFormat = [[NSDateFormatter alloc] init];
+    [timeFormat setDateFormat:@"hh:mm:ss"];
+    currentTime =[timeFormat stringFromDate:[NSDate date]];
+    
+    NSLog(@"Time: %@.", currentTime);
 }
 
 //timer method that ticks every Intervall of the timer
@@ -120,12 +129,16 @@ NSTimer *t2;
     //decrease energie every 30s
     int decrease_sleep_factor;
     
-    if([myShareCreature getIntFromKey:AWAKE] <= 30)
+    //Energy wont drop under 0
+    if([myShareCreature getIntFromKey:AWAKE] > 0)
     {
-        decrease_sleep_factor = - 2;
-    } else
-    {
-        decrease_sleep_factor = - 1;
+        if([myShareCreature getIntFromKey:AWAKE] <= 30)
+        {
+            decrease_sleep_factor = - 2;
+        } else
+        {
+            decrease_sleep_factor = - 1;
+        }
     }
     [myShareCreature updateKeyBy:AWAKE :decrease_sleep_factor];
     [self checkEnergie];
@@ -146,6 +159,10 @@ NSTimer *t2;
         [myShareCreature updateKeyBy:HUNGER :-1];
         [myShareCreature updateKeyBy:THIRST :-1];
         
+        //Gain energy by 10 points every 30 sec
+        [myShareCreature updateKeyBy:AWAKE :10];
+        
+        NSLog(@"Gain energy");
     }
     
     //check creature tired or not
@@ -154,6 +171,17 @@ NSTimer *t2;
         NSLog(@"tired");
     }
     
+    //wake up if energie full
+    if([ myShareCreature getIntFromKey:@"sleep"] == 0 && [myShareCreature getIntFromKey:AWAKE] >= 50)
+    {
+        //Max awake limit not exceed
+        [myShareCreature changeValueOfKey:AWAKE :@50];
+        
+        //Wake up the creature
+        [myShareCreature changeValueOfKey:SLEEP :@1];
+        
+        NSLog(@"Awake");
+    }
  
 }
 

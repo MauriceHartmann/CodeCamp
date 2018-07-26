@@ -15,12 +15,6 @@ int MAX_THIRST = 100;
 {
     NSLog(@"In Kitchen");
     
-    NSDateFormatter *timeFormat = [[NSDateFormatter alloc] init];
-    [timeFormat setDateFormat:@"hh.mm.ss"];
-    NSDate *dateNow = [myShares getObjectFromKey:@"time"];
-    
-    NSLog(@"Time: %@.", [timeFormat stringFromDate:dateNow]);
-    
     if(![Room checkFullness:myShares :pageView])
     {
         if(![Room checkNoItemLeft:myShares :pageView])
