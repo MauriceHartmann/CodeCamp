@@ -13,36 +13,24 @@
 
 @implementation Saloon
 
-+(void) doAction: (Share*) myShares
++(void) doAction: (Share*) myShares :(PageViewController*) pageView
 {
-    
-    
     NSLog(@"In Saloon");
     
-    //drinks reduces 2
-    if([myShares getIntFromKey:@"drinks"] > 0)
+    if([Room checkFullness:myShares :pageView])
     {
-        [myShares updateKeyBy:@"drinks" :-2];
-        
-        //Thirst gain 20 Point
-        if([myShares getIntFromKey:@"thirst"] < 100)
+        if(![Room checkNoItemLeft:myShares :pageView])
         {
-            if([myShares getIntFromKey:@"thirst"] >= 80)
-            {
-                int difference = 100 - [myShares getIntFromKey:@"thirst"];
-                [myShares updateKeyBy:@"thirst" :difference];
-            }
-            else
-            {
-                [myShares updateKeyBy:@"thirst" :20];
-            }
+            [myShares updateKeyBy:@"thirst" :20];
+            NSLog(@"Thirst gains by 20. Thirst left: %d.", [myShares getIntFromKey:@"thirst"]);
+            [myShares updateKeyBy:@"drinks" :-2];
+            NSLog(@"Drinks reduce by 2. Drinks left: %d.", [myShares getIntFromKey:@"drinks"]);
+        }else
+        {
+            NSLog(@"No Item left");
         }
-    }
-    
-    for (NSString *key in [myShares getAllKeys])
-        NSLog(@"%@", key) ;
-    
-    
+    } else
+    {NSLog(@"Not Thirsty!");}
 }
 
 

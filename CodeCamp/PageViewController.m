@@ -197,10 +197,10 @@ NSTimer *needViewTimer;
     
     switch (self.tabBarController.selectedIndex) {
         case 0:
-            [Kitchen doAction: mySharesView];
+            [Kitchen doAction: mySharesView :self];
             break;
         case 1:
-            [Saloon doAction: mySharesView];
+            [Saloon doAction: mySharesView :self];
             break;
         case 2:
             [Store doAction: mySharesView:self];

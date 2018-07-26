@@ -16,14 +16,11 @@ Share * storeShare;
 
 +(void) doAction : (Share *) myShares : (PageViewController *) pageView
 {
-    
-//    table = [[UITableView alloc] init];
-//    tableWidth = [UIScreen mainScreen].bounds.size.width *0.9;
-//    tableHeight = [UIScreen mainScreen].bounds.size.height*0.8;
-//    tablePosX = ([UIScreen mainScreen].bounds.size.width - tableWidth) / 2;
-//    tablePosY = ([UIScreen mainScreen].bounds.size.height - tableHeight) / 2;
-//    table.frame = CGRectMake(tablePosX, tablePosY, tableWidth, tableHeight);
-//    [pageView.view addSubview:table];
+    storeShare = myShares;
+    NSString * storyboardName = @"Main";
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+    UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"Shop"];
+    [pageView presentViewController:vc animated:YES completion:nil];
     
 }
 

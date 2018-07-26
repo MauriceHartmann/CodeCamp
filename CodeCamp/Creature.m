@@ -13,6 +13,7 @@
 //If values fall below the specified Limits the pet is considered hungry, thirsty etc.
 const int THIRST_LIMIT = 20;
 const int HUNGER_LIMIT = 20;
+const double AWAKE_LIMIT = 5;
 
 //Max value for the needs.
 const int MAX_VALUE_LIMIT = 100;
@@ -29,14 +30,19 @@ NSString* HUNGER =  @"hunger";
 NSString* THIRST =  @"thirst";
 NSString* FODDER =  @"fodder";
 NSString* DRINKS =  @"drinks";
+NSString* AWAKE  =  @"awake";
+NSString* SLEEP  =  @"sleep";
 
 NSMutableDictionary *dictCreature;
 UITabBarController* mainView;
 UIImageView* imageview;
 Share* myShareCreature;
 NSTimer *t;
+NSTimer *t2;
 
 @implementation Creature
+
+
 
 -(void) initCreature
 {
@@ -50,11 +56,17 @@ NSTimer *t;
                                                                                                     target: self
                                                                                                        selector:@selector(onTick:)
                                                                                                     userInfo: nil repeats:YES];
+    t2 = [NSTimer scheduledTimerWithTimeInterval: 30.0
+                                          target: self
+                                        selector:@selector(onTickEnergie:)
+                                        userInfo: nil repeats:YES];
 }
 
 //timer method that ticks every Intervall of the timer
 -(void)onTick:(NSTimer*)timer
 {
+    if([myShareCreature getIntFromKey:SLEEP] != 0)
+    {
     //decrease hunger and checks if the creature is hungry
     int decrease_factor = (arc4random_uniform(random_factor) + 1)*(-1);
     if([myShareCreature getIntFromKey:HUNGER] - decrease_factor < 0){
@@ -80,7 +92,47 @@ NSTimer *t;
      [self checkNeeds];
      NSLog(@"thirst: %d" ,[myShareCreature getIntFromKey:THIRST]);
      */
+    }
+}
+
+-(void)onTickEnergie:(NSTimer*) timer
+{
+    //decrease energie every 30s
+    int decrease_sleep_factor;
     
+    if([myShareCreature getIntFromKey:AWAKE] <= 30)
+    {
+        decrease_sleep_factor = - 2;
+    } else
+    {
+        decrease_sleep_factor = - 1;
+    }
+    NSLog(@"I am here");
+    [myShareCreature updateKeyBy:AWAKE :decrease_sleep_factor];
+    [self checkEnergie];
+}
+
+-(void) checkEnergie
+{
+    if([myShareCreature getIntFromKey:AWAKE] < 1){
+        [myShareCreature changeValueOfKey:@"sleep" :@0];
+        NSLog(@"Sleep");
+    }
+    
+    if([ myShareCreature getIntFromKey:@"sleep"] == 0)
+    {
+        [myShareCreature updateKeyBy:HUNGER :-1];
+        [myShareCreature updateKeyBy:THIRST :-1];
+        
+    }
+    
+    //check creature tired or not
+    if([myShareCreature getIntFromKey:AWAKE] <  AWAKE_LIMIT)
+    {
+        NSLog(@"tired");
+    }
+    
+ 
 }
 
 //checks if the pet is hungry,thirsty etc.
@@ -95,6 +147,8 @@ NSTimer *t;
         [myShareCreature changeValueOfKey:@"life" :@0];
         
     }
+
+    
     
     //checks hunger
     if([myShareCreature getIntFromKey:HUNGER] <  HUNGER_LIMIT)
@@ -109,7 +163,7 @@ NSTimer *t;
         NSLog(@"thirsty");
         
     }
-    
+  
 }
 
 

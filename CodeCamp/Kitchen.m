@@ -11,34 +11,30 @@
 @implementation Kitchen
 int MAX_THIRST = 100;
 
-+(void) doAction: (Share*) myShares
++(void) doAction: (Share*) myShares :(PageViewController *) pageView
 {
     NSLog(@"In Kitchen");
     
-    //Fodder reduces 2
-        if([myShares getIntFromKey:@"fodder"] > 0)
+    NSDateFormatter *timeFormat = [[NSDateFormatter alloc] init];
+    [timeFormat setDateFormat:@"hh.mm.ss"];
+    NSDate *dateNow = [myShares getObjectFromKey:@"time"];
+    
+    NSLog(@"Time: %@.", [timeFormat stringFromDate:dateNow]);
+    
+    if([Room checkFullness:myShares :pageView])
+    {
+        if(![Room checkNoItemLeft:myShares :pageView])
         {
+            [myShares updateKeyBy:@"hunger" :20];
+            NSLog(@"Hunger gain by 20. Hunger left: %d.", [myShares getIntFromKey:@"hunger"]);
             [myShares updateKeyBy:@"fodder" :-2];
-           
-            //Hunger gain 20 Point
-            if([myShares getIntFromKey:@"hunger"] < 100)
-            {
-                if([myShares getIntFromKey:@"hunger"] >= 80)
-                {
-                    int difference = 100 - [myShares getIntFromKey:@"hunger"];
-                    [myShares updateKeyBy:@"hunger" :difference];
-                }
-                else
-                {
-                    [myShares updateKeyBy:@"hunger" :20];
-                }
-            }
+            NSLog(@"Fodder reduce by 2. Fodder left: %d.", [myShares getIntFromKey:@"fodder"]);
+        }else
+        {
+            NSLog(@"No Item left");
         }
+    } else
+    {NSLog(@"Not Hungry");}
     
-    
-    for (NSString *key in [myShares getAllKeys])
-        NSLog(@"%@", key) ;
-    
-   
 }
 @end
