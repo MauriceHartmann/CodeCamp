@@ -67,6 +67,11 @@ NSTimer *needViewTimer;
                                          target: self
                                        selector:@selector(onTick:)
                                        userInfo: nil repeats:YES];
+    [super viewDidAppear:true];
+    needViewTimer = [NSTimer scheduledTimerWithTimeInterval: 20.0
+                                                     target: self
+                                                   selector:@selector(onTick:)
+                                                   userInfo: nil repeats:YES];
 }
 
 -(void)viewDidDisappear:(BOOL)animated

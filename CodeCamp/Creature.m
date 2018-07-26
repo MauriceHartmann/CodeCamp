@@ -30,6 +30,8 @@ NSString* HUNGER =  @"hunger";
 NSString* THIRST =  @"thirst";
 NSString* FODDER =  @"fodder";
 NSString* DRINKS =  @"drinks";
+NSString* LIFE = @"life";
+NSString* MONEY = @"money";
 NSString* AWAKE  =  @"awake";
 NSString* SLEEP  =  @"sleep";
 
@@ -91,7 +93,7 @@ NSTimer *t2;
      }
      [self checkNeeds];
      NSLog(@"thirst: %d" ,[myShareCreature getIntFromKey:THIRST]);
-     */
+     
     }
 }
 

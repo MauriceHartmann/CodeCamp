@@ -113,6 +113,7 @@ Creature* pet;
     [myShare changeValueOfKey:@"drinks" :@10];
     [myShare createKeyWith:@"time" :[NSDate date]];
     [myShare changeValueOfKey:@"life" :@1];
+    [myShare changeValueOfKey:@"money" :@1000];
     
    
     [myShare createKeyWith:@"awake" :@10];
