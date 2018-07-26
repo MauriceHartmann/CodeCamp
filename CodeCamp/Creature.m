@@ -276,21 +276,21 @@ bool isGrantedNotificationAccess;
     
     //random Notifications if an item in the inventory is almost empty
     int randomNotification = 0;
-    if([myShareCreature getIntFromKey:FODDER] < 5)
+    if([myShareCreature getIntFromKey:FODDER] < 2)
     {
         //3600s = 1h => notification will pop between 1 and 6 hours;
         randomNotification = arc4random_uniform(3600*5) + 3600;
         [Creature sendNotification:@"CodeCamp" forSubtitle:FODDER forBody:@"Das Essen wird knapp" forIntervall:randomNotification];
     }
     
-    if([myShareCreature getIntFromKey:DRINKS] < 5)
+    if([myShareCreature getIntFromKey:DRINKS] < 2)
     {
         //3600s = 1h => notification will pop between 1 and 6 hours;
         randomNotification = arc4random_uniform(3600*5) + 3600;
         [Creature sendNotification:@"CodeCamp" forSubtitle:DRINKS forBody:@"Das Trinken wird knapp" forIntervall:randomNotification];
     }
     
-    if([myShareCreature getIntFromKey:SHAMPOO] < 5)
+    if([myShareCreature getIntFromKey:SHAMPOO] < 2)
     {
         //3600s = 1h => notification will pop between 1 and 6 hours;
         randomNotification = arc4random_uniform(3600*5) + 3600;
