@@ -203,10 +203,10 @@ int myUpdateTime = 1;
     if (sender.direction == UISwipeGestureRecognizerDirectionLeft) {
             /*
                 0 -> Home
-                1 -> Saloon
+                1 -> Pub
                 2 -> Mall
-                3 -> Options
-                4 -> Shower
+                3 -> Pub
+                4 -> Options
              */
         switch (self.tabBarController.selectedIndex) {
             case 0:
@@ -218,10 +218,14 @@ int myUpdateTime = 1;
                 AudioServicesPlaySystemSound(soundPageturn);
                 break;
             case 2:
-                self.tabBarController.selectedIndex = 4;
+                self.tabBarController.selectedIndex = 3;
+                AudioServicesPlaySystemSound(soundPageturn);
+                break;
+            case 3:
+                self.tabBarController.selectedIndex = 3;
                 break;
             case 4:
-                self.tabBarController.selectedIndex = 4;
+                self.tabBarController.selectedIndex = 0;
                 break;
             default:
                 self.tabBarController.selectedIndex = 0;
@@ -231,10 +235,10 @@ int myUpdateTime = 1;
     if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
             /*
                 0 -> Home
-                1 -> Saloon
+                1 -> Pub
                 2 -> Mall
-                3 -> Options
-                4 -> Shower
+                3 -> Pub
+                4 -> Options
              */
         switch (self.tabBarController.selectedIndex) {
             case 0:
@@ -248,8 +252,12 @@ int myUpdateTime = 1;
                 self.tabBarController.selectedIndex = 1;
                 AudioServicesPlaySystemSound(soundPageturn);
                 break;
-            case 4:
+            case 3:
                 self.tabBarController.selectedIndex = 2;
+                AudioServicesPlaySystemSound(soundPageturn);
+                break;
+            case 4:
+                self.tabBarController.selectedIndex = 0;
                 break;
 
             default:

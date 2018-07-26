@@ -47,6 +47,7 @@
 		967B905D210A01C100004526 /* Shower.m in Sources */ = {isa = PBXBuildFile; fileRef = 967B905C210A01C000004526 /* Shower.m */; };
 		96B31241210731E40081FCA6 /* OptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B31240210731E40081FCA6 /* OptionViewController.m */; };
 		96B312432107400F0081FCA6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 96B312422107400F0081FCA6 /* GameScene.sks */; };
+		96EA420F210A08B5001F7104 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EA420E210A08B5001F7104 /* AudioToolbox.framework */; };
 		96ECBAF12107103600B989DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96ECBAF02107103600B989DA /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +129,7 @@
 		96B3123F210731C20081FCA6 /* OptionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OptionViewController.h; sourceTree = "<group>"; };
 		96B31240210731E40081FCA6 /* OptionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OptionViewController.m; sourceTree = "<group>"; };
 		96B312422107400F0081FCA6 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		96EA420E210A08B5001F7104 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		96ECBAF02107103600B989DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = CodeCamp/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96EA420F210A08B5001F7104 /* AudioToolbox.framework in Frameworks */,
 				9663EA372105DE6E00F64A36 /* (null) in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,6 +228,7 @@
 		9663EA352105DE6E00F64A36 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				96EA420E210A08B5001F7104 /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
