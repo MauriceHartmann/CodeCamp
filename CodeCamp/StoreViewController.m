@@ -20,9 +20,11 @@ Share* mySharesInventory;
     // Do any additional setup after loading the view.
     mySharesInventory = Share.sharedSingleton;
     
-    _foodInventory.text = [NSString stringWithFormat:@"In Inventory: %i", [mySharesInventory getIntFromKey:FODDER]];
+    _foodInventory.text = [NSString stringWithFormat:@"%i", [mySharesInventory getIntFromKey:FODDER]];
     
-    _drinkInventory.text = [NSString stringWithFormat:@"In Inventory: %i", [mySharesInventory getIntFromKey:DRINKS]];
+    _drinkInventory.text = [NSString stringWithFormat:@"%i", [mySharesInventory getIntFromKey:DRINKS]];
+    
+    _moneyLabel.text = [NSString stringWithFormat:@"%i", [mySharesInventory getIntFromKey:DRINKS] + 1000];
 }
 
 - (IBAction)retrunAction:(id)sender
@@ -30,16 +32,16 @@ Share* mySharesInventory;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)buyDrinkAction:(id)sender
-{
+- (IBAction)buyDrinkAction:(id)sender {
     [mySharesInventory updateKeyBy:DRINKS :1];
-    _drinkInventory.text = [NSString stringWithFormat:@"In Inventory: %i", [mySharesInventory getIntFromKey:DRINKS]];
+    _drinkInventory.text = [NSString stringWithFormat:@"%i", [mySharesInventory getIntFromKey:DRINKS]];
 }
+
 
 - (IBAction)buyFoodAction:(id)sender
 {
     [mySharesInventory updateKeyBy:FODDER :1];
-    _foodInventory.text = [NSString stringWithFormat:@"In Inventory: %i", [mySharesInventory getIntFromKey:FODDER]];
+    _foodInventory.text = [NSString stringWithFormat:@"%i", [mySharesInventory getIntFromKey:FODDER]];
 }
 
 @end
