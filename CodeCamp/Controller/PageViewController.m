@@ -173,8 +173,7 @@ int noFoodWarning = 1;
     // Stock Values - Mall
     _foodLabelMall.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:FODDER]];
     _drinkLabelMall.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:DRINKS]];
-    _shampooLabelMall.text = @"???";
-    //    //    _shampooLabelMall.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:SHAMPOO]];
+    _shampooLabelMall.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:SHAMPOO]];
     
     // Stock Values - Home
     _hungerLabelHome.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:HUNGER]];
@@ -200,6 +199,11 @@ int noFoodWarning = 1;
     }
     
     if([mySharesView getIntFromKey:THIRST] <= THIRST_LIMIT )
+    {
+        [self.view addSubview:thirstView];
+        AudioServicesPlaySystemSound(soundBlobIsAngry);
+    }
+    else
     {
         [thirstView removeFromSuperview];
     }
