@@ -38,7 +38,7 @@ NSString* AWAKE  =  @"awake";
 NSString* SLEEP  =  @"sleep";
 NSString* SHAMPOO = @"shampoo";
 NSString* BEDTIME  = @"sleepTime";
-NSString* WAKINGTIME = @"wakeTime";
+NSString* WAKINGTIME = @"awakeTime";
 
 NSMutableDictionary *dictCreature;
 UITabBarController* mainView;
@@ -60,7 +60,8 @@ NSTimeInterval nightDuration;
     NSLog(@"Pet init");
     [self initNotification];
     myShareCreature = Share.sharedSingleton;
-    int timeForSleep = 24 - (([myShareCreature getIntFromKey:BEDTIME]/100)-([myShareCreature getIntFromKey:WAKINGTIME]/100));
+    int timeForSleep = (24 - (([myShareCreature getIntFromKey:BEDTIME]/100)-([myShareCreature getIntFromKey:WAKINGTIME]/100)));
+    NSLog(@"%d",timeForSleep);
     nightDuration = timeForSleep * 3600;
     //timer that decreases the needs of the creature in the onTick Method
     //timer ticks every "time_tick_factor" and calls the method onTick:
@@ -97,7 +98,6 @@ NSTimeInterval nightDuration;
         [myShareCreature updateKeyBy:HUNGER :decrease_factor];
     }
     [self checkNeeds];
-    //NSLog(@"hunger: %d" ,[myShareCreature getIntFromKey:HUNGER]);
     
     //decrease thirst and checks if the creature is thirsty
     
@@ -376,9 +376,8 @@ bool isGrantedNotificationAccess;
     
 }
 
-+(BOOL) isDuringSleepTime:(NSDate*) date{
-    NSDate *now = [NSDate date];
-    NSString *z = [timeFormat stringFromDate:now];
++(BOOL) isDuringSleepTime:(NSDate*) date{ //returns YES if nighttime
+    NSString *z = [timeFormat stringFromDate:date];
     NSInteger timeInt = [z integerValue];
     //Check current time between sleeptime (21:00) to 23:59
     if(timeInt > [myShareCreature getIntFromKey:@"sleepTime"] && timeInt <= [myShareCreature getIntFromKey:@"midnight"])
@@ -399,20 +398,24 @@ bool isGrantedNotificationAccess;
     NSTimeInterval interval;
     NSDate *last = (NSDate*)[myShareCreature getObjectFromKey:@"time"];
     if([Creature isDuringSleepTime :last]&&[Creature isDuringSleepTime:[NSDate date]]){ //Asleep lasttime & still asleep now
+        NSLog(@"Returning");
         return; //Dont substract anything
     }else if(![Creature isDuringSleepTime :last]&&![Creature isDuringSleepTime:[NSDate date]]){
-        
-        interval = [last timeIntervalSinceNow] + ([Creature dateDifference:[NSDate date] :last])*nightDuration;
+        interval = [last timeIntervalSinceNow] + ([Creature dateDifference:[NSDate date] :last]*nightDuration);
+        NSLog(@"both awake + nightDur %f",nightDuration/3600);
     }else if([Creature isDuringSleepTime :last]&&![Creature isDuringSleepTime:[NSDate date]]){ // last value was during sleeptime; currently awake
         interval = [[Creature intToDate:[myShareCreature getIntFromKey:@"awakeTime"]] timeIntervalSinceDate: [NSDate date]]; // only substract from awake time to current time
+        NSLog(@"last time was sleeptime");
     }else if(![Creature isDuringSleepTime :last]&&[Creature isDuringSleepTime:[NSDate date]]){ // last value was during daytime; currently asleep
         interval = [[Creature intToDate:[myShareCreature getIntFromKey:@"sleepTime"]] timeIntervalSinceDate: last]; // only substract from last Time to Sleep Time
+        NSLog(@"last time was awaketime");
     }else{ //Error
         interval = [last timeIntervalSinceNow];
         NSLog(@"timeError");
     }
     //Correct Values based on Interval
-    NSLog(@"Interval: %f" ,interval);
+    NSLog(@"Interval in Minuten: %f" ,interval/60);
+    NSLog(@"Interval in Stunden: %f" ,interval/3600);
     while(interval<(-(time_tick_factor-1))){
         interval += time_tick_factor;
         
@@ -425,27 +428,26 @@ bool isGrantedNotificationAccess;
     
 }
 
-+(NSDate*) intToDate:(int) time{
++(NSDate*) intToDate:(int) time{ // creates Date out of time (Day is always today)
     NSDateComponents *comps = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
     [comps setHour:(time/100)];
     NSLog(@"%@",[[NSCalendar currentCalendar] dateFromComponents:comps]);
     return [[NSCalendar currentCalendar] dateFromComponents:comps];
 }
 
-+(int)dateDifference:(NSDate*) from :(NSDate*) to{
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    NSDateComponents *components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay
-                                               fromDate:from
-                                                 toDate:to
-                                                options:0];
-    if(components.day>1||components.month>0||components.year>0){
-        [myShareCreature changeValueOfKey:LIFE :0]; //Checked less than a Day ago == instant Death
++(int)dateDifference:(NSDate*) from :(NSDate*) to{ // Calculate if days/moths or years have passed
+    NSTimeInterval passed = [to timeIntervalSinceDate:from];
+    if (passed<-86400||passed>86400){
+        [myShareCreature changeValueOfKey:LIFE :0];
         return 1;
-    }else if(components.day>0){
-        return 1; //Date changed
+    }
+    NSDateComponents *component1 = [[NSCalendar currentCalendar] components:NSCalendarUnitDay fromDate:to];
+    NSDateComponents *component2 = [[NSCalendar currentCalendar] components:NSCalendarUnitDay fromDate:from];
+    if(component1.day == component2.day){
+        NSLog(@"DAY is the same!");
+        return 0; //Date didn´t change
     }else{
-        return 0; //Date didn`t change
-        
+        return 1; //Date changed
     }
 };
 

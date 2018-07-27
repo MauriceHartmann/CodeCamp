@@ -23,12 +23,12 @@ Creature* pet;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     myShare = Share.sharedSingleton;
     [myShare initDict];
-    
+    [AppDelegate setupFile]; //Prepares File and Dictionary
+    // Override point for customization after application launch.
     pet = [[Creature alloc] init];
     [pet initCreature];
     
-    [AppDelegate setupFile]; //Prepares File and Dictionary
-    // Override point for customization after application launch.
+    
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     UITabBar *tabBar = tabBarController.tabBar;
     UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
@@ -41,6 +41,7 @@ Creature* pet;
     tabBarItem3 = [tabBarItem3 initWithTitle:@"Mall" image:[UIImage imageNamed:@"mall_button.png"] selectedImage:[UIImage imageNamed:@"mall_button.png"]];
     tabBarItem5 = [tabBarItem5 initWithTitle:@"Games" image:[UIImage imageNamed:@"arcade_button.png"] selectedImage:[UIImage imageNamed:@"arcade_button.png"]];
     
+    [Creature updateAfterReturn];
     return YES;
     
 }
@@ -121,7 +122,7 @@ Creature* pet;
     [myShare createKeyWith:@"awake" :@50];
     [myShare createKeyWith:@"sleep" :@1];
     [myShare createKeyWith:@"sleepTime" :@2100];
-    [myShare createKeyWith:@"awakeTime" :@730];
+    [myShare createKeyWith:@"awakeTime" :@700];
     [myShare createKeyWith:@"midnight" :@2359];
     
     [myShare printAll];
