@@ -155,6 +155,7 @@ int noFoodWarning = 1;
 
 -(void) checkNeedView
 {
+    // If hunger is below 20;
     if([mySharesView getIntFromKey:HUNGER] <= HUNGER_LIMIT )
     {
         [self.view addSubview:hungerView];
