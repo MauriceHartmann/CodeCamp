@@ -14,7 +14,7 @@
 const int THIRST_LIMIT = 20;
 const int HUNGER_LIMIT = 20;
 const int DIRT_LIMIT = 20;
-const int AWAKE_LIMIT = 5;
+const int AWAKE_LIMIT = 20;
 
 //Max value for the needs.
 const int MAX_VALUE_LIMIT = 100;
@@ -44,7 +44,8 @@ Share* myShareCreature;
 NSTimer *t;
 NSTimer *t2;
 NSDate* currentTime;
-NSString *strCurrentTime;
+NSDateFormatter *timeFormat;
+NSInteger *currentTimeInteger;
 
 @implementation Creature
 
@@ -67,12 +68,13 @@ NSString *strCurrentTime;
                                         selector:@selector(onTickEnergie:)
                                         userInfo: nil repeats:YES];
     
-    
-    NSDateFormatter *timeFormat = [[NSDateFormatter alloc] init];
-    [timeFormat setDateFormat:@"hh:mm:ss"];
-    currentTime =[timeFormat stringFromDate:[NSDate date]];
-    
-    NSLog(@"Time: %@.", currentTime);
+    currentTime = [NSDate date];
+    timeFormat = [[NSDateFormatter alloc] init];
+    //Set as 24H format
+    [timeFormat setDateFormat:@"HHmm"];
+    NSString *strCurrentTime =[timeFormat stringFromDate:currentTime];
+    currentTimeInteger = [strCurrentTime integerValue];
+    NSLog(@"Time on start: %d.", currentTimeInteger);
 }
 
 //timer method that ticks every Intervall of the timer
@@ -121,27 +123,69 @@ NSString *strCurrentTime;
     }
 }
 
+
 /*
  Timer method, that check tiredness of creature
  */
 -(void)onTickEnergie:(NSTimer*) timer
 {
     //decrease energie every 30s
-    int decrease_sleep_factor;
+    int decrease_sleep_factor = 0;
     
-    //Energy wont drop under 0
-    if([myShareCreature getIntFromKey:AWAKE] > 0)
+    //check if it is day
+    if(![self checkNight])
     {
-        if([myShareCreature getIntFromKey:AWAKE] <= 30)
+        //Energy wont drop under 0
+        if([myShareCreature getIntFromKey:AWAKE] > 0)
         {
-            decrease_sleep_factor = - 2;
-        } else
-        {
-            decrease_sleep_factor = - 1;
+            //energy decreased faster under awake limit
+            if([myShareCreature getIntFromKey:AWAKE] <= AWAKE_LIMIT)
+            {
+                decrease_sleep_factor = - 2;
+            }
+            //energy decrease normal
+            else
+            {
+                decrease_sleep_factor = - 1;
+            }
         }
     }
     [myShareCreature updateKeyBy:AWAKE :decrease_sleep_factor];
     [self checkEnergie];
+}
+
+
+/*
+ Method check whether it is day or not
+ ---> YES, it is night
+ ---> NO, it is day
+ */
+- (BOOL) checkNight
+{
+    currentTime = [NSDate date];
+    NSString *strCurrentTime =[timeFormat stringFromDate:currentTime];
+    currentTimeInteger = [strCurrentTime integerValue];
+//    NSLog(@"Current time: %@.", strCurrentTime);
+    
+    //Check current time between sleeptime (21:00) to 23:59
+    if(currentTimeInteger > [myShareCreature getIntFromKey:@"sleepTime"] && currentTime <= [myShareCreature getIntFromKey:@"midnight"])
+    {
+        [myShareCreature changeValueOfKey:SLEEP :@0];
+        NSLog(@"Sleep");
+        return YES;
+    }
+    
+    //Check current time between 00:00 to wake up time (07:30)
+    if(currentTimeInteger > 0 && currentTime <= [myShareCreature getIntFromKey:@"awakeTime"])
+    {
+        [myShareCreature changeValueOfKey:SLEEP :@0];
+        NSLog(@"Sleep");
+        return YES;
+    }
+    
+    NSLog(@"It is day!");
+    [myShareCreature changeValueOfKey:SLEEP :@1];
+    return NO;
 }
 
 /*
