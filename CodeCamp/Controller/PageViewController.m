@@ -14,6 +14,7 @@
 #import "Saloon.h"
 #import "Kitchen.h"
 #import "Shower.h"
+#import "Arcade.h"
 
 @interface PageViewController ()
 
@@ -163,7 +164,6 @@ int noFoodWarning = 1;
     }
     else
     {
-        NSLog(@"removing view");
         [hungerView removeFromSuperview];
     }
     
@@ -225,8 +225,8 @@ int noFoodWarning = 1;
                 0 -> Home
                 1 -> Saloon
                 2 -> Mall
-                3 -> Options
-                4 -> Shower
+                3 -> Shower
+                4 -> Arcade
              */
         switch (self.tabBarController.selectedIndex) {
             case 0:
@@ -238,6 +238,9 @@ int noFoodWarning = 1;
                 AudioServicesPlaySystemSound(soundPageturn);
                 break;
             case 2:
+                self.tabBarController.selectedIndex = 3;
+                break;
+            case 3:
                 self.tabBarController.selectedIndex = 4;
                 break;
             case 4:
@@ -253,8 +256,8 @@ int noFoodWarning = 1;
                 0 -> Home
                 1 -> Saloon
                 2 -> Mall
-                3 -> Options
-                4 -> Shower
+                3 -> Shower
+                4 -> Arcade
              */
         switch (self.tabBarController.selectedIndex) {
             case 0:
@@ -268,8 +271,11 @@ int noFoodWarning = 1;
                 self.tabBarController.selectedIndex = 1;
                 AudioServicesPlaySystemSound(soundPageturn);
                 break;
-            case 4:
+            case 3:
                 self.tabBarController.selectedIndex = 2;
+                break;
+            case 4:
+                self.tabBarController.selectedIndex = 3;
                 break;
 
             default:
@@ -291,17 +297,27 @@ int noFoodWarning = 1;
 {
     switch (self.tabBarController.selectedIndex) {
         case 0:
+            NSLog(@"Kitchen");
             [Kitchen doAction: mySharesView :self];
             AudioServicesPlaySystemSound(soundBlobIsEating);
             break;
         case 1:
+            NSLog(@"Saloon");
             [Saloon doAction: mySharesView :self];
             AudioServicesPlaySystemSound(soundBlobIsDrinking);
             break;
         case 2:
+            NSLog(@"Store");
             [Store doAction: mySharesView:self];
-        case 4:
+            break;
+        case 3:
+            NSLog(@"Shower");
             [Shower doAction: mySharesView:self];
+            break;
+        case 4:
+            NSLog(@"Arcade");
+            [Arcade doAction:mySharesView :self];
+            break;
         default:
             break;
             

@@ -45,6 +45,13 @@ int shampooPrice = 25;
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+- (IBAction)openOptions:(id)sender
+{
+    NSString * storyboardName = @"Main";
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+    UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"Options"];
+    [self presentViewController:vc animated:YES completion:nil];
+}
 
 //ButtonAction to buy Drink
 - (IBAction)buyDrinkAction:(id)sender {

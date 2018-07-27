@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9613489C2109C3CB00CF484E /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9613489B2109C3CB00CF484E /* GameController.m */; };
+		9616721B210B4F4C00C2BBB4 /* Arcade.m in Sources */ = {isa = PBXBuildFile; fileRef = 9616721A210B4F4C00C2BBB4 /* Arcade.m */; };
 		962528912109AFC1007B4C7D /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962528902109AFC1007B4C7D /* StoreViewController.m */; };
 		962606E82106038B005C7A1C /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962606E72106038B005C7A1C /* PageViewController.m */; };
 		963A19E72105C31D00C8C428 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 963A19E62105C31D00C8C428 /* AppDelegate.m */; };
@@ -70,6 +71,8 @@
 /* Begin PBXFileReference section */
 		9613489A2109C3BE00CF484E /* GameController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
 		9613489B2109C3CB00CF484E /* GameController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
+		96167219210B4F3F00C2BBB4 /* Arcade.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Arcade.h; sourceTree = "<group>"; };
+		9616721A210B4F4C00C2BBB4 /* Arcade.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Arcade.m; sourceTree = "<group>"; };
 		96229C05210716EA00365EE1 /* Room.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
 		96229C082107170B00365EE1 /* Creature.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Creature.m; sourceTree = "<group>"; };
 		96229C0B2107176000365EE1 /* Saloon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Saloon.m; sourceTree = "<group>"; };
@@ -249,6 +252,8 @@
 				967B905C210A01C000004526 /* Shower.m */,
 				966AD6B821071B9C002AD49E /* Store.h */,
 				966AD6B621071B98002AD49E /* Store.m */,
+				96167219210B4F3F00C2BBB4 /* Arcade.h */,
+				9616721A210B4F4C00C2BBB4 /* Arcade.m */,
 				966AD6B321071B86002AD49E /* Saloon.h */,
 				966AD6B421071B87002AD49E /* Saloon.m */,
 				966AD6B021071B82002AD49E /* Room.h */,
@@ -451,6 +456,7 @@
 				963A19F12105C31D00C8C428 /* GameViewController.m in Sources */,
 				963A19FC2105C31E00C8C428 /* main.m in Sources */,
 				963C5E7C2108BD7600CD30DE /* (null) in Sources */,
+				9616721B210B4F4C00C2BBB4 /* Arcade.m in Sources */,
 				962606E82106038B005C7A1C /* PageViewController.m in Sources */,
 				963C5E822108C7BE00CD30DE /* GameOverController.m in Sources */,
 				96B31241210731E40081FCA6 /* OptionViewController.m in Sources */,
