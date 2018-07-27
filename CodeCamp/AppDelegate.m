@@ -106,7 +106,6 @@ Creature* pet;
 +(void) initDict{
     NSLog(@"init");
     [myShare createKeyWith:@"hunger" : @100];
-    
     [myShare changeValueOfKey:@"thirst" :@100];
     [myShare changeValueOfKey:@"dirt" :@100];
     [myShare changeValueOfKey:@"fodder" :@10];
@@ -123,8 +122,7 @@ Creature* pet;
     [myShare createKeyWith:@"midnight" :@2359];
 
     
-    for (NSString *key in [myShare getAllKeys])
-        NSLog(@"%@",key) ;
+    [myShare printAll];
     
     
 }

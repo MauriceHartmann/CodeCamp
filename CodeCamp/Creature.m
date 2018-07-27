@@ -36,6 +36,9 @@ NSString* MONEY  =  @"money";
 NSString* DIRT   =  @"dirt";
 NSString* SLEEP  =  @"sleep";
 NSString* HEALTH =  @"health";
+NSString* SHAMPOO = @"shampoo";
+NSString* BEDTIME  = @"sleepTime";
+NSString* WAKINGTIME = @"wakeTime";
 
 NSMutableDictionary *dictCreature;
 UITabBarController* mainView;
@@ -45,7 +48,8 @@ NSTimer *t;
 NSTimer *t2;
 NSDate* currentTime;
 NSDateFormatter *timeFormat;
-NSInteger *currentTimeInteger;
+NSInteger currentTimeInteger;
+NSTimeInterval nightDuration;
 
 @implementation Creature
 
@@ -71,6 +75,7 @@ NSInteger *currentTimeInteger;
     [timeFormat setDateFormat:@"HHmm"];
     NSString *strCurrentTime =[timeFormat stringFromDate:currentTime];
     currentTimeInteger = [strCurrentTime integerValue];
+    NSLog(@"Time on start: %ld.", currentTimeInteger);
 }
 
 //timer method that ticks every Intervall of the timer
@@ -120,8 +125,6 @@ NSInteger *currentTimeInteger;
 }
 
 
-
-
 /*
  Method check whether it is day or not
  ---> YES, it is night
@@ -150,10 +153,12 @@ NSInteger *currentTimeInteger;
     }
     
     //Check current hunger and reduce the health
-    if([myShareCreature getIntFromKey:HUNGER] >= 5 && [myShareCreature getIntFromKey:HUNGER] <80)
+    if([myShareCreature getIntFromKey:HUNGER] >= 5 && [myShareCreature getIntFromKey:HUNGER] <HUNGER_LIMIT)
     {
         [myShareCreature updateKeyBy:HEALTH : -1];
-    } else {
+    }
+    else if([myShareCreature getIntFromKey:HUNGER] < 5)
+    {
         //Current hunger < 5
         //Reduce health by 2
         [myShareCreature updateKeyBy:HEALTH : -2];
@@ -165,10 +170,12 @@ NSInteger *currentTimeInteger;
         [myShareCreature updateKeyBy:THIRST :0];
     }
     
-    if([myShareCreature getIntFromKey:THIRST] >= 5 && [myShareCreature getIntFromKey:THIRST] <80)
+    if([myShareCreature getIntFromKey:THIRST] >= 5 && [myShareCreature getIntFromKey:THIRST] <THIRST_LIMIT)
     {
         [myShareCreature updateKeyBy:HEALTH : -1];
-    } else {
+    }
+    else if([myShareCreature getIntFromKey:THIRST] < 5)
+    {
         //Current thirst < 5
         //Reduce health by 2
          [myShareCreature updateKeyBy:HEALTH : -2];
@@ -181,9 +188,9 @@ NSInteger *currentTimeInteger;
     }
     
     //Creature dead when hungry, thirst and health equal 0
-    if ([myShareCreature getIntFromKey:HEALTH] < 0 &&
-            [myShareCreature getIntFromKey:THIRST] < 0 &&
-            [myShareCreature getIntFromKey:HUNGER] < 0 ) {
+    if ([myShareCreature getIntFromKey:HEALTH] == 0 &&
+            [myShareCreature getIntFromKey:THIRST] == 0 &&
+            [myShareCreature getIntFromKey:HUNGER] == 0 ) {
         [myShareCreature changeValueOfKey:@"life" :@0];
         NSLog(@"Dead");
     }
@@ -213,6 +220,9 @@ NSInteger *currentTimeInteger;
     //Check health
     if([myShareCreature getIntFromKey:HEALTH] <  HEALTH_LIMIT)
     {
+        NSLog(@"Health now: %d. Hunger: %d. Thirst: %d." ,[myShareCreature getIntFromKey:HEALTH],
+                                                            [myShareCreature getIntFromKey:HUNGER],
+                                                            [myShareCreature getIntFromKey:THIRST]);
         NSLog(@"dying");
     }
 }
