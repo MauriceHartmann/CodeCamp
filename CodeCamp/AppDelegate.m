@@ -119,11 +119,10 @@ Creature* pet;
     [myShare createKeyWith:@"awake" :@50];
     [myShare createKeyWith:@"sleep" :@1];
     [myShare createKeyWith:@"sleepTime" :@2100];
-    [myShare createKeyWith:@"awakeTime" :@0730];
+    [myShare createKeyWith:@"awakeTime" :@730];
     [myShare createKeyWith:@"midnight" :@2359];
     
-    for (NSString *key in [myShare getAllKeys])
-        NSLog(@"%@",key) ;
+    [myShare printAll];
     
     
 }

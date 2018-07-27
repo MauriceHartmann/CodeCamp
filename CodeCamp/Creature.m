@@ -45,7 +45,7 @@ NSTimer *t;
 NSTimer *t2;
 NSDate* currentTime;
 NSDateFormatter *timeFormat;
-NSInteger *currentTimeInteger;
+NSInteger currentTimeInteger;
 
 @implementation Creature
 
@@ -168,7 +168,7 @@ NSInteger *currentTimeInteger;
 //    NSLog(@"Current time: %@.", strCurrentTime);
     
     //Check current time between sleeptime (21:00) to 23:59
-    if(currentTimeInteger > [myShareCreature getIntFromKey:@"sleepTime"] && currentTime <= [myShareCreature getIntFromKey:@"midnight"])
+    if(currentTimeInteger > [myShareCreature getIntFromKey:@"sleepTime"] && currentTimeInteger <= [myShareCreature getIntFromKey:@"midnight"])
     {
         [myShareCreature changeValueOfKey:SLEEP :@0];
         NSLog(@"Sleep");
@@ -176,7 +176,7 @@ NSInteger *currentTimeInteger;
     }
     
     //Check current time between 00:00 to wake up time (07:30)
-    if(currentTimeInteger > 0 && currentTime <= [myShareCreature getIntFromKey:@"awakeTime"])
+    if(currentTimeInteger > 0 && currentTimeInteger <= [myShareCreature getIntFromKey:@"awakeTime"])
     {
         [myShareCreature changeValueOfKey:SLEEP :@0];
         NSLog(@"Sleep");
