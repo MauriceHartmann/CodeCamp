@@ -42,4 +42,5 @@ extern double time_tick_factor;
 +(void) sendNotification:(NSString*) title forSubtitle:(NSString*) subtitle forBody:(NSString*) body forIntervall: (NSInteger) intervall;
 -(void) prepareBackgroundNotification;
 +(void) updateAfterReturn;
++(BOOL) isDuringSleepTime:(NSDate*) date;
 @end

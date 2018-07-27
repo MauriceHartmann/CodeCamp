@@ -200,7 +200,7 @@ int noFoodWarning = 1;
     
     if([mySharesView getIntFromKey:HUNGER]<3){
         if(noFoodWarning == 1){
-            [self disptachDrinkWarning];
+            [self disptachFoodWarning];
         }
     }else{
         noFoodWarning = 1;
