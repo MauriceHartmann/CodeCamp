@@ -15,8 +15,19 @@
 
 +(void) doAction: (Share *) myShares :(PageViewController*) pageView
 {
-    
-    [myShares changeValueOfKey:DIRT :@100];
+    if(![Room checkFullness:myShares :pageView])
+    {
+        if(![Room checkNoItemLeft:myShares :pageView])
+        {
+            //puts Dirt on max Value
+            [myShares changeValueOfKey:DIRT :@100];
+            [myShares updateKeyBy:SHAMPOO :-1];
+        }else
+        {
+            NSLog(@"No Shampoo left");
+        }
+    } else
+    {NSLog(@"Not Dirty!");}
 }
 
 @end

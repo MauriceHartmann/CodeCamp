@@ -20,6 +20,7 @@ int MAX_THIRST = 100;
         if(![Room checkNoItemLeft:myShares :pageView])
         {
             [myShares updateKeyBy:@"hunger" :20];
+            [myShares updateKeyBy:DIRT :-2];
             NSLog(@"Hunger gain by 20. Hunger left: %d.", [myShares getIntFromKey:@"hunger"]);
             [myShares updateKeyBy:@"fodder" :-2];
             NSLog(@"Fodder reduce by 2. Fodder left: %d.", [myShares getIntFromKey:@"fodder"]);

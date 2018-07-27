@@ -56,7 +56,8 @@ NSInteger *currentTimeInteger;
     NSLog(@"Pet init");
     [self initNotification];
     myShareCreature = Share.sharedSingleton;
-    
+    int timeForSleep = 24 - (([myShareCreature getIntFromKey:BEDTIME]/100)-([myShareCreature getIntFromKey:WAKINGTIME]/100));
+    nightDuration = timeForSleep * 3600;
     //timer that decreases the needs of the creature in the onTick Method
     //timer ticks every "time_tick_factor" and calls the method onTick:
     t = [NSTimer scheduledTimerWithTimeInterval: time_tick_factor
@@ -128,27 +129,11 @@ NSInteger *currentTimeInteger;
  */
 - (BOOL) checkNight
 {
-    currentTime = [NSDate date];
-    NSString *strCurrentTime =[timeFormat stringFromDate:currentTime];
-    currentTimeInteger = [strCurrentTime integerValue];
-//    NSLog(@"Current time: %@.", strCurrentTime);
-    
-    //Check current time between sleeptime (21:00) to 23:59
-    if(currentTimeInteger > [myShareCreature getIntFromKey:@"sleepTime"] && currentTimeInteger <= [myShareCreature getIntFromKey:@"midnight"])
-    {
+    if([Creature isDuringSleepTime:[NSDate date]] == YES){
         [myShareCreature changeValueOfKey:SLEEP :@0];
         NSLog(@"Sleep");
         return YES;
     }
-    
-    //Check current time between 00:00 to wake up time (07:30)
-    if(currentTimeInteger > 0 && currentTimeInteger <= [myShareCreature getIntFromKey:@"awakeTime"])
-    {
-        [myShareCreature changeValueOfKey:SLEEP :@0];
-        NSLog(@"Sleep");
-        return YES;
-    }
-    
     NSLog(@"It is day!");
     [myShareCreature changeValueOfKey:SLEEP :@1];
     return NO;
@@ -266,7 +251,7 @@ bool isGrantedNotificationAccess;
 }
 //allows you to send a push notification
 //title:     headline for the notification
-//subtitle:  second headline ?!?
+//subtitle:  second headline ?!? Is used as notifiactionIdentifier
 //body:      smaller Text part for informations
 //intervall: amount of seconds until the notifications pops up
 
@@ -301,8 +286,10 @@ bool isGrantedNotificationAccess;
     if(needValue < 1 )
     {
         needValue = 1;
-        correction = time_tick_factor;
+        correction = time_tick_factor; // correction is needed if need value had to be raised to avoid Exception
     }
+    
+    //hoursLeftTillNeed is the approx. time until the pet is hungry,thirst etc.
     double hoursLeftTillNeed = ((needValue / ((random_factor + 1)/2)))*time_tick_factor;
     [Creature sendNotification:@"CodeCamp" forSubtitle:@"Hunger" forBody:@"Hab Hunger!" forIntervall:hoursLeftTillNeed];
     NSLog(@"Current Hunger: %d Pet will be hungry in %f minutes",[myShareCreature getIntFromKey:HUNGER],((hoursLeftTillNeed-correction)/60) );
@@ -315,14 +302,86 @@ bool isGrantedNotificationAccess;
         needValue = 1;
         correction = time_tick_factor;
     }
+    
+    //hoursLeftTillNeed is the approx. time until the pet is hungry,thirst etc.
     hoursLeftTillNeed = (needValue / ((random_factor + 1)/2))*time_tick_factor;
     [Creature sendNotification:@"CodeCamp" forSubtitle:@"Durscht" forBody:@"ICH HAB BRAND!" forIntervall:hoursLeftTillNeed];
     NSLog(@"Current thirst: %d Pet will be thirsty in %f minutes",[myShareCreature getIntFromKey:THIRST],((hoursLeftTillNeed-correction)/60) );
     
+    needValue = [myShareCreature getIntFromKey:DIRT]-20;
+    correction = 0;
+    if(needValue < 1 )
+    {
+        needValue = 1;
+        correction = time_tick_factor;
+    }
+    
+    //hoursLeftTillNeed is the approx. time until the pet is hungry,thirst etc.
+    hoursLeftTillNeed = (needValue / ((random_factor + 1)/2))*time_tick_factor;
+    [Creature sendNotification:@"CodeCamp" forSubtitle:DIRT forBody:@"Ich bin dreckig. FeelsBadMan" forIntervall:hoursLeftTillNeed];
+    NSLog(@"Current dirt: %d Pet will be dirty in %f minutes",[myShareCreature getIntFromKey:DIRT],((hoursLeftTillNeed-correction)/60) );
+    
+    //random Notifications if an item in the inventory is almost empty
+    int randomNotification = 0;
+    if([myShareCreature getIntFromKey:FODDER] < 2)
+    {
+        //3600s = 1h => notification will pop between 1 and 6 hours;
+        randomNotification = arc4random_uniform(3600*5) + 3600;
+        [Creature sendNotification:@"CodeCamp" forSubtitle:FODDER forBody:@"Das Essen wird knapp" forIntervall:randomNotification];
+    }
+    
+    if([myShareCreature getIntFromKey:DRINKS] < 2)
+    {
+        //3600s = 1h => notification will pop between 1 and 6 hours;
+        randomNotification = arc4random_uniform(3600*5) + 3600;
+        [Creature sendNotification:@"CodeCamp" forSubtitle:DRINKS forBody:@"Das Trinken wird knapp" forIntervall:randomNotification];
+    }
+    
+    if([myShareCreature getIntFromKey:SHAMPOO] < 2)
+    {
+        //3600s = 1h => notification will pop between 1 and 6 hours;
+        randomNotification = arc4random_uniform(3600*5) + 3600;
+        [Creature sendNotification:@"CodeCamp" forSubtitle:SHAMPOO forBody:@"Das Shampoo wird knapp" forIntervall:randomNotification];
+    }
+    
 }
 
++(BOOL) isDuringSleepTime:(NSDate*) date{
+    NSDate *now = [NSDate date];
+    NSString *z = [timeFormat stringFromDate:now];
+    NSInteger timeInt = [z integerValue];
+    //Check current time between sleeptime (21:00) to 23:59
+    if(timeInt > [myShareCreature getIntFromKey:@"sleepTime"] && timeInt <= [myShareCreature getIntFromKey:@"midnight"])
+    {
+        return YES;
+    }
+    
+    //Check current time between 00:00 to wake up time (07:00)
+    if(timeInt >= 0 && currentTimeInteger <= [myShareCreature getIntFromKey:@"awakeTime"])
+    {
+        return YES;
+    }
+    return NO;
+}
+
+
 +(void) updateAfterReturn{
-    NSTimeInterval interval = [(NSDate*)[myShareCreature getObjectFromKey:@"time"] timeIntervalSinceNow];
+    NSTimeInterval interval;
+    NSDate *last = (NSDate*)[myShareCreature getObjectFromKey:@"time"];
+    if([Creature isDuringSleepTime :last]&&[Creature isDuringSleepTime:[NSDate date]]){ //Asleep lasttime & still asleep now
+        return; //Dont substract anything
+    }else if(![Creature isDuringSleepTime :last]&&![Creature isDuringSleepTime:[NSDate date]]){
+        
+        interval = [last timeIntervalSinceNow] + ([Creature dateDifference:[NSDate date] :last])*nightDuration;
+    }else if([Creature isDuringSleepTime :last]&&![Creature isDuringSleepTime:[NSDate date]]){ // last value was during sleeptime; currently awake
+        interval = [[Creature intToDate:[myShareCreature getIntFromKey:@"awakeTime"]] timeIntervalSinceDate: [NSDate date]]; // only substract from awake time to current time
+    }else if(![Creature isDuringSleepTime :last]&&[Creature isDuringSleepTime:[NSDate date]]){ // last value was during daytime; currently asleep
+        interval = [[Creature intToDate:[myShareCreature getIntFromKey:@"sleepTime"]] timeIntervalSinceDate: last]; // only substract from last Time to Sleep Time
+    }else{ //Error
+        interval = [last timeIntervalSinceNow];
+        NSLog(@"timeError");
+    }
+    //Correct Values based on Interval
     NSLog(@"Interval: %f" ,interval);
     while(interval<(-(time_tick_factor-1))){
         interval += time_tick_factor;
@@ -335,6 +394,31 @@ bool isGrantedNotificationAccess;
     }
     
 }
+
++(NSDate*) intToDate:(int) time{
+    NSDateComponents *comps = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
+    [comps setHour:(time/100)];
+    NSLog(@"%@",[[NSCalendar currentCalendar] dateFromComponents:comps]);
+    return [[NSCalendar currentCalendar] dateFromComponents:comps];
+}
+
++(int)dateDifference:(NSDate*) from :(NSDate*) to{
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay
+                                               fromDate:from
+                                                 toDate:to
+                                                options:0];
+    if(components.day>1||components.month>0||components.year>0){
+        [myShareCreature changeValueOfKey:LIFE :0]; //Checked less than a Day ago == instant Death
+        return 1;
+    }else if(components.day>0){
+        return 1; //Date changed
+    }else{
+        return 0; //Date didn`t change
+        
+    }
+};
+
 
 
 @end

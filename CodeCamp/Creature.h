@@ -26,6 +26,7 @@ extern NSString* DRINKS;
 extern NSString* LIFE;
 extern NSString* MONEY;
 extern NSString* DIRT;
+extern NSString* SHAMPOO;
 
 //(random_factor + 1) is the max Number of Supply the pet loses per time_tick_factor
 //example: random_factor = 9 => 1-10 Supply loss per tick
@@ -41,4 +42,5 @@ extern double time_tick_factor;
 +(void) sendNotification:(NSString*) title forSubtitle:(NSString*) subtitle forBody:(NSString*) body forIntervall: (NSInteger) intervall;
 -(void) prepareBackgroundNotification;
 +(void) updateAfterReturn;
++(BOOL) isDuringSleepTime:(NSDate*) date;
 @end

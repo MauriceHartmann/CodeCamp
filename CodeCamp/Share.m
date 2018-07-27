@@ -31,12 +31,14 @@ static Share *sharedSingleton = nil;
     }
 }
 
+//Changes Value of keys. Only use for Numbers
 -(void) changeValueOfKey: (NSString*) key : (NSNumber*) value{
     @synchronized(passedMutableDict){
         [passedMutableDict setValue:value forKey:key];
     }
 }
 
+//Adds or substracts from value
 -(void) updateKeyBy:(NSString*) key : (int) num{
     @synchronized(passedMutableDict){
         NSNumber *nsNum = [passedMutableDict valueForKey:key];
@@ -67,27 +69,32 @@ static Share *sharedSingleton = nil;
     return t;
 }
 
+//Reads .txt and creates a new Dictionary
 -(void) createFromFile:(NSString*) path{
     passedMutableDict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
     
 }
 
+//returns requested Object
 -(NSObject*) getObjectFromKey:(NSString*)key{
     @synchronized(passedMutableDict){
         return [passedMutableDict objectForKey:key];
     }
     
 }
-
+// prints Dictionary to .txt (No synchronized neede because only called once)
 -(void) dictToTxt:(NSString*) path{
     [passedMutableDict writeToFile:path atomically:YES];
 }
 
+//Initializes Dictionary
 -(void) initDict{
     if(passedMutableDict == nil)
     passedMutableDict = [NSMutableDictionary dictionary];
 }
 
+
+//Used to print contents od Dictionary
 -(void)printAll{
     @synchronized(passedMutableDict){
         for(NSString *key in [passedMutableDict allKeys]) {
