@@ -190,10 +190,10 @@
 				969A022B210A03BE000DF867 /* Controller */,
 				969A022A210A038E000DF867 /* Room */,
 				96B312422107400F0081FCA6 /* GameScene.sks */,
-				966AD6AB21071B7C002AD49E /* Inventory.m */,
 				966AD6AA21071B79002AD49E /* Inventory.h */,
-				966AD6A821071B76002AD49E /* Creature.m */,
+				966AD6AB21071B7C002AD49E /* Inventory.m */,
 				966AD6A721071B5A002AD49E /* Creature.h */,
+				966AD6A821071B76002AD49E /* Creature.m */,
 				963A19E52105C31D00C8C428 /* AppDelegate.h */,
 				963A19E62105C31D00C8C428 /* AppDelegate.m */,
 				963A19F22105C31D00C8C428 /* Main.storyboard */,
@@ -201,8 +201,8 @@
 				963A19F72105C31E00C8C428 /* LaunchScreen.storyboard */,
 				963A19FA2105C31E00C8C428 /* Info.plist */,
 				963A19FB2105C31E00C8C428 /* main.m */,
-				963A1A272106039500C8C428 /* Share.m */,
 				963A1A29210603DE00C8C428 /* Share.h */,
+				963A1A272106039500C8C428 /* Share.m */,
 			);
 			path = CodeCamp;
 			sourceTree = "<group>";
@@ -266,18 +266,18 @@
 		969A022B210A03BE000DF867 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				963A19EF2105C31D00C8C428 /* GameViewController.h */,
-				963A19F02105C31D00C8C428 /* GameViewController.m */,
-				962528902109AFC1007B4C7D /* StoreViewController.m */,
-				962528922109AFCF007B4C7D /* StoreViewController.h */,
-				962606E62106038B005C7A1C /* PageViewController.h */,
-				962606E72106038B005C7A1C /* PageViewController.m */,
-				96B3123F210731C20081FCA6 /* OptionViewController.h */,
-				96B31240210731E40081FCA6 /* OptionViewController.m */,
 				9613489A2109C3BE00CF484E /* GameController.h */,
 				9613489B2109C3CB00CF484E /* GameController.m */,
 				963C5E812108C7BE00CD30DE /* GameOverController.m */,
 				963C5E802108C7B700CD30DE /* GameOverController.h */,
+				963A19EF2105C31D00C8C428 /* GameViewController.h */,
+				963A19F02105C31D00C8C428 /* GameViewController.m */,
+				96B3123F210731C20081FCA6 /* OptionViewController.h */,
+				96B31240210731E40081FCA6 /* OptionViewController.m */,
+				962606E62106038B005C7A1C /* PageViewController.h */,
+				962606E72106038B005C7A1C /* PageViewController.m */,
+				962528922109AFCF007B4C7D /* StoreViewController.h */,
+				962528902109AFC1007B4C7D /* StoreViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

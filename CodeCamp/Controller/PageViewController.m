@@ -14,6 +14,7 @@
 #import "Saloon.h"
 #import "Kitchen.h"
 #import "Shower.h"
+#import "Room.h"
 
 @interface PageViewController ()
 
@@ -22,6 +23,11 @@
 UIImageView * petView;
 UIImageView * hungerView;
 UIImageView * thirstView;
+
+// Energy Bar
+UIImage *image_green;
+UIImage *image_yellow;
+UIImage *image_red;;
 
 @implementation PageViewController
 Share* mySharesView;
@@ -35,7 +41,15 @@ int myUpdateTime = 1;
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Energy Bar
+    image_green = [UIImage imageNamed: @"blob_green.png"];
+    image_yellow = [UIImage imageNamed: @"blob_yellow.png"];
+    image_red = [UIImage imageNamed: @"blob_red.png"];
+    
+    [_energyHome setImage:image_green];
+    [_energyMall setImage:image_green];
+    [_energyPub setImage:image_green];
+    [_energyShower setImage:image_green];
     
     // Sounds
     NSURL *soundGameOverURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"game_over" ofType:@"mp3"]];
@@ -68,8 +82,8 @@ int myUpdateTime = 1;
     NSURL *soundClickMiniGameURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"click_minigame" ofType:@"mp3"]];
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundClickMiniGameURL, &soundClickMinigame);
     
-    // Hide the Tab Bar by default
-    [self.tabBarController.tabBar setHidden:YES];
+    // Show the Tab Bar by default
+    [self.tabBarController.tabBar setHidden:NO];
     
     // Handle Swipes to change between screens
     self.leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
@@ -153,33 +167,36 @@ int myUpdateTime = 1;
 
 -(void) checkNeedView
 {
+    // Stock Values - Mall
+    _foodLabelMall.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:FODDER]];
+    _drinkLabelMall.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:DRINKS]];
+    _shampooLabelMall.text = @"???";
+    //    //    _shampooLabelMall.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:SHAMPOO]];
+    
+    // Stock Values - Home
+    _hungerLabelHome.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:HUNGER]];
+    _fodderLabelHome.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:FODDER]];
+    
+    // Stock Values - Pub
+    _thirstLabelPub.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:THIRST]];
+    _drinksLabelPub.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:DRINKS]];
+    
+    // Stock Values - Shower
+    _dirtLabelShower.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:DIRT]];
+    _shampooLabelShower.text = @"???";
+    //    _shampooLabelShower.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:SHAMPOO]];
+    
     if([mySharesView getIntFromKey:HUNGER] <= HUNGER_LIMIT )
-    {
-        [self.view addSubview:hungerView];
-        AudioServicesPlaySystemSound(soundBlobIsAngry);
-    }
-    else
     {
         [hungerView removeFromSuperview];
     }
     
     if([mySharesView getIntFromKey:THIRST] <= THIRST_LIMIT )
     {
-        [self.view addSubview:thirstView];
-        AudioServicesPlaySystemSound(soundBlobIsAngry);
-    }
-    else
-    {
         [thirstView removeFromSuperview];
     }
     
     if([mySharesView getIntFromKey:DIRT] <= DIRT_LIMIT)
-    {
-        UIImage *myimg = [UIImage imageNamed:@"dirt"];
-        petView.image=myimg;
-        [self.view addSubview:petView];
-    }
-    else
     {
         UIImage *myimg = [UIImage imageNamed:@"blob"];
         petView.image=myimg;

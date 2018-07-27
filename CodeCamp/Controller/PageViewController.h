@@ -23,6 +23,23 @@
     SystemSoundID soundPageturn;
 }
 
+@property (weak, nonatomic) IBOutlet UILabel *foodLabelMall;
+@property (weak, nonatomic) IBOutlet UILabel *drinkLabelMall;
+@property (weak, nonatomic) IBOutlet UILabel *shampooLabelMall;
+@property (weak, nonatomic) IBOutlet UIImageView *energyMall;
+
+@property (weak, nonatomic) IBOutlet UILabel *hungerLabelHome;
+@property (weak, nonatomic) IBOutlet UILabel *fodderLabelHome;
+@property (weak, nonatomic) IBOutlet UIImageView *energyHome;
+
+@property (weak, nonatomic) IBOutlet UILabel *thirstLabelPub;
+@property (weak, nonatomic) IBOutlet UILabel *drinksLabelPub;
+@property (weak, nonatomic) IBOutlet UIImageView *energyPub;
+
+@property (weak, nonatomic) IBOutlet UILabel *dirtLabelShower;
+@property (weak, nonatomic) IBOutlet UILabel *shampooLabelShower;
+@property (weak, nonatomic) IBOutlet UIImageView *energyShower;
+
 @property (nonatomic, strong) UISwipeGestureRecognizer *leftSwipe;
 @property (nonatomic, strong) UISwipeGestureRecognizer *rightSwipe;
 @property (nonatomic, strong) UISwipeGestureRecognizer *upSwipe;
