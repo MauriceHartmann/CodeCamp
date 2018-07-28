@@ -169,7 +169,25 @@ int noFoodWarning = 1;
 
 -(void) checkNeedView
 {
-    // If hunger is below 20;
+    // Stock Values - Mall
+    _foodLabelMall.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:FODDER]];
+    _drinkLabelMall.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:DRINKS]];
+    _shampooLabelMall.text = @"???";
+    //    //    _shampooLabelMall.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:SHAMPOO]];
+    
+    // Stock Values - Home
+    _hungerLabelHome.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:HUNGER]];
+    _fodderLabelHome.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:FODDER]];
+    
+    // Stock Values - Pub
+    _thirstLabelPub.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:THIRST]];
+    _drinksLabelPub.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:DRINKS]];
+    
+    // Stock Values - Shower
+    _dirtLabelShower.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:DIRT]];
+    _shampooLabelShower.text = @"???";
+    //    _shampooLabelShower.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:SHAMPOO]];
+    
     if([mySharesView getIntFromKey:HUNGER] <= HUNGER_LIMIT )
     {
         [self.view addSubview:hungerView];
