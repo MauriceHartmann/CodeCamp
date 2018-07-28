@@ -10,8 +10,12 @@
 #define Game_h
 
 #import <UIKit/UIKit.h>
+#import <AudioToolbox/AudioToolbox.h>
 
-@interface GameController : UIViewController
+@interface GameController : UIViewController {
+    SystemSoundID soundClickMinigame;
+}
+
 @property (weak, nonatomic) IBOutlet UIButton *Btn1;
 @property (weak, nonatomic) IBOutlet UIButton *Btn2;
 @property (weak, nonatomic) IBOutlet UIButton *Btn3;

@@ -14,6 +14,7 @@
 #import "Saloon.h"
 #import "Kitchen.h"
 #import "Shower.h"
+#import "Room.h"
 
 @interface PageViewController ()
 
@@ -22,6 +23,11 @@
 UIImageView * petView;
 UIImageView * hungerView;
 UIImageView * thirstView;
+
+// Energy Bar
+UIImage *image_green;
+UIImage *image_yellow;
+UIImage *image_red;;
 
 @implementation PageViewController
 Share* mySharesView;
@@ -37,7 +43,15 @@ int noFoodWarning = 1;
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Energy Bar
+    image_green = [UIImage imageNamed: @"blob_green.png"];
+    image_yellow = [UIImage imageNamed: @"blob_yellow.png"];
+    image_red = [UIImage imageNamed: @"blob_red.png"];
+    
+    [_energyHome setImage:image_green];
+    [_energyMall setImage:image_green];
+    [_energyPub setImage:image_green];
+    [_energyShower setImage:image_green];
     
     // Sounds
     NSURL *soundGameOverURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"game_over" ofType:@"mp3"]];
@@ -70,8 +84,8 @@ int noFoodWarning = 1;
     NSURL *soundClickMiniGameURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"click_minigame" ofType:@"mp3"]];
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundClickMiniGameURL, &soundClickMinigame);
     
-    // Hide the Tab Bar by default
-    [self.tabBarController.tabBar setHidden:YES];
+    // Show the Tab Bar by default
+    [self.tabBarController.tabBar setHidden:NO];
     
     // Handle Swipes to change between screens
     self.leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
@@ -169,21 +183,10 @@ int noFoodWarning = 1;
     
     if([mySharesView getIntFromKey:THIRST] <= THIRST_LIMIT )
     {
-        [self.view addSubview:thirstView];
-        AudioServicesPlaySystemSound(soundBlobIsAngry);
-    }
-    else
-    {
         [thirstView removeFromSuperview];
     }
     
     if([mySharesView getIntFromKey:DIRT] <= DIRT_LIMIT)
-    {
-        UIImage *myimg = [UIImage imageNamed:@"dirt"];
-        petView.image=myimg;
-        [self.view addSubview:petView];
-    }
-    else
     {
         UIImage *myimg = [UIImage imageNamed:@"blob"];
         petView.image=myimg;
@@ -223,10 +226,10 @@ int noFoodWarning = 1;
     if (sender.direction == UISwipeGestureRecognizerDirectionLeft) {
             /*
                 0 -> Home
-                1 -> Saloon
+                1 -> Pub
                 2 -> Mall
-                3 -> Options
-                4 -> Shower
+                3 -> Pub
+                4 -> Options
              */
         switch (self.tabBarController.selectedIndex) {
             case 0:
@@ -238,10 +241,14 @@ int noFoodWarning = 1;
                 AudioServicesPlaySystemSound(soundPageturn);
                 break;
             case 2:
-                self.tabBarController.selectedIndex = 4;
+                self.tabBarController.selectedIndex = 3;
+                AudioServicesPlaySystemSound(soundPageturn);
+                break;
+            case 3:
+                self.tabBarController.selectedIndex = 3;
                 break;
             case 4:
-                self.tabBarController.selectedIndex = 4;
+                self.tabBarController.selectedIndex = 0;
                 break;
             default:
                 self.tabBarController.selectedIndex = 0;
@@ -251,10 +258,10 @@ int noFoodWarning = 1;
     if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
             /*
                 0 -> Home
-                1 -> Saloon
+                1 -> Pub
                 2 -> Mall
-                3 -> Options
-                4 -> Shower
+                3 -> Pub
+                4 -> Options
              */
         switch (self.tabBarController.selectedIndex) {
             case 0:
@@ -268,8 +275,12 @@ int noFoodWarning = 1;
                 self.tabBarController.selectedIndex = 1;
                 AudioServicesPlaySystemSound(soundPageturn);
                 break;
-            case 4:
+            case 3:
                 self.tabBarController.selectedIndex = 2;
+                AudioServicesPlaySystemSound(soundPageturn);
+                break;
+            case 4:
+                self.tabBarController.selectedIndex = 0;
                 break;
 
             default:
