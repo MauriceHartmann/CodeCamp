@@ -34,10 +34,12 @@ Creature* pet;
     UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
     UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:1];
     UITabBarItem *tabBarItem3 = [tabBar.items objectAtIndex:2];
+    UITabBarItem *tabBarItem5 = [tabBar.items objectAtIndex:4];
     
     tabBarItem1 = [tabBarItem1 initWithTitle:@"Home" image:[UIImage imageNamed:@"home_button.png"] selectedImage:[UIImage imageNamed:@"home_button.png"]];
     tabBarItem2 = [tabBarItem2 initWithTitle:@"Saloon" image:[UIImage imageNamed:@"saloon_button.png"] selectedImage:[UIImage imageNamed:@"saloon_button.png"]];
     tabBarItem3 = [tabBarItem3 initWithTitle:@"Mall" image:[UIImage imageNamed:@"mall_button.png"] selectedImage:[UIImage imageNamed:@"mall_button.png"]];
+    tabBarItem5 = [tabBarItem5 initWithTitle:@"Games" image:[UIImage imageNamed:@"arcade_button.png"] selectedImage:[UIImage imageNamed:@"arcade_button.png"]];
     
     [Creature updateAfterReturn];
     return YES;

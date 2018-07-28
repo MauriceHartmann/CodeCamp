@@ -195,7 +195,6 @@ int noFoodWarning = 1;
     }
     else
     {
-        NSLog(@"removing view");
         [hungerView removeFromSuperview];
     }
     
@@ -300,6 +299,9 @@ int noFoodWarning = 1;
             case 4:
                 self.tabBarController.selectedIndex = 0;
                 break;
+            case 4:
+                self.tabBarController.selectedIndex = 3;
+                break;
 
             default:
                 self.tabBarController.selectedIndex = 0;
@@ -320,17 +322,27 @@ int noFoodWarning = 1;
 {
     switch (self.tabBarController.selectedIndex) {
         case 0:
+            NSLog(@"Kitchen");
             [Kitchen doAction: mySharesView :self];
             AudioServicesPlaySystemSound(soundBlobIsEating);
             break;
         case 1:
+            NSLog(@"Saloon");
             [Saloon doAction: mySharesView :self];
             AudioServicesPlaySystemSound(soundBlobIsDrinking);
             break;
         case 2:
+            NSLog(@"Store");
             [Store doAction: mySharesView:self];
-        case 4:
+            break;
+        case 3:
+            NSLog(@"Shower");
             [Shower doAction: mySharesView:self];
+            break;
+        case 4:
+            NSLog(@"Arcade");
+            [Arcade doAction:mySharesView :self];
+            break;
         default:
             break;
             
