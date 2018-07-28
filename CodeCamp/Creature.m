@@ -69,7 +69,6 @@ NSTimeInterval nightDuration;
                                                                                                     target: self
                                                                                                        selector:@selector(onTick:)
                                                                                                     userInfo: nil repeats:YES];
- 
     currentTime = [NSDate date];
     timeFormat = [[NSDateFormatter alloc] init];
     //Set as 24H format
@@ -125,26 +124,6 @@ NSTimeInterval nightDuration;
 }
 
 
-/*
- Timer method, that check tiredness of creature
- */
--(void)onTickEnergie:(NSTimer*) timer
-{
-    //decrease energie every 30s
-    int decrease_sleep_factor = 0;
-    
-    //check if it is day
-    if(![self checkNight])
-    {
-        //Energy wont drop under 0
-        if([myShareCreature getIntFromKey:AWAKE] > 0)
-        {
-            [myShareCreature updateKeyBy:DIRT :decrease_factor];
-        }
-        [self checkNeeds];
-        //NSLog(@"DIRT: %d" ,[myShareCreature getIntFromKey:DIRT]);
-    }
-}
 
 
 /*
