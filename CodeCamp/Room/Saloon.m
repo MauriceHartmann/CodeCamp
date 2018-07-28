@@ -25,6 +25,9 @@
             NSLog(@"Thirst gains by 20. Thirst left: %d.", [myShares getIntFromKey:@"thirst"]);
             [myShares updateKeyBy:@"drinks" :-2];
             NSLog(@"Drinks reduce by 2. Drinks left: %d.", [myShares getIntFromKey:@"drinks"]);
+            [Room gainHealth:myShares];
+            NSLog(@"Health: %d.", [myShares getIntFromKey:@"health"]);
+            
         }else
         {
             NSLog(@"No Item left");

@@ -107,7 +107,6 @@ Creature* pet;
 +(void) initDict{
     NSLog(@"init");
     [myShare createKeyWith:@"hunger" : @100];
-    
     [myShare changeValueOfKey:@"thirst" :@100];
     [myShare changeValueOfKey:@"dirt" :@100];
     [myShare changeValueOfKey:@"fodder" :@10];
@@ -117,11 +116,12 @@ Creature* pet;
     [myShare changeValueOfKey:@"life" :@1];
     [myShare changeValueOfKey:@"money" :@1000];
     
-    [myShare createKeyWith:@"awake" :@50];
+    [myShare createKeyWith:@"health" :@100];
     [myShare createKeyWith:@"sleep" :@1];
     [myShare createKeyWith:@"sleepTime" :@2100];
     [myShare createKeyWith:@"awakeTime" :@700];
     [myShare createKeyWith:@"midnight" :@2359];
+
     
     [myShare printAll];
     

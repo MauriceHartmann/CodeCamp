@@ -24,6 +24,8 @@ int MAX_THIRST = 100;
             NSLog(@"Hunger gain by 20. Hunger left: %d.", [myShares getIntFromKey:@"hunger"]);
             [myShares updateKeyBy:@"fodder" :-2];
             NSLog(@"Fodder reduce by 2. Fodder left: %d.", [myShares getIntFromKey:@"fodder"]);
+            [Room gainHealth:myShares];
+            NSLog(@"Health: %d.", [myShares getIntFromKey:@"health"]);
         }else
         {
             NSLog(@"No Item left");

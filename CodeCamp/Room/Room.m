@@ -33,6 +33,10 @@
         case 1:
             check = ([myShareInRoom getIntFromKey:@"drinks"] <= 1);
             break;
+        
+        case 4:
+            check = ([myShareInRoom getIntFromKey:@"shampoo"] <= 1);
+            break;
     }
     
     return check;
@@ -60,8 +64,29 @@
                 check = true;
             };
             break;
+            
+        case 4:
+            if([myShareInRoom getIntFromKey:DIRT] == 100){
+                check = true;
+            };
+            
     }
     
     return check;
+}
+
+/*
+ 
+ */
++(void) gainHealth:(Share*) myShareInRoom
+{
+    if([myShareInRoom getIntFromKey:@"health"] >= 80)
+    {
+        int difference = 100 - [myShareInRoom getIntFromKey:@"health"];
+        [myShareInRoom updateKeyBy:@"health" :difference];
+    } else {
+        [myShareInRoom updateKeyBy:@"health" :20];
+    }
+        
 }
 @end

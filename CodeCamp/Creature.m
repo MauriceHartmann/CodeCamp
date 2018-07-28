@@ -14,7 +14,7 @@
 const int THIRST_LIMIT = 20;
 const int HUNGER_LIMIT = 20;
 const int DIRT_LIMIT = 20;
-const int AWAKE_LIMIT = 20;
+const int HEALTH_LIMIT = 20;
 
 //Max value for the needs.
 const int MAX_VALUE_LIMIT = 100;
@@ -31,11 +31,11 @@ NSString* HUNGER =  @"hunger";
 NSString* THIRST =  @"thirst";
 NSString* FODDER =  @"fodder";
 NSString* DRINKS =  @"drinks";
-NSString* LIFE = @"life";
-NSString* MONEY = @"money";
-NSString* DIRT = @"dirt";
-NSString* AWAKE  =  @"awake";
+NSString* LIFE   =  @"life";
+NSString* MONEY  =  @"money";
+NSString* DIRT   =  @"dirt";
 NSString* SLEEP  =  @"sleep";
+NSString* HEALTH =  @"health";
 NSString* SHAMPOO = @"shampoo";
 NSString* BEDTIME  = @"sleepTime";
 NSString* WAKINGTIME = @"awakeTime";
@@ -69,11 +69,7 @@ NSTimeInterval nightDuration;
                                                                                                     target: self
                                                                                                        selector:@selector(onTick:)
                                                                                                     userInfo: nil repeats:YES];
-    t2 = [NSTimer scheduledTimerWithTimeInterval: 5.0
-                                          target: self
-                                        selector:@selector(onTickEnergie:)
-                                        userInfo: nil repeats:YES];
-    
+ 
     currentTime = [NSDate date];
     timeFormat = [[NSDateFormatter alloc] init];
     //Set as 24H format
@@ -143,20 +139,11 @@ NSTimeInterval nightDuration;
         //Energy wont drop under 0
         if([myShareCreature getIntFromKey:AWAKE] > 0)
         {
-            //energy decreased faster under awake limit
-            if([myShareCreature getIntFromKey:AWAKE] <= AWAKE_LIMIT)
-            {
-                decrease_sleep_factor = - 2;
-            }
-            //energy decrease normal
-            else
-            {
-                decrease_sleep_factor = - 1;
-            }
+            [myShareCreature updateKeyBy:DIRT :decrease_factor];
         }
+        [self checkNeeds];
+        //NSLog(@"DIRT: %d" ,[myShareCreature getIntFromKey:DIRT]);
     }
-    [myShareCreature updateKeyBy:AWAKE :decrease_sleep_factor];
-    [self checkEnergie];
 }
 
 
@@ -177,57 +164,66 @@ NSTimeInterval nightDuration;
     return NO;
 }
 
-/*
- NOT DONE YET!
- */
--(void) checkEnergie
-{
-    if([myShareCreature getIntFromKey:AWAKE] < 1){
-        [myShareCreature changeValueOfKey:SLEEP :@0];
-        NSLog(@"Sleep");
-    }
-    
-    if([ myShareCreature getIntFromKey:SLEEP] == 0)
-    {
-        [myShareCreature updateKeyBy:HUNGER :-1];
-        [myShareCreature updateKeyBy:THIRST :-1];
-        
-        //Gain energy by 10 points every 30 sec
-        [myShareCreature updateKeyBy:AWAKE :10];
-        
-        NSLog(@"Gain energy");
-    }
-    
-    //check creature tired or not
-    if([myShareCreature getIntFromKey:AWAKE] <  AWAKE_LIMIT)
-    {
-        NSLog(@"tired");
-    }
-    
-    //wake up if energie full
-    if([ myShareCreature getIntFromKey:SLEEP] == 0 && [myShareCreature getIntFromKey:AWAKE] >= 50)
-    {
-        //Max awake limit not exceed
-        [myShareCreature changeValueOfKey:AWAKE :@50];
-        
-        //Wake up the creature
-        [myShareCreature changeValueOfKey:SLEEP :@1];
-        
-        NSLog(@"Awake");
-    }
- 
-}
-
 //checks if the pet is hungry,thirsty etc.
 -(void) checkNeeds
 {
-    if([myShareCreature getIntFromKey:HUNGER] <  1){
-        [myShareCreature changeValueOfKey:LIFE :@0];
+    
+    //Hunger never under 0
+    if([myShareCreature getIntFromKey:HUNGER] <= 0)
+    {
+        [myShareCreature updateKeyBy:HUNGER :0];
     }
     
-    if([myShareCreature getIntFromKey:THIRST] <  1){
-        [myShareCreature changeValueOfKey:LIFE :@0];
+    //Check current hunger and reduce the health
+    if([myShareCreature getIntFromKey:HUNGER] >= 5 && [myShareCreature getIntFromKey:HUNGER] <HUNGER_LIMIT)
+    {
+        [myShareCreature updateKeyBy:HEALTH : -1];
     }
+    else if([myShareCreature getIntFromKey:HUNGER] < 5)
+    {
+        //Current hunger < 5
+        //Reduce health by 2
+        [myShareCreature updateKeyBy:HEALTH : -2];
+    }
+    
+    //Thirst never under 0
+    if([myShareCreature getIntFromKey:THIRST] <= 0)
+    {
+        [myShareCreature updateKeyBy:THIRST :0];
+    }
+    
+    if([myShareCreature getIntFromKey:THIRST] >= 5 && [myShareCreature getIntFromKey:THIRST] <THIRST_LIMIT)
+    {
+        [myShareCreature updateKeyBy:HEALTH : -1];
+    }
+    else if([myShareCreature getIntFromKey:THIRST] < 5)
+    {
+        //Current thirst < 5
+        //Reduce health by 2
+         [myShareCreature updateKeyBy:HEALTH : -2];
+    }
+    
+    //Health never under 0
+    if([myShareCreature getIntFromKey:HEALTH] <= 0)
+    {
+        [myShareCreature updateKeyBy:HEALTH :0];
+    }
+    
+    //Creature dead when hungry, thirst and health equal 0
+    if ([myShareCreature getIntFromKey:HEALTH] == 0 &&
+            [myShareCreature getIntFromKey:THIRST] == 0 &&
+            [myShareCreature getIntFromKey:HUNGER] == 0 ) {
+        [myShareCreature changeValueOfKey:@"life" :@0];
+        NSLog(@"Dead");
+    }
+    
+//    if([myShareCreature getIntFromKey:HUNGER] <  1){
+//        [myShareCreature changeValueOfKey:@"life" :@0];
+//    }
+//
+//    if([myShareCreature getIntFromKey:THIRST] <  1){
+//        [myShareCreature changeValueOfKey:@"life" :@0];
+//    }
 
     
     
@@ -235,16 +231,22 @@ NSTimeInterval nightDuration;
     if([myShareCreature getIntFromKey:HUNGER] <  HUNGER_LIMIT)
     {
         NSLog(@"hungry");
-        
     }
     
     //checks thirst
     if([myShareCreature getIntFromKey:THIRST] <  THIRST_LIMIT)
     {
         NSLog(@"thirsty");
-        
     }
   
+    //Check health
+    if([myShareCreature getIntFromKey:HEALTH] <  HEALTH_LIMIT)
+    {
+        NSLog(@"Health now: %d. Hunger: %d. Thirst: %d." ,[myShareCreature getIntFromKey:HEALTH],
+                                                            [myShareCreature getIntFromKey:HUNGER],
+                                                            [myShareCreature getIntFromKey:THIRST]);
+        NSLog(@"dying");
+    }
 }
 
 

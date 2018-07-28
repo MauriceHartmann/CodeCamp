@@ -19,5 +19,5 @@
 
 +(BOOL) checkNoItemLeft: (Share *) myShareInRoom :(PageViewController*) pageView;
 +(BOOL) checkFullness: (Share *) myShareInRoom :(PageViewController*) pageView;
-
++(void) gainHealth: (Share*) myShareInRoom;
 @end
