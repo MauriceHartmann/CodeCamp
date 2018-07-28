@@ -15,6 +15,7 @@
 #import "Kitchen.h"
 #import "Shower.h"
 #import "Room.h"
+#import "Arcade.h"
 
 @interface PageViewController ()
 
@@ -218,7 +219,7 @@ int noFoodWarning = 1;
         noDrinkWarning = 1;
     }
     
-    if([mySharesView getIntFromKey:HUNGER]<3){
+    if([mySharesView getIntFromKey:FODDER]<3){
         if(noFoodWarning == 1){
             [self disptachFoodWarning];
         }
@@ -245,8 +246,8 @@ int noFoodWarning = 1;
                 0 -> Home
                 1 -> Pub
                 2 -> Mall
-                3 -> Pub
-                4 -> Options
+                3 -> Shower
+                4 -> Arcade
              */
         switch (self.tabBarController.selectedIndex) {
             case 0:
@@ -262,10 +263,10 @@ int noFoodWarning = 1;
                 AudioServicesPlaySystemSound(soundPageturn);
                 break;
             case 3:
-                self.tabBarController.selectedIndex = 3;
+                self.tabBarController.selectedIndex = 4;
                 break;
             case 4:
-                self.tabBarController.selectedIndex = 0;
+                self.tabBarController.selectedIndex = 4;
                 break;
             default:
                 self.tabBarController.selectedIndex = 0;
@@ -277,8 +278,8 @@ int noFoodWarning = 1;
                 0 -> Home
                 1 -> Pub
                 2 -> Mall
-                3 -> Pub
-                4 -> Options
+                3 -> Shower
+                4 -> Arcade
              */
         switch (self.tabBarController.selectedIndex) {
             case 0:
@@ -295,9 +296,6 @@ int noFoodWarning = 1;
             case 3:
                 self.tabBarController.selectedIndex = 2;
                 AudioServicesPlaySystemSound(soundPageturn);
-                break;
-            case 4:
-                self.tabBarController.selectedIndex = 0;
                 break;
             case 4:
                 self.tabBarController.selectedIndex = 3;
