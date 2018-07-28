@@ -55,6 +55,11 @@ NSTimeInterval nightDuration;
 
 
 
+
+
+
+
+
 -(void) initCreature
 {
     NSLog(@"Pet init");
@@ -77,6 +82,15 @@ NSTimeInterval nightDuration;
     currentTimeInteger = [strCurrentTime integerValue];
     NSLog(@"Time on start: %ld.", currentTimeInteger);
 }
+
+
+
+
+
+
+
+
+
 
 //timer method that ticks every Intervall of the timer
 -(void)onTick:(NSTimer*)timer
@@ -126,6 +140,9 @@ NSTimeInterval nightDuration;
 
 
 
+
+
+
 /*
  Method check whether it is day or not
  ---> YES, it is night
@@ -142,6 +159,14 @@ NSTimeInterval nightDuration;
     [myShareCreature changeValueOfKey:SLEEP :@1];
     return NO;
 }
+
+
+
+
+
+
+
+
 
 //checks if the pet is hungry,thirsty etc.
 -(void) checkNeeds
@@ -266,6 +291,11 @@ bool isGrantedNotificationAccess;
 //body:      smaller Text part for informations
 //intervall: amount of seconds until the notifications pops up
 
+
+
+
+
+
 + (void) sendNotification:(NSString*) title forSubtitle:(NSString*) subtitle forBody:(NSString*) body forIntervall: (NSInteger) intervall
 {
     if(isGrantedNotificationAccess)
@@ -288,6 +318,10 @@ bool isGrantedNotificationAccess;
         
     }
 }
+
+
+
+
 
 //prepares the notifications when the app is in background
 -(void) prepareBackgroundNotification
