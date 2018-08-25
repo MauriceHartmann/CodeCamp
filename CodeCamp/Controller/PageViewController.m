@@ -15,7 +15,7 @@
 #import "Kitchen.h"
 #import "Shower.h"
 #import "Room.h"
-#import "Arcade.h"
+
 
 @interface PageViewController ()
 
