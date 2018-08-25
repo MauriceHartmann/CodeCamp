@@ -15,6 +15,7 @@
 #import "Kitchen.h"
 #import "Shower.h"
 #import "Room.h"
+#import "Arcade.h"
 
 
 @interface PageViewController ()
@@ -40,6 +41,8 @@ NSTimer *needViewTimer;
 int myUpdateTime = 1;
 int noDrinkWarning = 1;
 int noFoodWarning = 1;
+BOOL showHungerImage = false;
+BOOL showThirstImage = false;
 
 - (void)viewDidLoad {
     
@@ -126,6 +129,7 @@ int noFoodWarning = 1;
 
 -(void)viewDidAppear:(BOOL)animated
 {
+    [self initViews];
     [self checkNeedView];
     [super viewDidAppear:false];
     needViewTimer = [NSTimer scheduledTimerWithTimeInterval: myUpdateTime
@@ -137,6 +141,9 @@ int noFoodWarning = 1;
 -(void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:true];
+    [hungerView removeFromSuperview];
+    [thirstView removeFromSuperview];
+    [petView removeFromSuperview];
     [needViewTimer invalidate];
 }
 
@@ -163,11 +170,13 @@ int noFoodWarning = 1;
     myimg = [UIImage imageNamed:@"hunger"];
     hungerView.image=myimg;
     hungerView.frame = CGRectMake(width/2 , height/2 , petViewWidth , petViewHeight);
+    [self.view addSubview:hungerView];
     
     thirstView= [[UIImageView alloc] init];
     myimg = [UIImage imageNamed:@"thirst"];
     thirstView.image=myimg;
     thirstView.frame = CGRectMake(width/2 - petViewWidth , height/2 , petViewWidth , petViewHeight);
+    [self.view addSubview:thirstView];
 }
 
 -(void) checkNeedView
@@ -189,28 +198,37 @@ int noFoodWarning = 1;
     _dirtLabelShower.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:DIRT]];
     _shampooLabelShower.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:SHAMPOO]];
     
-    if([mySharesView getIntFromKey:HUNGER] <= HUNGER_LIMIT )
+    if([mySharesView getIntFromKey:HUNGER] <= HUNGER_LIMIT)
     {
-        [self.view addSubview:hungerView];
-        AudioServicesPlaySystemSound(soundBlobIsAngry);
+        hungerView.hidden = false;
+        NSLog(@"showing");
+        if(showHungerImage == false){
+            showHungerImage = true;
+            AudioServicesPlaySystemSound(soundBlobIsAngry);
+            
+        }
+        
+        
     }
-    else
-    {
-        dispatch_async(dispatch_get_main_queue(),^{
-            [hungerView removeFromSuperview];
-        });
+    else if([mySharesView getIntFromKey:HUNGER] > HUNGER_LIMIT){
+        hungerView.hidden = true;
+        NSLog(@"hiding");
+        showHungerImage = false;
     }
     
-    if([mySharesView getIntFromKey:THIRST] <= THIRST_LIMIT )
+    if([mySharesView getIntFromKey:THIRST] <= THIRST_LIMIT)
     {
+        if(showThirstImage == false){
+            showThirstImage = true;
+            AudioServicesPlaySystemSound(soundBlobIsAngry);
+            
+        }
+        thirstView.hidden = false;
         
-        [self.view addSubview:thirstView];
-        AudioServicesPlaySystemSound(soundBlobIsAngry);
-    }else{
-        NSLog(@"Alles Prima");
-        dispatch_async(dispatch_get_main_queue(),^{
-            [thirstView removeFromSuperview];
-        });
+    }else if([mySharesView getIntFromKey:THIRST] > THIRST_LIMIT)
+    {
+        thirstView.hidden = true;
+        showThirstImage = false;
     }
     
     if([mySharesView getIntFromKey:DIRT] <= DIRT_LIMIT)
