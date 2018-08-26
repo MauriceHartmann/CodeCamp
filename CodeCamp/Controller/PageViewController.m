@@ -120,6 +120,8 @@ int noFoodWarning = 1;
     
     [self initViews];
     [self checkNeedView];
+    
+    NSLog(@"GGGGGGGGG!");
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -173,8 +175,7 @@ int noFoodWarning = 1;
     // Stock Values - Mall
     _foodLabelMall.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:FODDER]];
     _drinkLabelMall.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:DRINKS]];
-    _shampooLabelMall.text = @"???";
-    //    //    _shampooLabelMall.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:SHAMPOO]];
+    _shampooLabelMall.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:SHAMPOO]];
     
     // Stock Values - Home
     _hungerLabelHome.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:HUNGER]];
@@ -186,8 +187,7 @@ int noFoodWarning = 1;
     
     // Stock Values - Shower
     _dirtLabelShower.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:DIRT]];
-    _shampooLabelShower.text = @"???";
-    //    _shampooLabelShower.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:SHAMPOO]];
+    _shampooLabelShower.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:SHAMPOO]];
     
     if([mySharesView getIntFromKey:HUNGER] <= HUNGER_LIMIT )
     {
@@ -196,12 +196,21 @@ int noFoodWarning = 1;
     }
     else
     {
-        [hungerView removeFromSuperview];
+        dispatch_async(dispatch_get_main_queue(),^{
+            [hungerView removeFromSuperview];
+        });
     }
     
     if([mySharesView getIntFromKey:THIRST] <= THIRST_LIMIT )
     {
-        [thirstView removeFromSuperview];
+        
+        [self.view addSubview:thirstView];
+        AudioServicesPlaySystemSound(soundBlobIsAngry);
+    }else{
+        NSLog(@"Alles Prima");
+        dispatch_async(dispatch_get_main_queue(),^{
+            [thirstView removeFromSuperview];
+        });
     }
     
     if([mySharesView getIntFromKey:DIRT] <= DIRT_LIMIT)
