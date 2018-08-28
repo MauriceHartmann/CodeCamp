@@ -214,9 +214,7 @@ NSTimeInterval nightDuration;
     }
     
     //Creature dead when hungry, thirst and health equal 0
-    if ([myShareCreature getIntFromKey:HEALTH] == 0 &&
-            [myShareCreature getIntFromKey:THIRST] == 0 &&
-            [myShareCreature getIntFromKey:HUNGER] == 0 ) {
+    if ([myShareCreature getIntFromKey:HEALTH] == 0) {
         [myShareCreature changeValueOfKey:@"life" :@0];
         NSLog(@"Dead");
     }
