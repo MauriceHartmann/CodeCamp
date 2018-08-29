@@ -106,7 +106,6 @@ NSTimeInterval nightDuration;
     {
         [myShareCreature updateKeyBy:HUNGER :decrease_factor];
     }
-    [self checkNeeds];
     
     //decrease thirst and checks if the creature is thirsty
     
@@ -118,7 +117,6 @@ NSTimeInterval nightDuration;
      {
      [myShareCreature updateKeyBy:THIRST :decrease_factor];
      }
-     [self checkNeeds];
     // NSLog(@"thirst: %d" ,[myShareCreature getIntFromKey:THIRST]);
     
     
@@ -214,9 +212,7 @@ NSTimeInterval nightDuration;
     }
     
     //Creature dead when hungry, thirst and health equal 0
-    if ([myShareCreature getIntFromKey:HEALTH] == 0 &&
-            [myShareCreature getIntFromKey:THIRST] == 0 &&
-            [myShareCreature getIntFromKey:HUNGER] == 0 ) {
+    if ([myShareCreature getIntFromKey:HEALTH] == 0) {
         [myShareCreature changeValueOfKey:@"life" :@0];
         NSLog(@"Dead");
     }
