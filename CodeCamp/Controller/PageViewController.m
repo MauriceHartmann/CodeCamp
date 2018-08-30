@@ -188,6 +188,37 @@ int noFoodWarning = 1;
     _shampooLabelShower.text = @"???";
     //    _shampooLabelShower.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:SHAMPOO]];
     
+    // Smiley Traffic Lights
+    if(([mySharesView getIntFromKey:HUNGER] <= 100)
+       || ([mySharesView getIntFromKey:THIRST] <= 100)
+       || ([mySharesView getIntFromKey:DIRT] <= 100))
+    {
+        [_energyHome setImage:image_green];
+        [_energyMall setImage:image_green];
+        [_energyPub setImage:image_green];
+        [_energyShower setImage:image_green];
+    }
+    
+    if(([mySharesView getIntFromKey:HUNGER] <= 80)
+       || ([mySharesView getIntFromKey:THIRST] <= 80)
+       || ([mySharesView getIntFromKey:DIRT] <= 80))
+    {
+        [_energyHome setImage:image_yellow];
+        [_energyMall setImage:image_yellow];
+        [_energyPub setImage:image_yellow];
+        [_energyShower setImage:image_yellow];
+    }
+    
+    if(([mySharesView getIntFromKey:HUNGER] <= 20)
+       || ([mySharesView getIntFromKey:THIRST] <= 20)
+       || ([mySharesView getIntFromKey:DIRT] <= 20))
+    {
+        [_energyHome setImage:image_red];
+        [_energyMall setImage:image_red];
+        [_energyPub setImage:image_red];
+        [_energyShower setImage:image_red];
+    }
+    
     if([mySharesView getIntFromKey:HUNGER] <= HUNGER_LIMIT )
     {
         [self.view addSubview:hungerView];
