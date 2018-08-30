@@ -32,13 +32,13 @@ Share* myShares;
 }
 
 - (IBAction)deleteFile:(UIButton *)sender {
-    NSLog(@"call");
     [AppDelegate deleteFile];
 }
 - (IBAction)triggerHunger:(UIButton *)sender {
     NSNumber *num = [NSNumber numberWithInt:20];
     [myShares changeValueOfKey:@"hunger":num];
 }
+
 - (IBAction)triggerThirst:(UIButton *)sender {
     NSNumber *num = [NSNumber numberWithInt:20];
     [myShares changeValueOfKey:@"thirst":num];

@@ -343,6 +343,7 @@ BOOL showThirstImage = false;
     }
 }
 
+// Tapping executes action
 - (void) handleTap: (UITapGestureRecognizer*) recognize
 {
     switch (self.tabBarController.selectedIndex) {
@@ -376,7 +377,7 @@ BOOL showThirstImage = false;
     [self checkNeedView];
 }
 
-
+// Shows warning when drinks or foods ar almost empty WARNING: MUST stay two seperate Methods or else bugs will happen
 -(void)disptachDrinkWarning{
     noDrinkWarning = 0;
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Drinks are almost empty!" preferredStyle:UIAlertControllerStyleActionSheet];

@@ -413,16 +413,19 @@ bool isGrantedNotificationAccess;
     if([Creature isDuringSleepTime :last]&&[Creature isDuringSleepTime:[NSDate date]]){ //Asleep lasttime & still asleep now
         NSLog(@"Returning");
         return; //Dont substract anything
+        
     }else if(![Creature isDuringSleepTime :last]&&![Creature isDuringSleepTime:[NSDate date]]){
         interval = [last timeIntervalSinceNow] + ([Creature dateDifference:[NSDate date] :last]*nightDuration);
         NSLog(@"both awake + nightDur %f",nightDuration/3600);
+        
     }else if([Creature isDuringSleepTime :last]&&![Creature isDuringSleepTime:[NSDate date]]){ // last value was during sleeptime; currently awake
         interval = [[Creature intToDate:[myShareCreature getIntFromKey:@"awakeTime"]] timeIntervalSinceDate: [NSDate date]]; // only substract from awake time to current time
-        NSLog(@"last time was sleeptime");
-    }else if(![Creature isDuringSleepTime :last]&&[Creature isDuringSleepTime:[NSDate date]]){ // last value was during daytime; currently asleep
+        
+    }
+    else if(![Creature isDuringSleepTime :last]&&[Creature isDuringSleepTime:[NSDate date]]){ // last value was during daytime; currently asleep
         interval = [[Creature intToDate:[myShareCreature getIntFromKey:@"sleepTime"]] timeIntervalSinceDate: last]; // only substract from last Time to Sleep Time
-        NSLog(@"last time was awaketime");
-    }else{ //Error
+    }
+    else{ //Error
         interval = [last timeIntervalSinceNow];
         NSLog(@"timeError");
     }
@@ -431,11 +434,8 @@ bool isGrantedNotificationAccess;
     NSLog(@"Interval in Stunden: %f" ,interval/3600);
     while(interval<(-(time_tick_factor-1))){
         interval += time_tick_factor;
-        
         [myShareCreature updateKeyBy:@"hunger" :(-1)];
         [myShareCreature updateKeyBy:@"thirst" :(-1)];
-        NSLog(@"reappear");
-        NSLog(@"Rhunger: %d" ,[myShareCreature getIntFromKey:HUNGER]);
         
     }
     
