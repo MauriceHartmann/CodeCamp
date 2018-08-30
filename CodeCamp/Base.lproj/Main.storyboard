@@ -533,7 +533,6 @@
                                 </state>
                                 <connections>
                                     <action selector="gameStart:" destination="WMo-Hv-Emk" eventType="touchUpInside" id="or6-rd-CMV"/>
-                                    <action selector="triggerHunger:" destination="WMo-Hv-Emk" eventType="touchUpInside" id="DuZ-7R-q67"/>
                                 </connections>
                             </button>
                         </subviews>

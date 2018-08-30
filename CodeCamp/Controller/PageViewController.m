@@ -17,6 +17,7 @@
 #import "Room.h"
 #import "Arcade.h"
 
+
 @interface PageViewController ()
 
 @end
@@ -40,6 +41,8 @@ NSTimer *needViewTimer;
 int myUpdateTime = 1;
 int noDrinkWarning = 1;
 int noFoodWarning = 1;
+BOOL showHungerImage = false;
+BOOL showThirstImage = false;
 
 - (void)viewDidLoad {
     
@@ -120,10 +123,13 @@ int noFoodWarning = 1;
     
     [self initViews];
     [self checkNeedView];
+    
+    NSLog(@"GGGGGGGGG!");
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
+    [self initViews];
     [self checkNeedView];
     [super viewDidAppear:false];
     needViewTimer = [NSTimer scheduledTimerWithTimeInterval: myUpdateTime
@@ -135,6 +141,9 @@ int noFoodWarning = 1;
 -(void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:true];
+    [hungerView removeFromSuperview];
+    [thirstView removeFromSuperview];
+    [petView removeFromSuperview];
     [needViewTimer invalidate];
 }
 
@@ -161,11 +170,13 @@ int noFoodWarning = 1;
     myimg = [UIImage imageNamed:@"hunger"];
     hungerView.image=myimg;
     hungerView.frame = CGRectMake(width/2 , height/2 , petViewWidth , petViewHeight);
+    [self.view addSubview:hungerView];
     
     thirstView= [[UIImageView alloc] init];
     myimg = [UIImage imageNamed:@"thirst"];
     thirstView.image=myimg;
     thirstView.frame = CGRectMake(width/2 - petViewWidth , height/2 , petViewWidth , petViewHeight);
+    [self.view addSubview:thirstView];
 }
 
 -(void) checkNeedView
@@ -185,8 +196,7 @@ int noFoodWarning = 1;
     
     // Stock Values - Shower
     _dirtLabelShower.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:DIRT]];
-    _shampooLabelShower.text = @"???";
-    //    _shampooLabelShower.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:SHAMPOO]];
+    _shampooLabelShower.text = [NSString stringWithFormat:@"%d", [mySharesView getIntFromKey:SHAMPOO]];
     
     // Smiley Traffic Lights
     if(([mySharesView getIntFromKey:HUNGER] <= 100)
@@ -221,22 +231,35 @@ int noFoodWarning = 1;
     
     if([mySharesView getIntFromKey:HUNGER] <= HUNGER_LIMIT )
     {
-        [self.view addSubview:hungerView];
-        AudioServicesPlaySystemSound(soundBlobIsAngry);
+        hungerView.hidden = false;
+        NSLog(@"showing");
+        if(showHungerImage == false){
+            showHungerImage = true;
+            AudioServicesPlaySystemSound(soundBlobIsAngry);
+            
+        }
+        
+        
     }
-    else
-    {
-        [hungerView removeFromSuperview];
+    else if([mySharesView getIntFromKey:HUNGER] > HUNGER_LIMIT){
+        hungerView.hidden = true;
+        NSLog(@"hiding");
+        showHungerImage = false;
     }
     
-    if([mySharesView getIntFromKey:THIRST] <= THIRST_LIMIT )
+    if([mySharesView getIntFromKey:THIRST] <= THIRST_LIMIT)
     {
-        [self.view addSubview:thirstView];
-        AudioServicesPlaySystemSound(soundBlobIsAngry);
-    }
-    else
+        if(showThirstImage == false){
+            showThirstImage = true;
+            AudioServicesPlaySystemSound(soundBlobIsAngry);
+            
+        }
+        thirstView.hidden = false;
+        
+    }else if([mySharesView getIntFromKey:THIRST] > THIRST_LIMIT)
     {
-        [thirstView removeFromSuperview];
+        thirstView.hidden = true;
+        showThirstImage = false;
     }
     
     if([mySharesView getIntFromKey:DIRT] <= DIRT_LIMIT)
@@ -351,6 +374,7 @@ int noFoodWarning = 1;
     }
 }
 
+// Tapping executes action
 - (void) handleTap: (UITapGestureRecognizer*) recognize
 {
     switch (self.tabBarController.selectedIndex) {
@@ -384,7 +408,7 @@ int noFoodWarning = 1;
     [self checkNeedView];
 }
 
-
+// Shows warning when drinks or foods ar almost empty WARNING: MUST stay two seperate Methods or else bugs will happen
 -(void)disptachDrinkWarning{
     noDrinkWarning = 0;
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Drinks are almost empty!" preferredStyle:UIAlertControllerStyleActionSheet];
